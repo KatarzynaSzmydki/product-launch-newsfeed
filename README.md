@@ -22,19 +22,21 @@ readable brief with a stock snapshot.
 
 ```mermaid
 flowchart LR
-    A["📰 Scan the news"] --> B["✅ Confirm it's real"]
-    B --> C["✍️ Write a brief"]
-    C --> D["📊 Live dashboard"]
+    A1["📰 Google News"] --> B["✅ Confirm it's real"]
+    A2["📈 Yahoo Finance"] --> C
+    B --> C["✍️ Claude writes a brief"]
+    C --> D["📊 Streamlit dashboard"]
 ```
 
-1. **Scan the news** — each company is checked daily against recent news
+1. **Google News** — each company is checked daily against recent news
    coverage.
 2. **Confirm it's real** — a launch only counts once it's corroborated by
    multiple outlets, filtering out routine financial news.
-3. **Write a brief** — a short, plain-language summary is generated
-   alongside a stock snapshot (price, 1-year change, 52-week range).
-4. **Live dashboard** — everything is published to the app above
-   automatically, no manual updates.
+3. **Claude writes a brief** — Claude generates a short, plain-language
+   summary, paired with a stock snapshot (price, 1-year change, 52-week
+   range) pulled from Yahoo Finance.
+4. **Streamlit dashboard** — everything is published to the live app
+   above automatically, no manual updates.
 
 ## Built with
 
