@@ -1,0 +1,278 @@
+{
+  "groups": {
+    "AAPL::announces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "pending",
+      "ticker": "AAPL",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "announces",
+          "source_name": "Apple",
+          "tier": "other",
+          "title": "Apple announces changes to iOS in Brazil - Apple",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNV2Q0cXdNN005UGVGekFfM2IyX01IUXdZbVA3T28xdmVzWFh1clV5bzA4V2VmSDM4cV9NWEozUC1mUWlld0lXU3h1dm8tWDFYa0JTbU1IaFJTWGJTVW9xUHdLdHFRTG1IdzNicmVoa1FYMDlQaEJud0lnRlc4RnVPc0RuNFEyakE?oc=5"
+        }
+      ]
+    },
+    "AAPL::introduces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "introduces",
+      "status": "pending",
+      "ticker": "AAPL",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "introduces",
+          "source_name": "Apple",
+          "tier": "other",
+          "title": "Apple introduces Siri AI, a profoundly more capable and personal assistant - Apple",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQOHh5ZUJodXpvNGI2Y09yQ25oNUszam5rendnZ2haX2l2dTMxbWcwU1Jlb0xjdnNRckNkMElCZy02aHhlQUFfNmZTeU1faE1vLW1aRzByektzWFJ4MEUycjJtY1dkRi1DVGN0dWNzdFIyQjlPdWJ2RG5LLTVXelN5SU5BUGZFeFZNSU0zMEpUcUFPLWxySlpSWjA2c0FvZDRxRzlZWWdPNU02M0JMVUVsN1Vfbw?oc=5"
+        }
+      ]
+    },
+    "AAPL::launches": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "launches",
+      "status": "pending",
+      "ticker": "AAPL",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "launches",
+          "source_name": "NBC Bay Area",
+          "tier": "other",
+          "title": "Everything you need to know about Apple's \u2018big week' of product launches - NBC Bay Area",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOLWFsb01peTRleVV5bzN6RmU1ak1FSnhMYkZsREFhclU3eGdlSGdKRnB5QU9Qdl9MdVhRZFhXNlhvUHJMcXE1VllaVGlOOXR3ZzJKTUprUnRpSF92RFFxUm1UYTlWR2ZNdktGZEp4Sk1nNzdkWnpma0hwX0pyZHYzMzkzNzVMbk1kdjZFTjhMOFY2MW5fQ2fSAZ4BQVVfeXFMUHphQTEtSDhpUWQ5NTdWbDBhQTA3blZvRlFiZVpWYTFjc0ZMZDhuNFROYy1IeG5IRGhxYjAwTmV5eTRucnpibkxhTnFWZjN0V0huSElKWDBfVGYxUmRsaUNJV3VCV1JCOU8zVDlCOGFydVBMMmhTOU5MN3dtcndrTUFrZ040YkZKVUtJU3BrZWNuSFZJTndhVlhvQ0NsTFE?oc=5"
+        }
+      ]
+    },
+    "AMD::launches": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "launches",
+      "status": "pending",
+      "ticker": "AMD",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "launches",
+          "source_name": "Sahm",
+          "tier": "other",
+          "title": "Advanced Micro Devices (AMD) Launches 30 MW Rackspace AI Deal And Joins Russell Top 50 - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPYUNyeE5mNGU3VzV4M3NvZDlDVkNuWGhPT2pkblVieUxLSUtneDRMTlNEX2NVUjlYUE1CRlJiVXcwNTJ5RUZCZVZ0M0pwOFVuVVl1QnF6LUVLR1N6SndUNGZCdGc5MkhhUklFLXlVTGZNQXRPUllwcTZUWk5CSDItek55bndDMTJ3RjAzX0twNl9EZzZHT0NuMmFmZ3NVVEV1Z1o3Y0lmOHltb01WSk1wN3gyS2stOUYzRFoxVGk1ZFRDZlV4MW16U2VrQTBVWEplSWc?oc=5"
+        }
+      ]
+    },
+    "AMD::reveals": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "reveals",
+      "status": "pending",
+      "ticker": "AMD",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "reveals",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Jim Cramer Reveals Why Advanced Micro Devices (AMD) Was Successful - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOVXdlQ1F2Tkx5SGgxWS0yYXR3NmF4YVF5QVR3ajBFTlNLNE5wa1FyWlNqVktaR2tCbzJiZXBCTlp2NVVpWVZwWDdrNnM3V3J2STR3YXZ1OHdhTWk5RkthV1lDekFHYWNNbGkzTzBCQjJ5X05sNkxmLVRjdGExQWE1WUtiZzF6d2txM2pZWVRtcFh0VS1RcERpdnZTckM?oc=5"
+        }
+      ]
+    },
+    "AMD::unveils": {
+      "brief_path": "data/briefs/2026-07-13_AMD_unveils.md",
+      "confirmed_at": "2026-07-13",
+      "first_seen": "2026-07-13",
+      "generated_at": "2026-07-13",
+      "keyword": "unveils",
+      "status": "confirmed",
+      "ticker": "AMD",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "unveils",
+          "source_name": "Bloomberg.com",
+          "tier": "tier1",
+          "title": "AMD Unveils New Chip For Corporate Data Centers, Talks Up Demand - Bloomberg.com",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQTy1Ec2hnTzlSS3NzM1ZhOXNfUllaZUdpMkNDNkladVZ4Nm5NODk5SEQtb28tVy1UczRxUHlKbGV3Ui1kQTJmelNWUWZVNXFrbmVDSlFqQ3gyQkhjRVlSOWd1Y1ZURWZ6TFhzOV9SM3RjSkJIdHh1dGU1cXhZRHpwNmxhaHpzaGtJOGhKckxnc3pUVTdiejZVQ2JlMnNra0ktdnhWdVA2d1lxOFhScXhwejFKUHU?oc=5"
+        }
+      ]
+    },
+    "ASML::launches": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "launches",
+      "status": "pending",
+      "ticker": "ASML",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "launches",
+          "source_name": "Taipei Times",
+          "tier": "other",
+          "title": "ASML Holding launches Taiwn recruitment drive - Taipei Times",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9QQ0VPc1FWbThDRk9VSm1tV0RoUjJvYmtvM1BZT1JzWEw2YWFCVEpyakU1SGdoXzBITTlyR1Z0RHgtTFhPYlF4T1hQMlJSTWRHX3h0b3RZa3VpQmpTMHBNOVFUYk1lUVF1d0xtcVR1WHJGZFlTZGc?oc=5"
+        }
+      ]
+    },
+    "ASML::reveals": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "reveals",
+      "status": "pending",
+      "ticker": "ASML",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "reveals",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "ASML Holding N.V. (ASML): Leopold Aschenbrenner Reveals New Position - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRGFQMmc4bGxYZHl0RWlsak9uUXBuVi0tTHo3d19UQXdIZVlZV3FzemxZcEVTbFYwZ1lDMUtFZmZIYUdxWE9TZUxpWWJzc3dFMTRXYVF2MWs0aG1PcHc5d2V1bEo5ekc2Q0FPR2RWOE5LckRnV093cko0ZEVMSGhZTUxoalRRQmVURTExLTVTRQ?oc=5"
+        }
+      ]
+    },
+    "ASML::unveils": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "unveils",
+      "status": "pending",
+      "ticker": "ASML",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "unveils",
+          "source_name": "GuruFocus",
+          "tier": "other",
+          "title": "Elon Musk Unveils Terafab Chip Manufacturing Plan at ASML Conference - GuruFocus",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQU1JySnpCRHVRbzBQSWhnODdTdWpoN19PWkhsQlhScFVXUEFpT2w4QWxFRE9oUGQ2MzU5cFBZS1V3NFhWU3NnVC1TbHhlV2NzOG5IdHdmLVVWMUJ1TFVpZ0g1S2U4LTBDTWt3THVyZzJVU2F2NWhxVTc0V3loaDA3bDJ3WmZRWDZnZzh6SFdRaTZoNjd3cWxOazd4WTUyT1FXSWg1eWR4cnBOOTZ2U2cyRmQzLXI2eE9mMG03S2MxbDVUZlliZUhaZlAwMnZ4dndG?oc=5"
+        }
+      ]
+    },
+    "MSFT::announces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "pending",
+      "ticker": "MSFT",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "announces",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Microsoft Corporation (MSFT) Announces a New Quantum Chip, Here\u2019s What You Need to Know - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOMHlWNnIxUUtyckFqRzNnVGVIM0xqc0xrQUVvVVVWMTg3LWxRdk5Cb01UZElJd0tPOXZ0dzhHYkNSZlRPTUdYZTZPWFQzc2ZKc281dzJaZ2E3TUY5d1J2WnBjTk9QRVdzV3hjN1ZpakRxeDRZUS1LT3dXdkJHV3Ffa0JoVENnSTd0b0Nza3dHXzVZQjNJdm83ZnhXa0F1aEIwUDV3dW1HbTQ1cXNHZ3dMNzg2MA?oc=5"
+        }
+      ]
+    },
+    "MSFT::launches": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "launches",
+      "status": "pending",
+      "ticker": "MSFT",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "launches",
+          "source_name": "Sahm",
+          "tier": "other",
+          "title": "Microsoft (MSFT) Launches $2.5 Billion Frontier Company For Enterprise AI Push - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWHhZMnFxNklYM2w4X2xnVWdhUklFX0Q3QzVUb1p6MW5qYW9KVjdkaEhxbHc1cHY3M1RhX2hvUGF0VGk0RC1pdGZvVG50ZDFDVWtLNnV1Wm1GcG9LTUZhYUFiMTJTQTNJM3RnaDZUYnUyaGY2WjhiM3hPVXNTRlNjUnB3SEVmQ0Qzd1dSVE5jbnpuOXlab215RHZTeTRHRzFuc3QyTWNEbFNqbnlqZ0dkb2hQal9MZFY2VmpnV3JBS0dGeFpM?oc=5"
+        }
+      ]
+    },
+    "MSFT::reveals": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "reveals",
+      "status": "pending",
+      "ticker": "MSFT",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "reveals",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Jim Cramer Reveals What He\u2019d Like To See With Microsoft (MSFT) - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOemdwNFlLU1Y1eG0tTmZ4a0Jwb1FXeU0wYUdYUFBfWkNVZ3lmSEpMMXhyTGFWeGdCSldQMXNzU1dUZlM2Z3I2Z29uNnNrYy1FRjE1OHk4UjRBdFBBTTJscHExNFVyUGxDSnd6UU55X3JKSmkxVTd1LU5sUXlNMkxEV0gxcXcyRGk0UmQ0VEdyaGhQLVk?oc=5"
+        }
+      ]
+    },
+    "NVDA::announces": {
+      "brief_path": "data/briefs/2026-07-13_NVDA_announces.md",
+      "confirmed_at": "2026-07-13",
+      "first_seen": "2026-07-13",
+      "generated_at": "2026-07-13",
+      "keyword": "announces",
+      "status": "confirmed",
+      "ticker": "NVDA",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "announces",
+          "source_name": "NVIDIA Investor Relations",
+          "tier": "other",
+          "title": "NVIDIA Announces Halos for Robotics, the Industry\u2019s First Full-Stack Safety System for Physical AI - NVIDIA Investor Relations",
+          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPTkpZMS1HdEpzbEtBM3JIRktUaUxsOU9rd0RGcnZDdlc2dlZCQ3M1cVZDQmRfYXRaYmRUVjF1cHBycXVzME54bUtQTkIzX2hsUS15RlVCWWtiZmNjYkNCLXkyNFUycjY0c3dvS2pRMlNZYWxKMkY1YmpCeW55djZzWEtrX21RT1lZY1dxQ2ljLWpkeklVbTYwUUFEcUNta2x0bHFQbnljMUpzSV9NRVV5MTB3R3dHLUZFbmN0bTVWNlhzaGp1aHJLTTk3Z3dBQVZDMWF0RDVIVlREX181WmZIYkhCeUExTTJGVVYwOFZjOTljSUotRGEtbEVkUU1rQQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "announces",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "NVIDIA Corporation (NVDA) Announces Launch of the NVIDIA Nemotron 3 Super - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPTjVaLTctUkg0U1BLckZVQ19Kc1VTdDRKc2RheVY3aVFRTGNiRFg4TDNqUkp5RF93ZUo4R0k0ejI4X1hQek9HT1hjUkkzenpsdHBoa2loZEpheDJqYVd4bUhJeTFuX2Q0dWxjaUY4aGdDTnZqSHR6d3R3ZEVaLXlEZGdpQ2VBQzEwN1VwX2hWUQ?oc=5"
+        }
+      ]
+    },
+    "NVDA::unveils": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "unveils",
+      "status": "pending",
+      "ticker": "NVDA",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-13",
+          "keyword": "unveils",
+          "source_name": "Sahm",
+          "tier": "other",
+          "title": "NVIDIA-Backed Mindbeam AI Unveils AI-Based Research For Better Pain Medications - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOb0VKNFI5LVR1bks5bDZhVFN4YXNtWFpVODhYMzU0NXV2WmJCc0tMdjYzczlOUXFIS1loaDFMRjQyTUExTG4wc2tDOFZzQnVOZWFWb3JlUWplNlhEdFJNSlMyakpxMEVqRi1fM1Y3WGd1a05xRlhQLWU0VVlfN0lwMmRpcGowWHV6QkRlQ2lNeHVfN2FWbU55UVFvTzlaY29sVkljMlhNUFROVmNJYzhfNGlvaG5UeXhNTVh2S3Rpc2ZlUDNhRjhRT1RhQQ?oc=5"
+        }
+      ]
+    }
+  }
+}

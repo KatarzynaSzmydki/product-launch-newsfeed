@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Staged facts used between the mechanical pipeline step and the
+# generation step. Never committed: it's the one place raw scraped
+# article text can transiently live, and this repo is public.
+data/pending_generation/

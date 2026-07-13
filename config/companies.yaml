@@ -1,0 +1,209 @@
+- name: ASML Holding N.V.
+  ticker: ASML
+- name: Adobe Inc.
+  ticker: ADBE
+- name: Advanced Micro Devices, Inc.
+  ticker: AMD
+- name: Airbnb, Inc.
+  ticker: ABNB
+- name: Alnylam Pharmaceuticals, Inc.
+  ticker: ALNY
+- name: Alphabet Inc.
+  ticker: GOOGL
+  aliases:
+  - Google
+- name: Amazon.com, Inc.
+  ticker: AMZN
+- name: American Electric Power Company, Inc.
+  ticker: AEP
+- name: Amgen Inc.
+  ticker: AMGN
+- name: Analog Devices, Inc.
+  ticker: ADI
+- name: AppLovin Corporation
+  ticker: APP
+- name: Apple Inc.
+  ticker: AAPL
+- name: Applied Materials, Inc.
+  ticker: AMAT
+- name: Arm Holdings plc
+  ticker: ARM
+- name: Astera Labs, Inc.
+  ticker: ALAB
+- name: Autodesk, Inc.
+  ticker: ADSK
+- name: Automatic Data Processing, Inc.
+  ticker: ADP
+- name: Axon Enterprise, Inc.
+  ticker: AXON
+- name: Baker Hughes Company
+  ticker: BKR
+- name: Booking Holdings Inc.
+  ticker: BKNG
+- name: Broadcom Inc.
+  ticker: AVGO
+- name: CSX Corporation
+  ticker: CSX
+- name: Cadence Design Systems, Inc.
+  ticker: CDNS
+- name: Charter Communications, Inc.
+  ticker: CHTR
+- name: Cintas Corporation
+  ticker: CTAS
+- name: Cisco Systems, Inc.
+  ticker: CSCO
+- name: Coca-Cola Europacific Partners PLC
+  ticker: CCEP
+- name: Comcast Corporation
+  ticker: CMCSA
+- name: Constellation Energy Corporation
+  ticker: CEG
+- name: Copart, Inc.
+  ticker: CPRT
+- name: CoreWeave, Inc.
+  ticker: CRWV
+- name: Costco Wholesale Corporation
+  ticker: COST
+- name: CrowdStrike Holdings, Inc.
+  ticker: CRWD
+- name: Datadog, Inc.
+  ticker: DDOG
+- name: DexCom, Inc.
+  ticker: DXCM
+- name: Diamondback Energy, Inc.
+  ticker: FANG
+- name: DoorDash, Inc.
+  ticker: DASH
+- name: Electronic Arts Inc.
+  ticker: EA
+- name: Exelon Corporation
+  ticker: EXC
+- name: Fastenal Company
+  ticker: FAST
+- name: Ferrovial N.V.
+  ticker: FER
+- name: Fortinet, Inc.
+  ticker: FTNT
+- name: GE HealthCare Technologies Inc.
+  ticker: GEHC
+- name: Gilead Sciences, Inc.
+  ticker: GILD
+- name: Honeywell Aerospace Inc.
+  ticker: HONA
+- name: Honeywell International Inc.
+  ticker: HON
+- name: IDEXX Laboratories, Inc.
+  ticker: IDXX
+- name: Intel Corporation
+  ticker: INTC
+- name: Intuit Inc.
+  ticker: INTU
+- name: Intuitive Surgical, Inc.
+  ticker: ISRG
+- name: KLA Corporation
+  ticker: KLAC
+- name: Keurig Dr Pepper Inc.
+  ticker: KDP
+- name: Lam Research Corporation
+  ticker: LRCX
+- name: Linde plc
+  ticker: LIN
+- name: Lumentum Holdings Inc.
+  ticker: LITE
+- name: Marriott International, Inc.
+  ticker: MAR
+- name: Marvell Technology, Inc.
+  ticker: MRVL
+- name: MercadoLibre, Inc.
+  ticker: MELI
+- name: Meta Platforms, Inc.
+  ticker: META
+  aliases:
+  - Meta
+  - Facebook
+- name: Microchip Technology Incorporated
+  ticker: MCHP
+- name: Micron Technology, Inc.
+  ticker: MU
+- name: Microsoft Corporation
+  ticker: MSFT
+- name: Mondelez International, Inc.
+  ticker: MDLZ
+- name: Monolithic Power Systems, Inc.
+  ticker: MPWR
+- name: Monster Beverage Corporation
+  ticker: MNST
+- name: NVIDIA Corporation
+  ticker: NVDA
+- name: NXP Semiconductors N.V.
+  ticker: NXPI
+- name: Nebius Group N.V.
+  ticker: NBIS
+- name: Netflix, Inc.
+  ticker: NFLX
+- name: O'Reilly Automotive, Inc.
+  ticker: ORLY
+- name: Old Dominion Freight Line, Inc.
+  ticker: ODFL
+- name: PACCAR Inc
+  ticker: PCAR
+- name: PDD Holdings Inc.
+  ticker: PDD
+- name: Palantir Technologies Inc.
+  ticker: PLTR
+- name: Palo Alto Networks, Inc.
+  ticker: PANW
+- name: PayPal Holdings, Inc.
+  ticker: PYPL
+- name: Paychex, Inc.
+  ticker: PAYX
+- name: PepsiCo, Inc.
+  ticker: PEP
+- name: QUALCOMM Incorporated
+  ticker: QCOM
+- name: Regeneron Pharmaceuticals, Inc.
+  ticker: REGN
+- name: Rocket Lab Corporation
+  ticker: RKLB
+- name: Roper Technologies, Inc.
+  ticker: ROP
+- name: Ross Stores, Inc.
+  ticker: ROST
+- name: Sandisk Corporation
+  ticker: SNDK
+- name: Seagate Technology Holdings plc
+  ticker: STX
+- name: Shopify Inc.
+  ticker: SHOP
+- name: Starbucks Corporation
+  ticker: SBUX
+- name: Strategy Inc
+  ticker: MSTR
+- name: Synopsys, Inc.
+  ticker: SNPS
+- name: T-Mobile US, Inc.
+  ticker: TMUS
+- name: Take-Two Interactive Software, Inc.
+  ticker: TTWO
+- name: Tesla, Inc.
+  ticker: TSLA
+- name: Texas Instruments Incorporated
+  ticker: TXN
+- name: The Kraft Heinz Company
+  ticker: KHC
+- name: Thomson Reuters Corporation
+  ticker: TRI
+- name: Vertex Pharmaceuticals Incorporated
+  ticker: VRTX
+- name: Walmart Inc.
+  ticker: WMT
+- name: Warner Bros. Discovery, Inc.
+  ticker: WBD
+- name: Western Digital Corporation
+  ticker: WDC
+- name: Workday, Inc.
+  ticker: WDAY
+- name: Xcel Energy Inc.
+  ticker: XEL
+- name: Zscaler, Inc.
+  ticker: ZS
