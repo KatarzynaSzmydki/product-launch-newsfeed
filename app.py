@@ -69,6 +69,16 @@ st.markdown(
         background: #4b5563 !important;
         background-image: none !important;
     }
+    /* Shrink button padding and inter-row spacing so the company table
+       fits more rows per page. */
+    div[data-testid="stButton"] button {
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+        min-height: 0 !important;
+    }
+    div[data-testid="stVerticalBlock"] {
+        gap: 0.35rem !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -132,7 +142,9 @@ state = load_state()
 groups = state.get("groups", {})
 ticker_to_name = {c["ticker"]: c["name"] for c in companies}
 
-confirmed_groups = [g for g in groups.values() if g["status"] == "confirmed"]
+confirmed_groups = [
+    g for g in groups.values() if g["status"] == "confirmed" and g.get("brief_path")
+]
 
 # Group by confirmed date, then by ticker -- a company can have more than one
 # confirmed group on the same date (e.g. under both "announces" and
@@ -200,7 +212,7 @@ with left:
             header_cols = st.columns([3, 1])
             header_cols[0].markdown("**Company**")
             header_cols[1].markdown("**Ticker**")
-            st.divider()
+            st.markdown("<hr style='margin:4px 0'>", unsafe_allow_html=True)
             for i, t in enumerate(tickers):
                 row_cols = st.columns([3, 1])
                 selected = t == st.session_state.get("selected_ticker")
@@ -214,7 +226,7 @@ with left:
                     st.rerun()
                 row_cols[1].write(t)
                 if i < len(tickers) - 1:
-                    st.divider()
+                    st.markdown("<hr style='margin:2px 0'>", unsafe_allow_html=True)
 
 with right:
     selected_ticker = st.session_state.get("selected_ticker")
@@ -243,10 +255,6 @@ with right:
                 st.markdown("**Headline**")
                 for h in headlines:
                     st.caption(h)
-
-            if not group.get("brief_path"):
-                st.caption("Brief not generated yet -- check back after the next scheduled run.")
-                continue
 
             brief_path = REPO_ROOT / group["brief_path"]
             if not brief_path.exists():

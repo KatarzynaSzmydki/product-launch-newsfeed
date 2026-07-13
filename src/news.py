@@ -8,6 +8,7 @@ exposes as entry.source.title / entry.source.href.
 """
 import re
 import time
+from datetime import date, timedelta
 from urllib.parse import quote
 
 import feedparser
@@ -90,11 +91,19 @@ def _mentions_company_early(title, company):
     )
 
 
-def build_query(name, aliases):
+def build_query(name, aliases, today):
     names = [name] + list(aliases or [])
     name_clause = " OR ".join(f'"{n}"' for n in names)
     verb_clause = " OR ".join(LAUNCH_KEYWORDS)
-    return f"({name_clause}) ({verb_clause})"
+    # Google News RSS's after:/before: operators are day-granularity, not
+    # hour-granularity -- a same-day-only window would clip stories near
+    # the run's UTC boundary. A day on either side of `today` approximates
+    # a rolling last-24h window without losing those edge-of-day hits;
+    # dedup-by-URL in state.py absorbs the resulting day-to-day overlap.
+    today_date = date.fromisoformat(today)
+    after = (today_date - timedelta(days=1)).isoformat()
+    before = (today_date + timedelta(days=1)).isoformat()
+    return f"({name_clause}) ({verb_clause}) after:{after} before:{before}"
 
 
 def fetch_entries(query):
@@ -156,7 +165,7 @@ def trigger_events_for_company(company, today):
     this module has no direct clock dependency.
     """
     events = []
-    query = build_query(company["name"], company.get("aliases"))
+    query = build_query(company["name"], company.get("aliases"), today)
     for entry in fetch_entries(query):
         title = entry.get("title", "")
         link = entry.get("link")
