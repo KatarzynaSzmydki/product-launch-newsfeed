@@ -75,6 +75,16 @@ st.markdown(
         padding-top: 0.25rem !important;
         padding-bottom: 0.25rem !important;
         min-height: 0 !important;
+        overflow: hidden !important;
+    }
+    /* A long company name would otherwise wrap to a second line and grow
+       that row's button taller than its neighbors. Force one line with an
+       ellipsis instead; the full name is still available via the button's
+       hover tooltip (see `help=` in app.py). */
+    div[data-testid="stButton"] button p {
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
     div[data-testid="stVerticalBlock"] {
         gap: 0.35rem !important;
@@ -208,25 +218,26 @@ with left:
         st.write("")
         st.write("")
 
+        # Each row is a single button (name + ticker in one label) rather than
+        # a button next to separate table cells/grid lines -- a button's own
+        # box never lines up pixel-for-pixel with independent column/divider
+        # grid lines, which read as misalignment. One shape per row sidesteps
+        # that entirely. Native st.dataframe row-selection was tried first and
+        # dropped: its click target isn't the visible row, so clicks silently
+        # did nothing (see project history).
         with st.container(border=True):
-            header_cols = st.columns([3, 1])
-            header_cols[0].markdown("**Company**")
-            header_cols[1].markdown("**Ticker**")
-            st.markdown("<hr style='margin:4px 0'>", unsafe_allow_html=True)
-            for i, t in enumerate(tickers):
-                row_cols = st.columns([3, 1])
+            for t in tickers:
                 selected = t == st.session_state.get("selected_ticker")
-                if row_cols[0].button(
-                    ticker_to_name.get(t, t),
+                label = f"{ticker_to_name.get(t, t)}  ·  {t}"
+                if st.button(
+                    label,
                     key=f"company_row_{selected_date}_{t}",
                     use_container_width=True,
                     type="primary" if selected else "secondary",
+                    help=ticker_to_name.get(t, t),
                 ):
                     st.session_state.selected_ticker = t
                     st.rerun()
-                row_cols[1].write(t)
-                if i < len(tickers) - 1:
-                    st.markdown("<hr style='margin:2px 0'>", unsafe_allow_html=True)
 
 with right:
     selected_ticker = st.session_state.get("selected_ticker")
