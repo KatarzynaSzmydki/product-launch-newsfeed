@@ -96,10 +96,10 @@
       ]
     },
     "GOOGL::introduces": {
-      "brief_path": null,
+      "brief_path": "data/briefs/2026-07-14_GOOGL_introduces.md",
       "confirmed_at": "2026-07-14",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-14",
       "keyword": "introduces",
       "status": "confirmed",
       "ticker": "GOOGL",
@@ -123,10 +123,10 @@
       ]
     },
     "GOOGL::launches": {
-      "brief_path": null,
+      "brief_path": "data/briefs/2026-07-14_GOOGL_launches.md",
       "confirmed_at": "2026-07-14",
       "first_seen": "2026-07-14",
-      "generated_at": null,
+      "generated_at": "2026-07-14",
       "keyword": "launches",
       "status": "confirmed",
       "ticker": "GOOGL",
@@ -146,6 +146,14 @@
           "tier": "other",
           "title": "Google Antigravity Launches Agent Teams: A New Way to Build Software with Coordinated AI Subagents - nokiapoweruser.com",
           "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSlRSdk42NHg4NEJ2SnE0UHZtTC1ZRTlBalVGOVZxV2dTOFVJRmZqeWpnTHZFQ0wxSXk4NlQwRzhZd25LNWxORzIwb0ZINl9rQldlZmI1TzktMWkwX2FSQ1RpNThYMkhfMG83TmR3NmhlX1ItRTRHU0l1eDVLQmtZdy04aEt0Ykd6d09aY2VPbklhbV9lTjB6b3dpZG5iYlFqQXBJV1NFX1VSSjRDZXRmQXZFcVNzbVdFQW5nbDY1a1RzWjQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-14",
+          "keyword": "launches",
+          "source_name": "India Today",
+          "tier": "other",
+          "title": "Google launches free AI research foundations curriculum in India, it will teach you how to build LLMs - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNcG5KQ1ZvdkdiNlhyR0tFZGpZdXVZSmZCUXB2c0RMYl9acGlXTEdLVF83VVJzcldiSDNaNTdsUVpRdkp2cTBVZWtJb3A3NzVDRnl3Y0d3NFVvV1ByRFBHM2w1TnlPenZYeXVaakoyYWJZRmltendIWlNUc01JelpvcVFfa19HUXBkV1JPSWMySVdOTGU4S18tWGVLeVJJWkl4SHFYYXBORnJ4YXdyV1N6OW11U3hPMWQ0X0VMdkRuUUpOWVR1SUNXaFppRGVxMWtOSE9yMzNEeGptQmtvZkw3YkNhNnVVYWRyRktDblZTbkhFenkwQUVrZkplSdIBgAJBVV95cUxOVXhuR3E2VkFnUTd5SE9TN2lpTm9uVG1YaFRaMlFTRlFGX0hGVDZ6dVczcFpSMy1SQWw2RENjb3JqcVFsUkp5WlFuWF91STJZa3huWVd2V3RzY01sUmVFQTg4UEp0U0lVczg0YU1QcjN1MlB3dUZFd3FPdmZvaHRJampxTm1EdWNmZjRWX2U3cFJyMm5zTFNFUXBhWk96T0hLMVlWMGQxR2IteTNrY1p6aWlzNDlLdWlkQUVXYmNGTjVURU9KM2F2Z2NKXzJqZklzX3NveHZpT1pfTXlmNjR0V2M5a3BMRFBOYzlhdXppVHVWb2JvT3VNcHlaOXFvNE9M?oc=5"
         }
       ]
     },
@@ -399,10 +407,10 @@
       ]
     },
     "MSTR::unveils": {
-      "brief_path": null,
+      "brief_path": "data/briefs/2026-07-14_MSTR_unveils.md",
       "confirmed_at": "2026-07-14",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-14",
       "keyword": "unveils",
       "status": "confirmed",
       "ticker": "MSTR",
