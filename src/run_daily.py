@@ -76,6 +76,10 @@ def fetch_snapshots_by_ticker(tickers):
     return results
 
 
+def _staging_prefix(group_key):
+    return group_key.replace("::", "_")
+
+
 def has_pending_staging_file(group_key):
     """True if a group already has an unpublished staging file.
 
@@ -87,8 +91,7 @@ def has_pending_staging_file(group_key):
     """
     if not STAGING_DIR.exists():
         return False
-    prefix = group_key.replace("::", "_")
-    return any(STAGING_DIR.glob(f"{prefix}_*.json"))
+    return any(STAGING_DIR.glob(f"{_staging_prefix(group_key)}_*.json"))
 
 
 def stage_for_generation(group_key, group, ticker_to_name, today, snapshot):
@@ -118,7 +121,7 @@ def stage_for_generation(group_key, group, ticker_to_name, today, snapshot):
     }
 
     STAGING_DIR.mkdir(parents=True, exist_ok=True)
-    staging_path = STAGING_DIR / f"{group_key.replace('::', '_')}_{uuid.uuid4().hex[:8]}.json"
+    staging_path = STAGING_DIR / f"{_staging_prefix(group_key)}_{uuid.uuid4().hex[:8]}.json"
     staging_path.write_text(json.dumps(staged, indent=2), encoding="utf-8")
     return staging_path
 
