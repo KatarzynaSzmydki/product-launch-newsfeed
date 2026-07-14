@@ -30,9 +30,26 @@ for design rationale see `product-launch-tracker-scope.md`.
 - **`data/state.json` is ~60KB and grows daily.** Never Read or Edit it to change a few fields —
   `src/state.py` and `src/publish_brief.py` maintain it in-process.
 
-## Push approval gate for app.py
+## Branching policy
 
-`.git/hooks/pre-push` blocks any push whose diff touches `app.py` unless `APP_PUSH_APPROVED=1` is
-set. app.py changes go live immediately via Streamlit Cloud's auto-redeploy, so they need explicit
-user review first: show the diff, get sign-off, then push as `APP_PUSH_APPROVED=1 git push`.
-Routine pipeline pushes (`data/state.json`, `data/briefs/*.md`) are exempt.
+Streamlit Cloud auto-redeploys from `master`, so anything that lands there is live immediately.
+Where a change goes depends on whether it touches the deployed frontend:
+
+- **`app.py` — never push to `master`.** Branch, push the branch, open a PR, and stop. The user
+  reviews and merges it; the PR *is* the approval step, so do not merge it yourself and do not
+  ask for a shortcut around it.
+
+  ```
+  git switch -c <feature-branch>
+  git add app.py && git commit
+  git push -u origin <feature-branch>
+  gh pr create          # then hand the PR link to the user and stop
+  ```
+
+- **Everything else — straight to `master`.** Daily-run output (`data/state.json`,
+  `data/briefs/*.md`) and pipeline source (`src/*`, config, docs) need no branch and no PR.
+
+`.git/hooks/pre-push` enforces this: it rejects any push that puts `app.py` on `master`, and has
+no override. Pushing `app.py` to a non-master branch is unrestricted. The hook lives in `.git/`
+and is therefore local-only — it won't survive a fresh clone, so treat the policy above as the
+source of truth, not the hook.

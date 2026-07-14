@@ -59,7 +59,9 @@ git push
 
 `data/pending_generation/` is git-ignored and must never be committed — it's the only place raw scraped article text lives, and this repo is public. Never `git add -A` here.
 
-Do not touch `app.py`. A pre-push hook blocks any push that changes it without explicit sign-off.
+Do not touch `app.py`. The daily run pushes straight to `master`, and `app.py` is not allowed on
+`master` (it goes via a feature branch and a PR the user merges — see `CLAUDE.md`). A pre-push
+hook rejects it, which would block the whole daily push.
 
 ## 5. Report
 
