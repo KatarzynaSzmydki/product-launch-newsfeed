@@ -76,6 +76,21 @@ def fetch_snapshots_by_ticker(tickers):
     return results
 
 
+def has_pending_staging_file(group_key):
+    """True if a group already has an unpublished staging file.
+
+    Staging filenames encode the group key (see stage_for_generation), so
+    this is a glob rather than a state.json lookup -- a group stays
+    "confirmed, no brief_path" for as long as its staging file is
+    unpublished, so re-running the mechanical step before generation
+    catches up would otherwise stage the same group again on every run.
+    """
+    if not STAGING_DIR.exists():
+        return False
+    prefix = group_key.replace("::", "_")
+    return any(STAGING_DIR.glob(f"{prefix}_*.json"))
+
+
 def stage_for_generation(group_key, group, ticker_to_name, today, snapshot):
     if snapshot is None:
         print(f"SKIP (no usable stock data this run, will retry): {group_key}")
@@ -187,6 +202,9 @@ def main():
 
     staged_count = 0
     for group_key, group in pending:
+        if has_pending_staging_file(group_key):
+            print(f"SKIP (already staged, awaiting generation): {group_key}")
+            continue
         staging_path = stage_for_generation(
             group_key, group, ticker_to_name, today, snapshots.get(group["ticker"])
         )
