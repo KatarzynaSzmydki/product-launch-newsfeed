@@ -257,53 +257,58 @@ with right:
                 st.session_state.pop("selected_ticker", None)
                 st.rerun()
 
-        for i, group in enumerate(ticker_groups):
-            if i > 0:
-                st.divider()
-
-            headlines = [e["title"] for e in group.get("trigger_events", [])[:2]]
-            if headlines:
-                st.markdown("**Headline**")
-                for h in headlines:
-                    st.caption(h)
-
+        # A company can have more than one confirmed group on the same date
+        # (e.g. one corroborated under "introduces", another under "launches")
+        # -- that split is an artifact of the corroboration keyword, not
+        # something a reader cares about, so all groups for this company/date
+        # merge into one view: one stock snapshot, every summary, one combined
+        # headline list.
+        parsed_groups = []
+        for group in ticker_groups:
             brief_path = REPO_ROOT / group["brief_path"]
             if not brief_path.exists():
                 st.error(f"Brief file missing on disk: {group['brief_path']}")
                 continue
+            parsed_groups.append((group, parse_brief(brief_path)))
 
-            parsed = parse_brief(brief_path)
+        st.markdown("**Stock snapshot**")
+        stock = next((p["stock"] for _, p in parsed_groups if p["stock"]), None)
+        if stock:
+            pct = stock["pct_change_1y"]
+            arrow = "▲" if pct >= 0 else "▼"
+            color = "#1a7f37" if pct >= 0 else "#cf222e"
+            st.caption("1-year change")
+            st.markdown(
+                f"<span style='font-size:2rem;font-weight:600;color:{color}'>"
+                f"{arrow} {pct:+.1f}%</span>",
+                unsafe_allow_html=True,
+            )
+            st.caption(
+                f"Current price \\${stock['current_price']:.2f} · "
+                f"52-week range \\${stock['week52_low']:.2f}–\\${stock['week52_high']:.2f}"
+            )
+        else:
+            st.caption("Stock data unavailable for this run.")
 
-            st.markdown("**Stock snapshot**")
-            if parsed["stock"]:
-                stock = parsed["stock"]
-                pct = stock["pct_change_1y"]
-                arrow = "▲" if pct >= 0 else "▼"
-                color = "#1a7f37" if pct >= 0 else "#cf222e"
-                st.caption("1-year change")
-                st.markdown(
-                    f"<span style='font-size:2rem;font-weight:600;color:{color}'>"
-                    f"{arrow} {pct:+.1f}%</span>",
-                    unsafe_allow_html=True,
-                )
-                st.caption(
-                    f"Current price \\${stock['current_price']:.2f} · "
-                    f"52-week range \\${stock['week52_low']:.2f}–\\${stock['week52_high']:.2f}"
-                )
-            else:
-                st.caption("Stock data unavailable for this run.")
-
-            st.markdown("**Summary**")
+        st.markdown("**Summary**")
+        for _, parsed in parsed_groups:
             st.write(parsed["summary"])
 
-            sources = [
-                e for e in group.get("trigger_events", []) if e.get("url")
-            ]
-            if sources:
-                st.markdown("**Sources**")
-                for e in sources:
-                    label = e.get("source_name") or e["title"]
-                    st.markdown(f"- [{label}]({e['url']})")
+        # A story can corroborate more than one keyword-group, so dedup by
+        # URL rather than listing it once per group.
+        seen_urls = set()
+        headline_events = []
+        for group, _ in parsed_groups:
+            for e in group.get("trigger_events", []):
+                if e.get("url") and e["url"] not in seen_urls:
+                    seen_urls.add(e["url"])
+                    headline_events.append(e)
+
+        if headline_events:
+            st.markdown("**Headlines & Sources**")
+            for e in headline_events:
+                source = e.get("source_name") or "unknown source"
+                st.markdown(f"- [{e['title']}]({e['url']}) ({source})")
 
 st.divider()
 st.caption(
