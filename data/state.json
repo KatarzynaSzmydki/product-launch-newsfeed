@@ -19,25 +19,6 @@
         }
       ]
     },
-    "AAPL::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "AAPL",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Stocktwits",
-          "tier": "other",
-          "title": "AAPL Stock Gains \u2014 Apple Reportedly Eyes Foldable iPhone, Camera-Equipped AirPods Launches In 2027 - Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQWGtNOTlQelFyMkJVelNVejNjQWQ5ME9lTHlkd2dJWnExazNscTRiSWVhWG1KTlVXOXBpSnEyeWZpNmdldHQxV2lwcU1OZ29HNVI4Z2pHbTFOclRzdHROSEhqMFBjekZwRU84TzF6UE0yN0NyanA2UnpoM29rakxkUXlPVEpLcHFMdTd2Rll3T0NjdElvc0xJeDVtZnBUSE9BTGdXWW9YendCMjRvdkZySkNQRDBDU2R3cUNhM0pXbHhZMkJpOUNaclZMT2M4UzhGUThEWQ?oc=5"
-        }
-      ]
-    },
     "AAPL::unveils": {
       "brief_path": null,
       "confirmed_at": null,
@@ -57,25 +38,6 @@
         }
       ]
     },
-    "AMAT::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "AMAT",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Sahm",
-          "tier": "other",
-          "title": "Applied Materials (AMAT) Is Down 12.4% After Russell Reclassification And AI Tool Launches Has The Bull Case Changed? - Sahm",
-          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNUGFheW5yTWFBRk8yZFJBdlp0d1dvdkF5Z1JCZ1RpY2tMcTgzRlFPeDVySFdKeS1VTWN4aERrdFhEVkFMZVFKSGl3YVl5bWNCZ25EUlRJNHlidGd4dC1qUUljTmVyWVdUSWJvSTVrdVlLU2hGZHpoM1YtR3lVN25YNTBCMnhtZ0RGaVRLNUVuN3pBZi1yWkxKRVZ6Z1pJeFNrNEpmOUhNNjlRbkpGUERDMEsxUmZMWDBIRHYyUzNfbUUtWlNkRnlnMnNoVlgwTjRCVXJWQ3I0cnJiMFJ6aW5mc1ZCYjh2Qnd5VFd2Qlc5R2pMeHdsN2c0?oc=5"
-        }
-      ]
-    },
     "AMAT::unveils": {
       "brief_path": null,
       "confirmed_at": null,
@@ -92,231 +54,6 @@
           "tier": "other",
           "title": "Applied Materials (AMAT) Unveils AI-Powered SENZ Platform to Accelerate Smart Glasses Development - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNlpwdjdLSVRqbmZ0Rk5xNVFNaXl1R2Y0cThNazRObWlmdjV6Nnd3OXBteFpTSVRJaDBpeGtQSzNEN1d5TllwTEo5WDktY1RkQjhDX0JsNFdCbjlBWll0VFN5VC1saU5yVmttZko4dVRNc183SE92Y0dxQXVxQ211d0t3aHZjeGlZb1NoQzhwZ0Z5NTd6TWtNZmhGVkJtdw?oc=5"
-        }
-      ]
-    },
-    "AMD::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "AMD",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Seeking Alpha",
-          "tier": "other",
-          "title": "AMD in focus as it announces collaboration with 5C on gigascale AI campuses (AMD:NASDAQ) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPOXJkWW1DRG9mX0NvUFo2UV8zblpkQng4WXNPQVF1SVZ6TzhvcWxaWGU4QnlnbnVrbjRqT3dCU0dLRWRGYWUyNlZmNHlNRVFocW85TjUtdk9hUmNQbDVsa1lTaUg1MVAxa2RyQTRvbktXaFc4MnM2WUtXMWtPLURhTkFtcHZZSERTUWdrSnNESEE3NE8zcm1VbDZtb2NiNHJ5aDI3TTRRTzdBUGNDVmZLMTNwMA?oc=5"
-        }
-      ]
-    },
-    "AMD::launches": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "confirmed",
-      "ticker": "AMD",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "TradingKey",
-          "tier": "other",
-          "title": "AMD (AMD) Stock Price Forecast: Zen 6 Venice Launches July 22, Helios vs Nvidia Vera Rubin; Is $584 Next? - TradingKey",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPem0xWjg4YVg3d3JPM2IwS2VRWU5BRE93OWM1ZXJtYUprckdtZ1I0cWtrbU1DeXg2N25VcjhoLWlFZW04NFFYR2tkaW9GTWVZMUZZU2ZNMVppRWxJNEdUM2JvVWc5dkN3NHIyLXFDMGliNVRzbF9HN0FJbVVrSklvZjJjQmQ5SEdhSTN3S05MeFlwZlB4ZFpMLXBfa1RHREhTN1d1dDBqWmptZUZnVDU0SHp3NUhoM3pOcmgzMHNpeFBxUlIwRlpSQkpnazdnSjhu?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Stock Titan",
-          "tier": "other",
-          "title": "JPMorgan (JPM) launches auto callable notes tied to AMD, NVIDIA and Tesla with 31% yield - Stock Titan",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQT1pxdHVwVmZSYTA1LTlMdHg0VG9aTGtMcExCZ0NzRE92NXNnbmtXQkpxdDZGM0piaWlQZV81S0dmSjFxTWRnV3dOX3Zvc2NYZzZxTmJVUnA5RWpFZ3dCTklTcWJQQmVzUDF5RW1ERnU1MGQwdU1ZdEJkTWlQRG1JWFp5YjRmaS0zVl9KcVpKNXpYeFVabEN4ZkpjRVZ2VHYzZ3Joc1J1aDZ4Zw?oc=5"
-        }
-      ]
-    },
-    "AMZN::reveals": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "reveals",
-      "status": "pending",
-      "ticker": "AMZN",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "reveals",
-          "source_name": "Yahoo Finance",
-          "tier": "other",
-          "title": "Jim Cramer Reveals Reason Behind Amazon.com, Inc. (AMZN)\u2019s Share Price Movement - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUFQxdHdMdFhaSW42akxrYnBOM3VIR1JWQUpJQlN3a3I1S3cxOVNWbWlJUThfbEx1VWNZSm9xa3pOSUVjTUpCUVFjcnIwZUc2RWdUOFQwd3pVcEpqaFFsSUMxUWVNSm05TWdzOERiV0dlU2ZRODVUS3MtWmVLa2xUR2JhaUxLbkZVOFRRaEZGQmE1OXhkZnF3YVRvZzZqQQ?oc=5"
-        }
-      ]
-    },
-    "APP::reveals": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "reveals",
-      "status": "pending",
-      "ticker": "APP",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "reveals",
-          "source_name": "parameter.io",
-          "tier": "other",
-          "title": "AppLovin (APP) Stock Captures Market Share from Meta and Google \u2014 Latest Survey Data Reveals - parameter.io",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQa3lRd0NJbUpjNEE5cUNROVRVNDdnWDlIRlE1aFYzY0pRWkx5VFkzV3h0bTBtNG8tTm1DdGM5MWlzVU9ZcG1YYjZqYWkyY0ZzRXVrLVdTUFUybjY2TExObkgxY1dyRXdDNUdLX1NkSnBRWGFoTF9HSUg3b2hUanRpcFdSaXNvYmRtLVNubEJockhHV0xUY3V6ZS1xeVFzVGlzd1laZ3JFZUhnN3VJVnFr?oc=5"
-        }
-      ]
-    },
-    "AVGO::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "AVGO",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "grafa.com",
-          "tier": "other",
-          "title": "Apple announces $30 billion Broadcom silicon partnership - grafa.com",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTHYzdnlYM0J6dHBlZjc2bjFJaXJWSE5RRHVrYkdlMHhQdl9XOHdoRDdqcXhWcnliNE9JVTVaNFhPdkVSeHJaRnlCVGdZeXVkeHY3V0llRmhZQzBPWXZWU1pVM1pydUg0MkR4OUVQWkRmRTktcnhQa2RzMVVyZUtnQjliNXR1NFM0dTlfaFo3X2M?oc=5"
-        }
-      ]
-    },
-    "AVGO::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "AVGO",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Stock Titan",
-          "tier": "other",
-          "title": "UBS (AMUB) launches Broadcom\u2011linked auto\u2011call notes \u2014 $39.25 coupon, July 2028 maturity - Stock Titan",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcVNESHpNakhGWkp3MmhyYmhhMG5WVDVGVVhnSG53WjZmVWROSmFIb01HSld4SWZWUWhiNUl6NG9Mc1RYOWtZOEpJSHpKTDJsSl9Ya0VwanpnM2pVNW1sMHk0WVhUVm9pbUZyb3FKdnpyc3dzbWxLVzdyenlmNnFoVy0wSUFoLWtMcGRHbUs0Um9DX29wTTlhZVZtZno?oc=5"
-        }
-      ]
-    },
-    "AVGO::unveils": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "unveils",
-      "status": "pending",
-      "ticker": "AVGO",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "unveils",
-          "source_name": "Benzinga",
-          "tier": "other",
-          "title": "Apple Unveils $30 Billion Broadcom Deal - Benzinga",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcjh5aXFOYkFMWGE1elFKRXZjZmZ4Y0tCeUJPWDNEcms0TTI4NllQRTdzSVRfSzY0bUtTZFh6TlFIQUtvUU5XMVhORy1SN1VOaHZYand5X1NtRmt1RE5DaG5aTDd5UWtNM1Z4aVNUMXFUQk1GWVBwR1FSWlRZM25kZEdSWDlRaW9IYWdueWpYWkRhaEo1VGI4RTlPSFA?oc=5"
-        }
-      ]
-    },
-    "AXON::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "AXON",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "GuruFocus",
-          "tier": "other",
-          "title": "Axon Enterprise (AXON) Announces New Board Appointments - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONmJ4YlRtQW1ZM0hzdkR1djlqd2o4RFpGd2lkLXdKYlhqZXlhYWgyaDd1a1pOazNsTGZWb0tvNXJaekRHc1d0cEl2YU1zVkRGcHJhTG5zWkd2XzJwUU1zYjQ3bmFJX0Z6TlJNMDFXYmdQLW1wOVpKdXUyQ3lqdlgxWHhycHR6RFlYak1IVkFWM05xTmM3Zm85MTdISURRRm5LZlZySmQxbw?oc=5"
-        }
-      ]
-    },
-    "COST::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "COST",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Stocktwits",
-          "tier": "other",
-          "title": "Costco Announces 11% Jump In March Sales Despite Fewer Shopping Days - Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPcEROcHVRUkpvMExyMWotVDQ1T1RsTzFhd0tnRGdjdUN0d2FhQ0F2Q3hXQk50U01EM1o2Slh1SEpQbUlGQ2M5azdrZGZiWklxb1pFRTc4elUwckNQek1xMGQzYU1GN25rYnJJbVpMQXY3OENmRC1udk1hM2ZwRWx3RDBIRjh3TzRxZjRkVU5Xc1RhTlU3U2tkb0dlOVg4bnNzVFBFZ2MyLXR0TEJjbVhzUzVNSUkyNXRTMmhXbTg5UGZ5RnJXdjNDNEE0OWVZeFN1eFNjRlFR?oc=5"
-        }
-      ]
-    },
-    "CPRT::announces": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "confirmed",
-      "ticker": "CPRT",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Auto Recycling World",
-          "tier": "other",
-          "title": "Copart Announces Promotion Of Jane Pocock To President - Auto Recycling World",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbk1sNHpPMFQ1VDVYYUZiSkloYlBoODdwZE5kZmdQcG1VZVhGb0FiRkZEMHlIU1V1QmIzOUVKcFVZalg3U2xXTWk0UXZqTTg0UmtfMWVhZ1lSY0NDTWJiVnVZR3c0b28wUkpGbmxEUVdWSEdLbFRzTXMxNEgxRk1wT2I0T085dllQTTVhRzUxZw?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "marketscreener.com",
-          "tier": "other",
-          "title": "Copart Announces Promotion of Jane Pocock to President - marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQLW05ZWo4aVR3aDluZ0FPeVY5a1BGWUloUVlkUEJFem9jMmFiaHNyVzU2X2VfS2V5Vy1ncHNna3o2RnVvY0pGeTljUjJSUng5NzY1LUlheUpzSHptVGdjMWFmQlNGMGlsN3h1YUhZckRVdFJvUFRELTNrZ0FDRTVVZGw2YV9qdFNLZ21LeUlwUng4cTNiR3ljSVdOZjN4RHpteUFqYlN5ZmY1YlU?oc=5"
-        }
-      ]
-    },
-    "CRWV::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "CRWV",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Stocktwits",
-          "tier": "other",
-          "title": "CRWV Stock Gains Premarket Amid Market Rebound: Neocloud Operator Announces $3.5B Debt Raise - Stocktwits",
-          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOa2JGNW9kRzA0S1VpQjJiSzhGd0RDa0FmNjVOR1VDMm1pUlh4VXdWZXg0eVZpRy1aRjFnR29ybXAxdldLcEp1RzVwQ1BQUEhzOXduWjdETk01SWR5RzRIOFhtSTFOOGRpb0pmN3Ribk8xa0ROdV9CcDZFMFVvOGl4X0JhMVk1RUdBU3dPYWh3TldXeDB0dGxmZXEwOG9oLW9FRml5S1c4UzRZakZoYlNHZU92cGNqTmVDcGg1Wm5lcmxzcWhlelVDY2p0RkRPeEt6SGpEYTAzdkpiRDJHUHhiMlA2VGRsaUdiVjBv?oc=5"
         }
       ]
     },
@@ -360,11 +97,11 @@
     },
     "GOOGL::introduces": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-14",
       "first_seen": "2026-07-13",
       "generated_at": null,
       "keyword": "introduces",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "GOOGL",
       "trigger_events": [
         {
@@ -374,25 +111,41 @@
           "tier": "other",
           "title": "Google Cloud introduces C4N virtual machines for data-intensive workloads - Indiatimes",
           "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQUVhQV19iZVJmdUhEMFpuY2pUUXNEOVdGeWZuOGdhcGJlZlZiOUhqUlFYWkdBaHk0X2NVQVhyeTZtcmNHX0RNMmZKLUxUcVlKMHVTUTlKaHBIbEtkNS1FbldpTXM5SGxQYVNqWFZwS2RoV1ZDc0R3QmJsejFqc3ctTHpScDN0eTFFY3lUSDR6elg3MjdDV19rajA1c1BlZ2pfNDl4X1Z6NGt2NlQ5djNXMXl0OTU1eVQzbE96d0RJWVZLNFZBQnlEdGZLMDdxUVZMUHRDT1AyNjYxbDJXUTlWR29ST3VaTVJ1Zi15M3FoaHg1ZUNaX1E?oc=5"
+        },
+        {
+          "detected_at": "2026-07-14",
+          "keyword": "introduces",
+          "source_name": "ETV Bharat",
+          "tier": "other",
+          "title": "Google Introduces AI Disclosure Labels For Ads Across Search, YouTube And Discover - ETV Bharat",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQOTN2Q3RUMl9RRkpPWndkVFhsUlYyRm1DbnlxSng3REZwX3B5UFpyOUhRRFBfSS1JeWptMTUtQ2RLYXRvWEI2Y1M0T1ZCaWRQUVhxTGlYU3lJLVk4ODRyUzRfRE0tQ2s1TjlDUmJZaVhfTGp1VXdzdWM5RmJObHVMZWlBVHZrV2pYdXdfd2gtMEhzblhhQ2VTbkxZYkx5TmMyYy1keUZrYnkwdUtmTTJBdWp6aURKSV9rMzB1dUNiX2pVN09GS2o0eFNSZGRUQVVkTlHSAdcBQVVfeXFMTUhuRTMxSkNLWFhhTC1VY3JxYUpka1lieXB1TnRiOU9SUHR4ZU1hRHd1N0RuczdudWdwNEp2cnlJOXJra1hfQWszQ3VWQmlhSzBOWXk0OV9Dcng3cGpNcmxzOTRyT1FVMXBHNzh1Q01tS3ZOcjhTUW1NT1NMTVVMMWY5SUVBRWpTNnFKRnNrWG40RE9OZkhnX0JKSGR1XzBITFFXb0RJX184QnprQm5vd1d4YURfNkRkWFhzTTNBNHdiOWd4R0dLMXNIOVRJdm1yNUJQdWd6S0k?oc=5"
         }
       ]
     },
     "GOOGL::launches": {
       "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
+      "confirmed_at": "2026-07-14",
+      "first_seen": "2026-07-14",
       "generated_at": null,
       "keyword": "launches",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "GOOGL",
       "trigger_events": [
         {
-          "detected_at": "2026-07-13",
+          "detected_at": "2026-07-14",
           "keyword": "launches",
-          "source_name": "markets.businessinsider.com",
+          "source_name": "The Times of India",
           "tier": "other",
-          "title": "As AI Search Replaces Google for Millions of Consumers, Cytd.ai Launches to Help Businesses Stay Visible - markets.businessinsider.com",
-          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNZ3hRTW5KSE13MzVyN3E2T2RnM2RGSzR2d0U3dFluSFozdHRfcEZGTTY1Ukl4YlY1VTZUVWdJTnBqMUJUMlNSdWVBbFlZcl9zTWVJbHYtNEM0WnI3VFBVZm04cV9BX1dDNTlseXltT3EzNjF4NG9lUVJWY3lDQVlQQVp4V0h2LVlfUFhWVUpsaE1KOGJOUjRtZU5sVG5OQm1VVW5INUg4aUhPZ05PQjZJNWk3RFNoSU96QXRqekVOckRERENZSUE1WFpwY1R3RjN6dl9fVGZUQ0JlVVhJVXBmN3JqUVpfU3g4Zzg1Q2FzR0tGV3V1?oc=5"
+          "title": "Google launches new AI tools, education programs for India's developers and startups at I/O Connect India - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOLVJlczRkQWt2dlZ2ZW5pa29aTFZrY1g0bTh2ZmlJYTA1VzdmWHZfbWJqQ01ZdjI1RERPSjJ2Y1FZS25XVnlfV1lyQUJ4S0tEOHFON3dDMHZNODJEcDJvRlhzaGJEVUwzWFp0bjByT1J4VjdqcFBkdXJsbmt5di1rR3VDUGhDV19RMV9UQi1oV0ZtQ3NTd3g5QXlSbktxTWREOWVtV0NnMWF6WnhIZ2MwRzBuMkFJWmxueHh4akl5SEVXSE1FZlNRWWtoTHRSVEZqdnZPak1fOWFBNS0zNTVyV0JaaFROMWhSU3NhLUM2TS1OdHl6MGRjdzFMbG1QQXdEeXlMOXdVVkxKSnljV0lhQmdJLUFkZS1mZ0hj0gGgAkFVX3lxTE5lQWdlMnZZTk90ZTFyNmpPUGxfLVlOTWtGU0JlMm1xWGFWbTRsd3RSUGZaME9icjhHbGs5bEJtRU1BR2VUWmRXWjQ4VmJDT0VoWkNQc2oxODk2bW9tTEtDaU1lRUNQV0dvSFpreFliaHExb0N6X25qRUVUMHl1ZV84Yk5ZS010eXZiS0NBUHFLeGNoVG1wVGJyeV92Z2EwaC1kMlVnTGNMY0dhX0lLem5sYlVfbi1kQlF6YjVjcGJDNjNrdnZJMVRfbm1hUkZyTmM5bXJlcGl5M2RIcVdZM0lodnNzaUJ4MlJ2aXdCUWNOanR1QmdWRldRcXFfVE9PSXRLTjI0dGlFZU5ZVTdTOGk2UUxJcW96WDNTaDlXam9SNQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-14",
+          "keyword": "launches",
+          "source_name": "nokiapoweruser.com",
+          "tier": "other",
+          "title": "Google Antigravity Launches Agent Teams: A New Way to Build Software with Coordinated AI Subagents - nokiapoweruser.com",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSlRSdk42NHg4NEJ2SnE0UHZtTC1ZRTlBalVGOVZxV2dTOFVJRmZqeWpnTHZFQ0wxSXk4NlQwRzhZd25LNWxORzIwb0ZINl9rQldlZmI1TzktMWkwX2FSQ1RpNThYMkhfMG83TmR3NmhlX1ItRTRHU0l1eDVLQmtZdy04aEt0Ykd6d09aY2VPbklhbV9lTjB6b3dpZG5iYlFqQXBJV1NFX1VSSjRDZXRmQXZFcVNzbVdFQW5nbDY1a1RzWjQ?oc=5"
         }
       ]
     },
@@ -416,22 +169,14 @@
       ]
     },
     "GOOGL::unveils": {
-      "brief_path": "data/briefs/2026-07-13_GOOGL_unveils.md",
-      "confirmed_at": "2026-07-13",
+      "brief_path": null,
+      "confirmed_at": null,
       "first_seen": "2026-07-13",
-      "generated_at": "2026-07-13T17:56:11.255818+00:00",
+      "generated_at": null,
       "keyword": "unveils",
-      "status": "confirmed",
+      "status": "pending",
       "ticker": "GOOGL",
       "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "unveils",
-          "source_name": "PR Newswire",
-          "tier": "other",
-          "title": "DOUGLAS ELLIMAN LAUNCHES AI TRANSFORMATION BUILT WITH GOOGLE CLOUD'S TECHNOLOGY, UNVEILS NEW INTELLIGENCE COMPANY, AND ANNOUNCES DRIVE TO RESET COST STRUCTURE - PR Newswire",
-          "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPemNaOFpka1JmdDlTQVgzNE1BTlAtNFR6aDVUbkZSTF9ZWU9aTWFDZ2dhd3BpUm5iWnpUZEpwcXcydmp6M3ZhNmFGXzhQdF91cjk0eDB0MU51YWhuc2hCWDBicEpDcWN2S1JZQUJrTGlwX2tmclJubmdpTzByZk9pX25nNUNtaFBiSl9Mdzk5T3h2b1lNNXRqQTczQ0RmUWJCZ1Noc1RKMDZ2a3ZGMWUxZm1VS3R5a3JoVU1teENQT2g0ekJmWjRIZTQ1OEQ0aXRtdm1US1V3dU0wdTNqTlVwUzIyOGRTbllUOExSMXl2aUFySFYzeGpqc2pieV9ZWlF5aVdhT3pNY2RyRXpJY1R4UnI5UTJTZG1yVHd2cXlCQVpEZVNuN081eTlUdTJtLUZnTjZHUTlR?oc=5"
-        },
         {
           "detected_at": "2026-07-13",
           "keyword": "unveils",
@@ -442,57 +187,41 @@
         }
       ]
     },
-    "INTC::announces": {
+    "INTC::introduces": {
       "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
+      "confirmed_at": null,
+      "first_seen": "2026-07-14",
       "generated_at": null,
-      "keyword": "announces",
-      "status": "confirmed",
+      "keyword": "introduces",
+      "status": "pending",
       "ticker": "INTC",
       "trigger_events": [
         {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Irish Independent",
+          "detected_at": "2026-07-14",
+          "keyword": "introduces",
+          "source_name": "Zamin.uz",
           "tier": "other",
-          "title": "Intel announces \u20ac5bn investment in Leixlip campus as AI boom intensifies - Irish Independent",
-          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQSlJobFBWd2xkclZDemFLNkpUWkRnNFlaME5Vamk1ME1DUURwTE9FMDF6WEVrUEwyVXB0NV9iWTBXZ2xEWmxZeWh3dzd4Z2Vjd0tSNnVDcGp4Y29FRGNKV0Z0ZHZWalIzNnI3LXNIM2lYWWllemZxWURlQ3JkNllNSHlxZ0xjT2ZUZkVaWFdSa1lDb01oVG5xeTlXUmR3VElXOFJmTktDeDYzcHpfZ0RNZjQ2d2hleDlxOWZuSEdXUW5udw?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "marketscreener.com",
-          "tier": "other",
-          "title": "Intel announces $5.7 billion AI-driven capital investment in Ireland - marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZ3VzbEE5eW5IQjBkTkhvaUl6VWpUVXU2dHBOQUxjQ3dwY2JGc3pmRHRhZXhPMVZkQnFfYWxRUU5vYTZNeW9iT2w0QlkwVC0yV2hqamxDaFFqQjY4Nm50VlBSYnc3VGhfUjJTYkFCQk52YW1HUC1SVGw1YjBqcmk3RF85aDY1dFJNcThDNHpUa2VzaHB1czFLMW9JZHpHa1cwa3RjSVYtakdfVlZmeW5lME4tNm0zNThXaHlfUA?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "marketscreener.com",
-          "tier": "other",
-          "title": "Intel announces $5.7 billion capital investment at Irish manufacturing hub - marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNLXd4MFRDXzhMSlptZFFsVGFQc3BFdlZ1a2pnbTdjQl9xc2V4QklBVkFkN2R0WF9LVWxmbXBILVU2VXZ2NElxaTNWcDJKUzF1TnhUYWZ2V2hIU2xibXFiRElQMGpwSFJuYWxhN0RUS2R5NXlDTXh1YlRLRHJHQnNQbjZhTjhyZE5VTDZmZ2xZRXROYmNrdmpDTDc0Vzk1VE0zRVVNYm5uTVV4MlBXd01zbnVqMnI4T01YUEUwRmtrNGJOYVh5?oc=5"
+          "title": "Intel introduces state-of-the-art Starfire processors to conquer space - Zamin.uz",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUVJDSE9ITXdyMWRNU1F3T0x5ZEJRck5KcFVtVGNDVW9RaXFsaFdMZG9JSkI1UHRlREZUMlNYdGVvQ3hnYVhVT2drYmxpMWRYekI1aUxFN0RzLWhNN01KeHVtc0k0TEVIOHRfRjQxQVN5cVFHWERfYjNBZXliVENJcUlRdm9aQlo3bkE1UUZkLUlzR2R6SC0xZmVDSzVCUklpUUFUcDVyVElUS3pEclNFc3dFMA?oc=5"
         }
       ]
     },
-    "KHC::announces": {
+    "INTC::unveils": {
       "brief_path": null,
       "confirmed_at": null,
-      "first_seen": "2026-07-13",
+      "first_seen": "2026-07-14",
       "generated_at": null,
-      "keyword": "announces",
+      "keyword": "unveils",
       "status": "pending",
-      "ticker": "KHC",
+      "ticker": "INTC",
       "trigger_events": [
         {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "marketscreener.com",
+          "detected_at": "2026-07-14",
+          "keyword": "unveils",
+          "source_name": "finance.biggo.com",
           "tier": "other",
-          "title": "Kraft Heinz : Announces Redemption Price for the Partial Redemption of $1.0 Billion Aggregate Principal Amount of the 3.875% Senior Notes due 2027 - marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxONXZfbUI3em9qZE5kbDM0VVVfOUxvSWVvckNGeFY3R3hZM3BUeTFHRmdNSWpMX3JISF9yakdXOEhBQlF4akhoNlpkU3N4TkdBZkI2Zlgwa1p2NXVQa3pCQ2Q0aWNKQy1xb3M3SVkzVWVvTTE0UjA0Zk5yOFp4UFY2SHB1aUMwcGxTMkdXOGNFOVdCRTVNMlhYclR2cDJJZzJXeTM0YXRyYmNRR1RoVndpdDE0OUw1cm9teHQzVEdDVUpaMFRnc19JYkQzSmxfZFdvVFdXbDdBbW03dm5OSHdnQ2FZUnQ?oc=5"
+          "title": "Intel Unveils Starfire Space-Grade Chip: 18A Silicon Withstands Extreme Radiation and 125\u00b0C Heat - finance.biggo.com",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9IMU1LeVpybjhnTUNVX2xXWkFCbE1CTDQ3Rk5tNkhVeEFQU3RzU19PaGtWYWc1aHhjdm5JaDVINkRKTFFYbUloMDhFOXZldFFRZ2lqNzlERnNnaU1QMmRyUThHelhlOUdpVGgyZnpadkhlU05qdHc?oc=5"
         }
       ]
     },
@@ -574,6 +303,14 @@
           "tier": "other",
           "title": "Meta Launches New A.I. Model as Global Technology Race Heats Up - The New York Times",
           "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQaktuN2ZqWnFmVUxNT3Q5Ym16cHE0cF9NeG8tbjdHTnhWZDhjbnZ0REZ1Tzd6M0ZjN1RGdHg3YXVPXzUxNmZnT0RjbmI2T2RhLVppQkV3eEpEQXY3R2U0cGxYcFlWUUtYVmZJX2NOY0hyNmtBemU3bDB2d2R4aWNadHV0SDFwT0RHUUNHVlhrZ0VlbXhk?oc=5"
+        },
+        {
+          "detected_at": "2026-07-14",
+          "keyword": "launches",
+          "source_name": "IT Brief New Zealand",
+          "tier": "other",
+          "title": "Meta launches Muse Image in Meta AI for chats & apps - IT Brief New Zealand",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONmpvQ2hZMDNWMmVhd2FSMnJ4M0NpVGlBOTZZaVd2M0wwbGpadk54MzFnTXVnQ2NEMmxOc1g1WkxFQUtISjZrT0hZMldwSWQxUHdReFFBSmp5LXNvcGNlUnRHeEVpOEZDczBYTmhqZDhSc3RsRFdyczBydHNvUFllVHB0el8?oc=5"
         }
       ]
     },
@@ -593,60 +330,6 @@
           "tier": "other",
           "title": "Meta unveils two AI models - Semafor",
           "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5lSnhyemJUWjNTVjdIYnkxaS1uQnFKUjE2ZklWZXpMWWZYVDdjLS1mc2p3UEJLN2tGaGFkUVc5aVhJRjZoaGlQS2hZV0NEWjlYUzVSTDliT0V1ZnQxUUtmX2FTVjgtdzc1VXYybDNJRllaNWR1b1dpNQ?oc=5"
-        }
-      ]
-    },
-    "MNST::announces": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "confirmed",
-      "ticker": "MNST",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "GuruFocus",
-          "tier": "other",
-          "title": "Monster Beverage Corporation (MNST) Announces 2-for-1 Stock Spli - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNem83Ry1mSnhzVkV5M1RvdGhZMkQ0NHpTakptNVRkTFNvLUo2cUQxS3NIOEpxLTNZdFZrakRORkpacGJ0OTRjb0pJRjMwWHdSUV9RVGU4NUM5eGZXUWwzMDAyb3drUldMc01iQkt3ZkJNcWs5Y01EZFVLN2lGNGYzWWx2RFlad01yNUdjdi1MZDhFN2JYRWQxT0FsVEhGb1g2U0h4aU1CamtDTEo3ZU5kczBn?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "MSN",
-          "tier": "other",
-          "title": "Monster Beverage announces 2-for-1 stock split - MSN",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNDVFR0cxZi1nXzVnY05NcHRmNEE2dHpoQWE2ZUVMcU1pX0xpR0tUSERHcnFDVEJtWGZBaXk3Yk15eDFZS3Bzc05RbjVSZ2F4RU9qLXpabVRWaGJ6dF9ZYVJSbUNZNGp1UDhXMGU2ZWg1VjJtZEpWN3dETUVYbS0xZkdCZjVaMWJhOFdYVEg1YzFuYjdnMlVOZXNDVGlBaFhacnc?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Minichart",
-          "tier": "other",
-          "title": "Monster Beverage Announces 2-for-1 Stock Split Effective August 2026 - Minichart",
-          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTkVlcE9MQ2hiNk9RQnVFMUJLV2JRdkpVWHo2Z2s0OXNYMFpENEZtc1ZXMWYtQmRJWDdqT3drSEFMeHZOMktqYlR2SlgxSnNTclBPdVBnZk94Z0ZJZkhGbzkzRVBpSUxWSVdkZW9uaFdRVTI1RUwyM0p2MXdUY0VtdjQyY0JpdWxuTWhkZ2JuVlFUMlQ0d19JZ3FxZVBFODUwYUhkNEZYWGZoMElLQXc?oc=5"
-        }
-      ]
-    },
-    "MSFT::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "MSFT",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "marketscreener.com",
-          "tier": "other",
-          "title": "Microsoft to Cut Workforce by 4,800 as Xbox Announces Revamp - marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSmV0ZF92eTl0WFRyWUxTWDF0eGVRQWZRR00xUWJpTTBWRjZqZjl3X2RlbEQ0VUpibE9rUy15a0JWLWlGYlBacHNzX1VMZng3dmszbURkMlc4TXhBd25PTkdSdTBWU1hMaEdMTWwwVHFyQjNaQklOSnh6aWtackQ3cW1LNGVkSmlxTVlKM1Jjd2F0Q3B3bkZkNDBoQVlOZ2ppRENnc0huRVd1N0ctSHZqQzh1Zw?oc=5"
         }
       ]
     },
@@ -696,32 +379,32 @@
         }
       ]
     },
-    "MSTR::reveals": {
+    "MSTR::launches": {
       "brief_path": null,
       "confirmed_at": null,
-      "first_seen": "2026-07-13",
+      "first_seen": "2026-07-14",
       "generated_at": null,
-      "keyword": "reveals",
+      "keyword": "launches",
       "status": "pending",
       "ticker": "MSTR",
       "trigger_events": [
         {
-          "detected_at": "2026-07-13",
-          "keyword": "reveals",
-          "source_name": "GuruFocus",
+          "detected_at": "2026-07-14",
+          "keyword": "launches",
+          "source_name": "Cryptonews.net",
           "tier": "other",
-          "title": "Strategy (MSTR) Reveals Bitcoin Holdings Update - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQbzdIM0hZeFRRZ1hWTTJUQVZndjJoZmdOZlRQcWNzbFctZXJvWnd5QkpFQWhueDVSWnFPMnpYMXhIc2hYd1N4MHN0RFI3TnR5MjBuTnI4Z2tCWFZCVmZGeGIwbWl1bTBrV2JZcV85UnJNYXk3NWJVeHhscFlhXzRpLW5DOFRqQlZueGR4LQ?oc=5"
+          "title": "Strategy Launches Bitcoin Bank Adoption Index With 32% Overall Score - Cryptonews.net",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE12REJjU3M2bzVGa2NZSWNrWlQ2bjdUd3VFZ21pSjRKSXk0azFaLWU4eE1OYnZleDJZWDNFamFSZGFud1R2Ukl6S2xJY284NzdkZHJvZ3hIZ0c?oc=5"
         }
       ]
     },
     "MSTR::unveils": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-14",
       "first_seen": "2026-07-13",
       "generated_at": null,
       "keyword": "unveils",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "MSTR",
       "trigger_events": [
         {
@@ -731,6 +414,14 @@
           "tier": "other",
           "title": "Strategy unveils interactive credit model for Bitcoin risk assessment - Crypto Briefing",
           "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9hejNGeFpWVW15eEMwZk5OaWxJWW00dGphcmRnWEpuM05uREp6RjNuN2d3ZWdoRExHZ0xaQlhDb3I5bl95VnpTWHp6Mk94NTl4b09FTnRxSHJrTmtfdTJLU2FMbVFpeU9LT3dHVFE1QVp4X0xv?oc=5"
+        },
+        {
+          "detected_at": "2026-07-14",
+          "keyword": "unveils",
+          "source_name": "The Crypto Times",
+          "tier": "other",
+          "title": "Strategy Unveils Bitcoin Banking Adoption Index With 32% Score - The Crypto Times",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNTnZtWVFvY2ZxWGtvNW10QlpUYXUyYkJzWEZ2YXFVV0ZCVjIwdDNWOF9uVV9JQnBjajFSNVp4aF96Q3VlMmFPMFFDTGJSR1RTWm5INU8wc3lHUmVEaV9TSFFNNUNORlM5bUZ2RzF4WFhneFRocUlsNUpDOEwxWTNQVm1OVHQ2Q3M1QVAwdkhkT2VqMmtYR1NyTGZZYWl4a3pGTGc?oc=5"
         }
       ]
     },
@@ -750,63 +441,6 @@
           "tier": "other",
           "title": "Micron Announces Up to $3 Billion Strategic Investment to Strengthen U.S. Semiconductor Ecosystem - Investing News Network",
           "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQQnpNalpycGlqS2tIX09IdTZxSFN3Sng0aVltb042MG93cEM0VnIyQk1KdnBzOE9CSUZEOC1ObmhxZFRBTUN6TEJPNThTS0h5czUxNUlqcmpMUXo0U3hiZmxaRzZxUk1zbGJvZzFaZTlzTVoweWZlTnd5UU1fUDVmQzJKWGRXZ0JYY1A0VUhLMEhjdm5ldUprbHVwUTctZXpHOUpua2N4XzZESldmOHZNQUxSbDJvR3N4V2cwWl9WSQ?oc=5"
-        }
-      ]
-    },
-    "MU::reveals": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "reveals",
-      "status": "pending",
-      "ticker": "MU",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "reveals",
-          "source_name": "Yahoo Finance",
-          "tier": "other",
-          "title": "Jim Cramer Reveals A Firm That\u2019s Better Than Micron Technology Inc. (MU) - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNVm1PRmRkRzFrOVNhbHI3SVBUcElmaW1rdzdaV0p5Um5hdVdoNHY4MzY2c3ZMMlVJeU9wVUpoOU1lN0ZURGFWaGt6Z2ZyanhrMEZ4R1kyZ0oxdXRjVUZ4V0gyTmlFaW5Va2hXRFBIeTc1bU5xN2huVERmVGJzY2YyRFpuemtaSGN5WGw1UUZ3dGZVQldsbV9BMVF5Zw?oc=5"
-        }
-      ]
-    },
-    "MU::unveils": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "unveils",
-      "status": "pending",
-      "ticker": "MU",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "unveils",
-          "source_name": "Seeking Alpha",
-          "tier": "other",
-          "title": "Micron rises as it unveils new memory deal with Ford (MU:NASDAQ) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNOHRYc3A1NFl3RnQtV3ZQTXNscC03NjNOYUQ5TFFrNmVRN0pTSWUtOUhxekZsa0lTQzVpNDhOQjgyUEZEMFoyTUhDTHhJelEybjJHWDc4WGVWWU0xMXpvSkZaRkNERUd6VUs2a2lwNUZ1RnBXaEt2bEY3VVNfS2x3QjdyTlFMT0tyNVE5emV1ZjA0d19n?oc=5"
-        }
-      ]
-    },
-    "NBIS::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "NBIS",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Yahoo Finance",
-          "tier": "other",
-          "title": "Can Nebius Group (NBIS) Justify Its Valuation Following Nasdaq 100 Inclusion And New AI Launches? - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNbnpzQ05QMEtwdmlLWW1pYjZyZmtjNGtyNkdsYk5LYW1TeU5KTFdPWHZ6Q08zd3pTblpTbVdTMV93Wk9NdXdLQzdqX1ZQR1lrM0VfdkpqdTlSVjdrdzJJX1hvcjR4NVNlckNZeDA3UWNzT19ycUxKaWdJRlJ4UVQzb3hTamR4WVJLRGppTGlWcU1SSWpLU1REcXBxQVNvOUtGWmc?oc=5"
         }
       ]
     },
@@ -951,171 +585,6 @@
         }
       ]
     },
-    "RKLB::announces": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "confirmed",
-      "ticker": "RKLB",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Yahoo Finance",
-          "tier": "other",
-          "title": "Rocket Lab (RKLB) Announces Full Mission Success on VICTUS HAZE mission - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNZVlpZ0ctZGxZUXVxYTB2czNmeVBRYmlaR2hlYzl4VFYtTThTVVo0c3ZPcUFwX1lLakV4Z0RtWTljSF84UkJnamU4UlVITHczT0ItZzlWUmRIN1NjT1dNalAweFE2SkFILVRSWFFRc1FVN1h4UUNYcnpCajhrTEFNNnprOVRnS0kweHI1cERvaFMzRDFYclE?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "Quiver Quantitative",
-          "tier": "other",
-          "title": "Rocket Lab Announces Mission Success for U.S. Space Force VICTUS HAZE Responsive Space Mission - Quiver Quantitative",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNdUhheXlDaHIzeW1mWW9NRFQwVHVXaFlrOXVobExQbTZzN2xTT3VCTDlUaUdwZjVWbmw2MkdlcG5BRFlpclFldTBKeEZYSEFTT0xfNFNmN1hYamdHd3V6X1FKRm9TSjJWSV9PRDcyc3VQS3pYR1ZFcHNYcGZ2cE94S2dHM1RVTUF0VGZVeno1bUZma2NfNHBqbjJXbTV5ZjBTeWhLaXlTY1RtRExraVI4cWJwS1FSNnFxVUo2N3QzaU1qaUxLMUE?oc=5"
-        }
-      ]
-    },
-    "SHOP::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "SHOP",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Moomoo",
-          "tier": "other",
-          "title": "ShamlaTech Launches AI Agent for Shopify, WooCommerce, and Magento Stores in the U.S. - Moomoo",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNzAwMkZhMUlnaTFTVmNmcTRvNmYyMnY4R3czcmxKVy0wYlZNWlN6UWYwdzFvMVdzQ2lrMWR5RnZnZ0FrcjR0NkdNem9OOGxWejFVTVBuMU1sTUlXdmU3Y2ZPSDFsRG44WkhtSFJOMXo5YVNaTE56UXNTQmp3b09rQ0g5V2ViWHhaMXhnNEpaQjYxcklHVk05ZHM5QTJIczJFVlc3NkZIdF93VkE4WlU4MGNpVQ?oc=5"
-        }
-      ]
-    },
-    "TMUS::announces": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "confirmed",
-      "ticker": "TMUS",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "GuruFocus",
-          "tier": "other",
-          "title": "T-Mobile US, Inc. (TMUS) Announces Key Leadership Changes - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOcklEa3N3TDE5dTUtcG1sY1Q0NzVoZ0t2WU41YUtPZDcwaVpBZ2FsOVRJV1NlcGRrWHFyLUI1R015ekRDZEtMMWt0VTdrdDliZG14Yks5cHJNN1NvS2J2dUNhNVN0dW1QeE9KMzdHSlFUV0VzaEdtTmdrYkZkZnFMZmlYc0lENnNsMm4yYVNZT003OXFjbFE?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "marketscreener.com",
-          "tier": "other",
-          "title": "T-Mobile Us, Inc. Announces Management Changes - marketscreener.com",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMVNnUDBqb1AzbURSZHJ2b09pZXdhWFBaRGUwTXJEN1pnRFJiLV9aMjhKOXNLQ1hQTTZMOUdPS19ObnY1cGowSWw2REVHaHFROGdHeVg2ajFleFdQczlNQkdzNEdYOUh3WV9CZ3hsRERkOC1GVUNWR3FCbURCei13TEU4c09yNlZ1V3RsRkdldXE3Mjg5d2ZNM1Zlekh1UQ?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "TipRanks",
-          "tier": "other",
-          "title": "T-Mobile US Announces Strategic Executive Leadership Realignment - TipRanks",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOaFdyLU9kT3N0NmNDLWtMWUR1Uk1nNHNlMWhWRVVGMndiOWtKRUZqR2RBTnhhMVFQR1BFTExQbHVNa05DcUpacWtNZy1LenpHaHVqS0RTQ1pYSGZ3VGlFWGFCcmtzZHN2OUlBM1NIUjJQdFlWRmw4SXJMQUljMmw3V0JPVTAxSklGQ0RIdThCclFrR0NYRnktUlJQOU9aU2xkUFZRaUlDdzk4LVhsaXljSWNId0J1Zjg?oc=5"
-        }
-      ]
-    },
-    "TSLA::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "TSLA",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "GuruFocus",
-          "tier": "other",
-          "title": "California Launches EV Incentive Program to Boost Tesla (TSLA) S - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSklGZDYtUV9TTVpoSEVTN2VXN1Q3NWpMZEJVVG9zY1FYSnhjYTlveUFTN0EydC1fdUtjSlpMa0dmM2pBNVJiV0pxbVhmX0pMWXpqY0hYVXd0UDQzb0VHYXdLSUd1c09vaXhtU3RxYk15TVNrNmY5SUk2THlScTJUZTBXWXVsM0lNYVdYLXVxNkV6cHpqekhrMnp0VzBNczNBZFR3Ym43RFk?oc=5"
-        }
-      ]
-    },
-    "TSLA::unveils": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "unveils",
-      "status": "confirmed",
-      "ticker": "TSLA",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "unveils",
-          "source_name": "Bloomberg.com",
-          "tier": "tier1",
-          "title": "Ex-Tesla Scientist Unveils Plans For European Humanoid Robot - Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNSlYzaFBqNDhxSEJBUVBucmFlNVpkeGMzdUh3VXI2c2JKTkt3WF9EWGxZZXNpTzdlazI1S0hJLWFHZkVMTzNiMWstR1NrcVZteFBfVWdoSFl3ZF85MWhyeGwyeFE4Rkh1S3VuWHJIWm1ObTcwZ3VhT0NJdUZYMGN1cWtrUUtmbk9MSG81SV9aSThXSDJYSl9UT2ZGZGJJbjZRa2xsX2FwY0MtSmp3UVlUNQ?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "unveils",
-          "source_name": "The Star",
-          "tier": "other",
-          "title": "Ex-Tesla scientist unveils plans for European humanoid robot - The Star",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcFVoMU1XQkRMLWJjMHlYTlhBYk45S3k2MEJOU1lYdEQzQTktT21mcUpuZk5aWnlTUXJTZ0ZvdFlGSzFyZGpZcWdqXzJVN0pNVURKeG8zdnBwWC0wbzJVNkFXUjlRWlktYUpQenItT051azNub2FaSldhd1A2aXhndlYzVXB3Ny1XOTJRLUdFeTlZckVOMExaVlpyYmtzQi1IMU9KOC1MY0lMd0hqNHpGbU5uMA?oc=5"
-        }
-      ]
-    },
-    "TXN::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "TXN",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "texasinsider.org",
-          "tier": "other",
-          "title": "Governor Abbott Announces Texas Semiconductor Innovation Fund Grant To Texas Instruments - texasinsider.org",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOR29sQjJENW81VWpHd1ZvdDZMS3ZhelRwU2JEd2EwSDRiTDJtVkJDbnRIOWU2dFpuNG9ta2YxLXI5QUpnQ3BSb1RPV2NIN3VIcjk0bUQ4dHBudWRQb2xFcXlQOTU4Ql8wdTVHR0lKbjBpNU5xai1IQ1lBRXBTMHRkSE4tWjFvVkkta2dDaXRYUlhuRkFQa2QwT0h4VmJpYUFHN0ptUHpmVGN3QU04WHJDTVlNZTFmSVV0M2JiN2ZR?oc=5"
-        }
-      ]
-    },
-    "VRTX::announces": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "pending",
-      "ticker": "VRTX",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "GuruFocus",
-          "tier": "other",
-          "title": "Vertex Pharmaceuticals (VRTX) Announces Strategic Merger with Cr - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQbGF1MFppNG9WWU1oN01LMmlJOWRKTzVDM3BLbG16MUp0cEQyamRUTmVReWFrWlhyYVlUZGM4OUQwejlCQnhPOG9xQ1FzdTVuNzlyUmVHOG54aWJhVFM2cDJkZ3VMRFlNNWRtWWFqdV9sVUFhSklXQUJGLWlBM0RndGdVTkktX2lvSk1UdTV1VU5oVUc0b0Q1ZTl1Uk5aV0JuaThIUEFlWnNhQkVLRkhfbDV3QkluM3dzUDcxaHNMN1dGYndnWWs5NXRqRzBFUkpjVmNZZWxXcVZZbFM3YWlPczVsYkducHNDMjdxLWUyeERrX3QtR2dCNjlzbmJhd2hJMTBRYkVxUjFqbWgza1c0bFZR?oc=5"
-        }
-      ]
-    },
     "WBD::announces": {
       "brief_path": null,
       "confirmed_at": null,
@@ -1132,71 +601,6 @@
           "tier": "other",
           "title": "Warner Bros. Discovery Announces Agentic AI-Powered Advertising Technology Built on AWS, its Preferred Cloud Provider - WebWire",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5qZGtiREhWMl9hNDF4MDh3MmUxTmVPMFN1a21NNlZ0c1RjRkNpekNrcFlfOVhmclMzNk1zdHJOaTNieGNodFJYZlRfamVDMkQwOEUxR1FwT2xjZ3hHcUVaYw?oc=5"
-        }
-      ]
-    },
-    "WBD::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "WBD",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "Seeking Alpha",
-          "tier": "other",
-          "title": "Warner Bros launches agentic AI-powered advertising built on AWS (WBD:NASDAQ) - Seeking Alpha",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMnVlWFJZeF9xWWdRQWN2TEt3NHdBOG5RZXpycXZ3Z092UEwzWlloYy1DTkVmVG5TUWhkWW5aSVgxOVc3bW9IRWRVUjBrcjNYTF80NmNteE5hRnpLcWxPX21qcG1mNGFLRVJOZVpfOTZVd0NELUpzX25oWmZSUk42amhpSmNaVTFLUXZvcHVfTGI4cm4wT2tTYTQ1YzZvTXNlSlhoSA?oc=5"
-        }
-      ]
-    },
-    "WMT::announces": {
-      "brief_path": null,
-      "confirmed_at": "2026-07-13",
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "announces",
-      "status": "confirmed",
-      "ticker": "WMT",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "The Arkansas Democrat-Gazette",
-          "tier": "other",
-          "title": "Walmart announces price cuts; Trump claims White House influence - The Arkansas Democrat-Gazette",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPLVlTMWJZWE5xWFRXUTZTUFZtSEZiVmlfOTFHQ0tJM3dXQ184Zzh5b0Z6UW1VOG1VeUc1TlZzQjhPWXlGZE5IZUpPeUJHbnRpeUM0RUZtYjhFU2pDZ05XR0tWTU4zRDF3S0JWSWVRS2NrOGF6ZUNnYzZTWnlLam9yUW1xVlhRMlJtZVV2ZHIxRGw0c2FaZVFhdzgxQjI?oc=5"
-        },
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "announces",
-          "source_name": "KVUE",
-          "tier": "other",
-          "title": "Texas AG announces $13M Walmart settlement over driver pay issues in Walmart's Spark Driver program - KVUE",
-          "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNTUttR0pNOEhmMTV1Q3ZpMUtfdi02eDFRUzBfVGRCb2RUUGVOSE1nRVBMWTZyUEdpR2hNSnVfNl9qR0lrcHBlNjFFVEVIZzVuRjRpRG5qSHVkZW8xaHpvdVhEN2dSNmdvWFlEWFcxWDF5VE5jcVdzZE9JejlNbEhjU3JSWFhIQk5uYjlTc3J2V2tZdUJ0ajVVSGlMSDhSbmQzcXVtQjVibFp1dmRFYTBqeXJhbnJ3bWYzM0VjRXFUTmdONE90SUFUbHl6WmpDWEpkeWtueXZSVFZaVmlJYkYtSTNoc2VPUVpYQ24xZHFzeno?oc=5"
-        }
-      ]
-    },
-    "WMT::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
-      "first_seen": "2026-07-13",
-      "generated_at": null,
-      "keyword": "launches",
-      "status": "pending",
-      "ticker": "WMT",
-      "trigger_events": [
-        {
-          "detected_at": "2026-07-13",
-          "keyword": "launches",
-          "source_name": "GuruFocus",
-          "tier": "other",
-          "title": "WMT: Walmart Launches Major Summer Price Cuts Amid Consumer Disc - GuruFocus",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOcy1maWpTclptaXhYSnp1Z1E5ZmRJcTNYNkVxV0NyaExMX3d5MnFrR1VmNk13X0V3N04zMGFoMDNKT0V0bUU0R1Vkc1lfZWczcHkyYlJKaUQ5WldvOFpxWjZVUUw2eXhKYkdfQ3ZPQVV0MWcwRExweWlkZ2UzVDJnampZTXZ5SDBISHdxcTh2YTNBcUo5QU1yRmcxeEpXX05iSXVCUGJuYVpteXIz?oc=5"
         }
       ]
     }

@@ -33,20 +33,103 @@ BLOCKLIST_PATTERN = re.compile(
     r"law offices?|lawsuit|sued for|urges investors|"
     r"insider trading|form 4|13d|13g|"
     r"steps down|stepping down|departure of|resign\w*|retirement of|executive chang\w*|"
-    r"executive compensation|appoints .*? as|names .*? as|succession plan"
+    r"executive compensation|appoints .*? as|names .*? as|succession plan|"
+    # Personnel, restated. "announces" is a generic corporate verb, so it
+    # drags in every promotion and reshuffle: "Copart Announces Promotion Of
+    # Jane Pocock To President" was confirming as a product launch.
+    r"promotion of|promotes .*? to|leadership chang\w*|management chang\w*|"
+    r"realignment|new (ceo|cfo|coo|president|chair\w*)|"
+    # Corporate actions and capex. Also not products: "Intel announces $5.7
+    # billion capital investment in Ireland", "Monster Beverage Announces
+    # 2-for-1 Stock Split", "Walmart announces price cuts".
+    r"stock split|\d+-for-\d+|reverse split|"
+    r"capital investment|investment in|invests? \$|"
+    r"new (plant|factory|campus|facility)|"
+    # "probe" is deliberately qualified: an unqualified \bprobe\b would
+    # block a genuine space-probe launch, which is a real product for some
+    # of the universe (RKLB).
+    r"settle\w*|fine of|penalt\w*|antitrust|(regulatory|federal|doj|sec|ftc) probe|"
+    r"price cuts?|price (increase|hike)s?|announces? discounts?|"
+    # Operational milestones, not launches: "Rocket Lab Announces Full
+    # Mission Success on VICTUS HAZE".
+    r"mission success|mission complete|"
+    # Market/analyst commentary. A launch verb inside a price-forecast
+    # headline ("AMD Stock Price Forecast: Zen 6 Venice Launches July 22;
+    # Is $584 Next?") is a real launch being discussed as a trading thesis,
+    # not a launch announcement -- and it drags exactly the forecasting
+    # language the brief validator bans into the source material.
+    r"stock (price|forecast|prediction|split|analysis|to buy|to watch)|"
+    r"price (forecast|prediction)|share price|target price|valuation|"
+    r"analyst\w*|outperform|underperform|overweight|underweight|"
+    r"bull(ish)? case|bear(ish)? case|market cap|shares of|best stocks?|"
+    # Structured products: a bank "launches notes tied to" a basket of
+    # tickers. The named companies aren't launching anything.
+    r"structured notes?|callable notes?|notes tied to|etf|index fund"
     r")\b",
     re.IGNORECASE,
 )
 
 TIER1_SOURCE_MARKERS = ("reuters", "associated press", "ap news", "bloomberg")
 
-# A headline mentioning the company only in passing (e.g. a third party's
-# press release that happens to name them as a partner/landlord/supplier)
-# shouldn't count as that company's own news. Real self-reporting headlines
-# put the company name/ticker up front ("Apple unveils...", "AMD Unveils
-# New Chip..."); require a name/alias/ticker hit within the first stretch
-# of the title as a cheap proxy for "this is about them," not about them.
-EARLY_MENTION_CHARS = 60
+# Outlets that exist to comment on tickers, not to report product news.
+# They republish launch stories wrapped in trading framing, and because
+# corroboration only needs 2 distinct sources, two of these agreeing was
+# enough to confirm a "launch" that no primary outlet ever covered.
+SOURCE_BLOCKLIST_MARKERS = (
+    "stock titan",
+    "stocktitan",
+    "tradingkey",
+    "zacks",
+    "simply wall st",
+    "insider monkey",
+    "marketbeat",
+    "tipranks",
+    "motley fool",
+    "24/7 wall st",
+    "invezz",
+    "stocktwits",
+    "seeking alpha",
+    "barchart",
+    "investing.com",
+    "gurufocus",
+    "benzinga",
+)
+
+# The company has to be the thing *doing* the launching, not merely named
+# near it. Two headlines that both mention the company early but aren't its
+# news:
+#
+#   "JPMorgan (JPM) launches auto callable notes tied to AMD, NVIDIA..."
+#   "As AI Search Replaces Google for Millions of Consumers, Cytd.ai
+#    Launches to Help Businesses Stay Visible"
+#
+# Both name the company within the first 60 characters, so a positional
+# window admits them. What actually distinguishes a subject is adjacency to
+# the verb with no clause break in between: a real launch headline reads
+# "<Company> [modifier] <verb>". So require the name to sit close in front
+# of the verb, with nothing but a short, unbroken run of text between them.
+SUBJECT_VERB_GAP_CHARS = 30
+CLAUSE_BREAK_PATTERN = re.compile(r"[,;:–—]")
+
+# ...but a legal suffix trailing the company name is not a clause break, even
+# though it carries a comma: "Advanced Micro Devices, Inc. unveils Zen 6" is
+# AMD launching. Consume it before testing the gap.
+GAP_LEGAL_SUFFIX_PATTERN = re.compile(
+    r"^,?\s*(Inc\.?|Corporation|Corp\.?|Company|Co\.?|plc|N\.V\.|Holdings?|Ltd\.?|LLC|Group|"
+    r"Technologies|Systems|Solutions|Platforms|Pharmaceuticals)\.?\s*",
+    re.IGNORECASE,
+)
+
+# ...but preceding the verb still isn't enough on its own. "Ex-Tesla
+# Scientist Unveils Plans For European Humanoid Robot" puts Tesla before the
+# verb, yet the subject is a person who used to work there. Same for a
+# rival/supplier/partner named attributively. A mention disqualifies itself
+# as the subject if it's hyphen-attached or follows one of these.
+NOT_THE_SUBJECT_PATTERN = re.compile(
+    r"(ex|former|onetime|one-time|late|rival|competitor|supplier|partner|"
+    r"backed|owned|founded|led)[\s\-]+$",
+    re.IGNORECASE,
+)
 
 LEGAL_SUFFIX_PATTERN = re.compile(
     r",?\s*(Inc\.?|Corporation|Corp\.?|Company|Co\.?|plc|N\.V\.|Holdings?|Ltd\.?|LLC|Group|"
@@ -83,12 +166,18 @@ def _name_variants(company):
     return {v for v in variants if v and len(v) > 1}
 
 
-def _mentions_company_early(title, company):
-    prefix = title[:EARLY_MENTION_CHARS]
-    return any(
-        re.search(rf"\b{re.escape(variant)}\b", prefix, re.IGNORECASE)
-        for variant in _name_variants(company)
-    )
+def _is_launch_subject(title, company, keyword_index):
+    prefix = title[:keyword_index]
+    for variant in _name_variants(company):
+        for match in re.finditer(rf"\b{re.escape(variant)}\b", prefix, re.IGNORECASE):
+            preceding = prefix[: match.start()]
+            if preceding.endswith("-") or NOT_THE_SUBJECT_PATTERN.search(preceding):
+                continue
+            gap = GAP_LEGAL_SUFFIX_PATTERN.sub("", prefix[match.end() :])
+            if len(gap) > SUBJECT_VERB_GAP_CHARS or CLAUSE_BREAK_PATTERN.search(gap):
+                continue
+            return True
+    return False
 
 
 def build_query(name, aliases, today):
@@ -106,7 +195,7 @@ def build_query(name, aliases, today):
     return f"({name_clause}) ({verb_clause}) after:{after} before:{before}"
 
 
-def fetch_entries(query):
+def fetch_entries(query, label=""):
     url = f"{RSS_BASE}?q={quote(query)}&hl=en-US&gl=US&ceid=US:en"
     last_error = None
     for attempt in range(1, RETRY_ATTEMPTS + 1):
@@ -121,15 +210,25 @@ def fetch_entries(query):
         except requests.RequestException as exc:
             last_error = exc
             time.sleep(RETRY_BACKOFF_SECONDS * attempt)
+    # Deliberately terse: this is one line per company, and a Google News
+    # outage fires it for all ~100 of them straight into the routine agent's
+    # context. The full query adds ~150 chars each and diagnoses nothing.
     print(
         f"WARNING: RSS fetch failed after {RETRY_ATTEMPTS} attempts "
-        f"for query={query!r}: {last_error}"
+        f"for {label or 'query'}: {type(last_error).__name__}"
     )
     return []
 
 
 def is_blocked(title):
     return bool(BLOCKLIST_PATTERN.search(title))
+
+
+def is_blocked_source(source_name):
+    if not source_name:
+        return False
+    lowered = source_name.lower()
+    return any(marker in lowered for marker in SOURCE_BLOCKLIST_MARKERS)
 
 
 def classify_tier(source_name):
@@ -151,11 +250,18 @@ def extract_source_name(entry):
 
 
 def _matched_keyword(title):
-    lowered = title.lower()
+    """The *earliest* launch verb in the title, with its position.
+
+    Position matters -- _is_launch_subject needs to know what precedes the
+    verb -- so this returns the first verb by occurrence in the headline,
+    not the first by LAUNCH_KEYWORDS order.
+    """
+    best = None
     for kw in LAUNCH_KEYWORDS:
-        if kw in lowered:
-            return kw
-    return None
+        match = re.search(rf"\b{kw}\b", title, re.IGNORECASE)
+        if match and (best is None or match.start() < best[1]):
+            best = (kw, match.start())
+    return best
 
 
 def trigger_events_for_company(company, today):
@@ -166,15 +272,20 @@ def trigger_events_for_company(company, today):
     """
     events = []
     query = build_query(company["name"], company.get("aliases"), today)
-    for entry in fetch_entries(query):
+    for entry in fetch_entries(query, label=company["ticker"]):
         title = entry.get("title", "")
         link = entry.get("link")
         if not title or not link or is_blocked(title):
             continue
-        keyword = _matched_keyword(title)
-        if keyword is None or not _mentions_company_early(title, company):
+        matched = _matched_keyword(title)
+        if matched is None:
+            continue
+        keyword, keyword_index = matched
+        if not _is_launch_subject(title, company, keyword_index):
             continue
         source_name = extract_source_name(entry)
+        if is_blocked_source(source_name):
+            continue
         events.append(
             {
                 "url": link,

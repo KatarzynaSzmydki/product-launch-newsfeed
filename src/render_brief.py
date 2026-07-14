@@ -1,7 +1,11 @@
 """CLI: assemble a brief markdown file from staged facts + a generated
-launch-summary paragraph. This is what the routine's agent turn calls
-after it writes the summary prose -- disclaimer/stock-section/sources
-formatting stays code-owned; --summary is the only free-text input.
+launch-summary paragraph. Disclaimer/stock-section/sources formatting stays
+code-owned; --summary is the only free-text input.
+
+Note this writes the brief unconditionally, with no validation gate. The
+daily routine does NOT use it -- it calls src.publish_brief, which renders
+via the same template but validates before writing and then records the
+result in state.json. Keep this CLI for one-off manual renders.
 
 Usage:
     python -m src.render_brief data/pending_generation/<id>.json \

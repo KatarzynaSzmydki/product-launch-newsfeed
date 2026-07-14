@@ -178,3 +178,95 @@ When you write this up for a portfolio, be explicit about:
   on APIs, better dedup, human review UI, more source diversity) — showing
   you know the difference between a portfolio build and a production
   system is itself a good signal.
+
+## 8. Architecture (as built)
+
+Sections 1–7 are the pre-build scope. This section records what the code
+actually does and why, so `CLAUDE.md` doesn't have to carry it as
+always-on context.
+
+**No database.** Everything is flat files committed to the repo:
+`config/companies.yaml` (the NASDAQ-100 universe), `data/state.json`
+(every trigger event and group status), `data/briefs/*.md` (the published
+briefs), and the git-ignored `data/pending_generation/` (staged facts
+handed from the mechanical step to the generation step). At this scale a
+database buys nothing and costs a deployment dependency; the repo *is* the
+store, and `git log` is the audit trail.
+
+**The mechanical/generation split.** `src/run_daily.py` calls no LLM: it
+fetches Google News RSS per company (`src/news.py`), drops obvious
+non-launch stories (earnings/dividends/personnel — `BLOCKLIST_PATTERN`),
+corroborates via `src/state.py` (≥2 distinct sources, or one tier-1 wire
+hit), pulls a Yahoo Finance snapshot (`src/stock.py`), and stages each
+newly-confirmed launch to `data/pending_generation/<group_key>_<hash>.json`.
+Prose generation then happens inside a Claude Code agent turn — there is
+deliberately no `anthropic` API key anywhere in the project. Keeping the
+scraping, filtering and corroboration deterministic means the parts that
+decide *whether something is true* are auditable code, and the LLM is
+confined to the one job it's actually needed for: paraphrasing.
+
+**`src/publish_brief.py` is the generation step's only entrypoint.** It
+renders the brief in memory, runs the `src/validate_brief.py` gate
+(disclaimer present, no forecasting/banned phrases, no 15-word verbatim
+overlap with a source), and only then writes the file, records
+`brief_path` + `generated_at` in state, and deletes the staging file. Two
+reasons it's one command and not four:
+
+- *Correctness.* Validating before the write means a brief that fails the
+  gate is never written at all. Rendering first and checking afterwards
+  left failing briefs sitting in `data/briefs/`.
+- *Cost.* Every tool call an agent makes re-sends the whole conversation to
+  the model. The old sequence (Read staging → render → validate → edit
+  state → delete staging) was four round-trips per launch, one of which
+  pulled the entire ~60KB `state.json` into context to change two fields.
+  Generation runs unattended, every day, forever; the per-run token bill is
+  a real design constraint. `run_daily.py`'s `=== PENDING GENERATION ===`
+  digest exists for the same reason — it hands the agent the headlines it
+  needs and none of the opaque redirect URLs it doesn't.
+
+**Corroboration groups are keyed by `(ticker, matched keyword)`**, not by a
+resolved distinct product — an accepted MVP limitation (see "Known
+limitations" in the README). The same launch described with two different
+verbs still lands in two groups.
+
+**Precision is three independent filters, because the launch verbs are
+generic corporate verbs.** "announces" in particular matches promotions,
+capex, stock splits, settlements and mission results, and an early audit
+found that 9 of 11 "confirmed launches" were noise of exactly this kind. So
+a headline must survive all three checks in `src/news.py`:
+
+1. `BLOCKLIST_PATTERN` — kills the non-launch story types outright:
+   earnings/legal/personnel, plus market-analyst commentary ("AMD Stock
+   Price Forecast: ...Launches July 22"), corporate actions ("Announces
+   2-for-1 Stock Split"), capex ("announces $5.7 billion capital
+   investment"), and operational milestones ("Announces Full Mission
+   Success").
+2. `_is_launch_subject` — the company must be the thing *doing* the
+   launching, which is not the same as being mentioned near the verb.
+   "JPMorgan launches notes tied to AMD, NVIDIA and Tesla" and "As AI Search
+   Replaces Google..., Cytd.ai Launches..." both name the company early;
+   neither is its news. The test is adjacency: the name must sit close in
+   front of the verb with no clause break between (a trailing legal suffix
+   like ", Inc." doesn't count as one), and must not be hyphen-attached or
+   follow "ex-"/"former"/"rival" ("Ex-Tesla Scientist Unveils...").
+3. `SOURCE_BLOCKLIST_MARKERS` — drops ticker-commentary outlets (Zacks,
+   TipRanks, Stock Titan, GuruFocus...). They republish launch stories in
+   trading framing, and since corroboration only needs two distinct sources,
+   two of them agreeing was enough to confirm a launch no primary outlet
+   ever covered.
+
+These gate *ingest*. Events already written to `state.json` are not
+re-filtered, so tightening the rules does not retroactively un-confirm a
+group — that took a one-off purge, and would again.
+
+**One commit per run, at the end.** The pipeline pushes `data/state.json`
+and `data/briefs` in a single commit *after* generation completes, not
+before. Committing the mechanical step separately would race the generation
+step and leave the repo in a state where `state.json` claims a confirmed
+launch that has no brief.
+
+**`app.py` is a read-only Streamlit view** over `config/companies.yaml`,
+`data/state.json` and `data/briefs/*.md`. No API layer, no writes. It lists
+only companies whose `brief_path` is populated, not every "confirmed"
+group. It's deployed on Streamlit Community Cloud, which auto-redeploys on
+push — hence the `app.py` push-approval hook described in `CLAUDE.md`.

@@ -1,9 +1,14 @@
 """Flat-file state store for trigger events and launch/group status.
 
 No database -- everything lives in data/state.json. A "group" is
-(ticker, matched keyword) rather than a resolved distinct product; see the
-plan doc for why this simplification was accepted for the MVP (the same
-launch covered under two verbs can still land in two groups).
+(ticker, matched keyword) rather than a resolved distinct product; see
+"Architecture (as built)" in product-launch-tracker-scope.md for why this
+simplification was accepted for the MVP (the same launch covered under two
+verbs can still land in two groups).
+
+This file is only ever read and written in-process (by run_daily and
+publish_brief). It is ~60KB and grows daily -- nothing should be pulling it
+into an agent's context to change a couple of fields.
 """
 import json
 from datetime import date

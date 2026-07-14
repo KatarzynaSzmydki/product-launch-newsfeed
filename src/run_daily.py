@@ -12,12 +12,15 @@ speed; the RSS headline is used as the snippet instead. Re-enable by
 calling articles.fetch_snippet(event["url"]) in stage_for_generation if
 richer source text is wanted later.
 
-Deliberately does not touch git. The scheduled routine is responsible for
-the surrounding sequence: a clean checkout before this runs, then (after
-this script + the generation step both finish) a single commit + push --
-see the "Scheduling" section of the project plan for why two separate
-commits per run were rejected. data/pending_generation/ is git-ignored
-and this script never assumes otherwise.
+Deliberately does not touch git. The daily-run skill
+(.claude/skills/daily-run/) owns the surrounding sequence: run this, then
+generate + publish each staged brief, then a single commit + push at the
+end -- see "Architecture (as built)" in product-launch-tracker-scope.md for
+why two separate commits per run were rejected. data/pending_generation/ is
+git-ignored and this script never assumes otherwise.
+
+The run ends by printing a compact digest of everything awaiting
+generation; the agent turn reads that instead of the staging JSON files.
 """
 import argparse
 import json
@@ -105,13 +108,50 @@ def stage_for_generation(group_key, group, ticker_to_name, today, snapshot):
     return staging_path
 
 
+def print_pending_digest():
+    """Print exactly what the generation step needs to write its prose, and
+    nothing else. The agent reads this instead of Read-ing each staging JSON:
+    the raw files are dominated by opaque Google News redirect URLs and a
+    stock snapshot that publish_brief injects itself, none of which the
+    summary prose ever refers to.
+    """
+    staging_files = sorted(STAGING_DIR.glob("*.json")) if STAGING_DIR.exists() else []
+
+    print(f"\n=== PENDING GENERATION ({len(staging_files)}) ===")
+    if not staging_files:
+        print("Nothing to generate.")
+        return
+
+    for i, path in enumerate(staging_files, start=1):
+        staged = json.loads(path.read_text(encoding="utf-8"))
+        rel = path.relative_to(REPO_ROOT).as_posix()
+        print(f"[{i}] {rel}")
+        print(
+            f"    {staged['ticker']} - {staged['company_name']} "
+            f"- keyword: {staged['keyword']}"
+        )
+        for article in staged["articles"]:
+            source = article["source_name"] or "unknown source"
+            print(f"    - {source}: {article['title']}")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--tickers",
         help="Comma-separated tickers to restrict this run to (for scoped testing)",
     )
+    parser.add_argument(
+        "--show-pending",
+        action="store_true",
+        help="Reprint the pending-generation digest from existing staging files and exit, "
+        "without running the pipeline (e.g. after a brief failed validation)",
+    )
     args = parser.parse_args()
+
+    if args.show_pending:
+        print_pending_digest()
+        return
 
     today = today_utc()
 
@@ -152,12 +192,13 @@ def main():
         )
         if staging_path:
             staged_count += 1
-            print(f"Staged {group_key} -> {staging_path}")
 
     print(
         f"Done. {len(companies)} companies checked, {len(touched_groups)} groups had new "
         f"activity, {staged_count} staged for generation."
     )
+
+    print_pending_digest()
 
 
 if __name__ == "__main__":

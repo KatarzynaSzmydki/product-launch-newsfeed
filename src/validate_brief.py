@@ -3,7 +3,10 @@ to the public repo. Nothing here calls an LLM -- generation runs
 unattended inside a scheduled routine with no human review, so this is
 the mechanical check that stands in for one.
 
-Usage:
+The daily routine reaches these checks through src.publish_brief, which
+calls validate_text() on the brief before writing it. This CLI is the
+standalone path, for checking a brief that is already on disk:
+
     python -m src.validate_brief data/briefs/<file>.md --staging data/pending_generation/<id>.json
 Exits non-zero (and prints FAIL lines) if the brief should not be published.
 """
@@ -47,8 +50,10 @@ def check_verbatim_overlap(text, snippets, min_words=15):
     return None
 
 
-def validate(brief_path, staging_path=None):
-    text = Path(brief_path).read_text(encoding="utf-8")
+def validate_text(text, snippets=()):
+    """Gate an in-memory brief. src.publish_brief calls this *before* the
+    brief touches disk, so a failing brief is never written at all.
+    """
     errors = []
 
     if not check_disclaimer(text):
@@ -58,14 +63,22 @@ def validate(brief_path, staging_path=None):
     if banned:
         errors.append(f"contains banned phrase: {banned!r}")
 
+    overlap = check_verbatim_overlap(text, snippets)
+    if overlap:
+        errors.append(f"verbatim overlap with source snippet: {overlap!r}")
+
+    return errors
+
+
+def validate(brief_path, staging_path=None):
+    text = Path(brief_path).read_text(encoding="utf-8")
+
+    snippets = []
     if staging_path and Path(staging_path).exists():
         staged = json.loads(Path(staging_path).read_text(encoding="utf-8"))
         snippets = [a.get("snippet", "") for a in staged.get("articles", [])]
-        overlap = check_verbatim_overlap(text, snippets)
-        if overlap:
-            errors.append(f"verbatim overlap with source snippet: {overlap!r}")
 
-    return errors
+    return validate_text(text, snippets)
 
 
 def main():
