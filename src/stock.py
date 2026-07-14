@@ -74,4 +74,17 @@ def _try_fetch(ticker):
         "pct_change_1y": round(float(pct_change_1y), 2),
         "week52_high": round(float(week52_high), 2),
         "week52_low": round(float(week52_low), 2),
+        "price_series": _downsample(closes),
     }
+
+
+def _downsample(closes, stride=5):
+    """Every `stride`th close plus the final one, so a sparkline covers the
+    full 1y window in ~50 points instead of ~250 -- fine for a small chart,
+    a fraction of the JSON size of the full daily series.
+    """
+    series = [round(float(c), 2) for c in closes[::stride]]
+    last = round(float(closes[-1]), 2)
+    if series[-1] != last:
+        series.append(last)
+    return series

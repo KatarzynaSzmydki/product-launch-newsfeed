@@ -42,6 +42,23 @@ def brief_filename(staged):
     return f"{staged['today']}_{staged['ticker']}_{slug}.md"
 
 
+def write_price_sidecar(output_path, staged):
+    """A price series has no home in the brief markdown (code-owned, clean
+    template) or state.json (must stay small) -- so it's a sidecar keyed off
+    the brief's own filename, written only when the snapshot has one (older
+    snapshot shapes / a missing snapshot just mean no sparkline, not an error).
+    """
+    snapshot = staged.get("stock_snapshot") or {}
+    series = snapshot.get("price_series")
+    if not series:
+        return
+    sidecar_path = output_path.with_suffix(".prices.json")
+    sidecar_path.write_text(
+        json.dumps({"as_of": staged["today"], "series": series}),
+        encoding="utf-8",
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("staging_file", help="Path to a data/pending_generation/<id>.json file")
@@ -85,6 +102,7 @@ def main():
     output_path = BRIEFS_DIR / brief_filename(staged)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(brief_markdown, encoding="utf-8")
+    write_price_sidecar(output_path, staged)
 
     brief_rel = output_path.relative_to(REPO_ROOT).as_posix()
     current_state = state_module.load_state(STATE_PATH)
