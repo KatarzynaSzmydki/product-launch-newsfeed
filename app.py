@@ -89,6 +89,12 @@ st.markdown(
     div[data-testid="stVerticalBlock"] {
         gap: 0.35rem !important;
     }
+    /* Streamlit reserves several rems above the page for its toolbar even
+       when the toolbar itself is hidden -- reclaim that space so the title
+       sits near the top instead of floating mid-viewport. */
+    div.block-container {
+        padding-top: 2rem !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -188,18 +194,20 @@ with left:
     st.title("Product Launches")
     st.caption(f"NASDAQ · tracked in the news · last update {last_updated(state) or 'never'}")
 
-    total_launches = sum(len(v) for v in groups_by_date.values())
-    st.caption(
-        f"{total_launches} launches · {len(groups_by_ticker)} companies"
-        + (f" · since {format_date_label(available_dates[0])}" if available_dates else "")
-    )
+    st.write("")
+    st.write("")
 
     if not available_dates:
         st.info("No confirmed launches with a generated brief yet.")
     else:
         search_query = st.text_input(
-            "Search company or ticker", key="search_query", placeholder="Search company or ticker…"
+            "Search company or ticker",
+            key="search_query",
+            placeholder="Search company or ticker…",
+            label_visibility="collapsed",
         )
+
+        st.write("")
 
         if search_query.strip():
             q = search_query.strip().lower()
@@ -210,6 +218,7 @@ with left:
                     if q in t.lower() or q in ticker_to_name.get(t, "").lower()
                     for d in dates
                 ),
+                key=lambda match: match[0],
                 reverse=True,
             )
 
@@ -373,7 +382,7 @@ with right:
                     st.markdown(f"- [{e['title']}]({e['url']}) ({source})")
 
         with timeline_tab:
-            for d in ticker_dates:
+            for d in sorted(ticker_dates, reverse=True):
                 day_groups = groups_by_date.get(d, {}).get(selected_ticker, [])
                 if not day_groups:
                     continue
@@ -381,14 +390,19 @@ with right:
                 preview = parse_brief(preview_path)["summary"] if preview_path.exists() else ""
                 preview = (preview[:90] + "…") if len(preview) > 90 else preview
                 is_current = d == selected_date
-                if st.button(
-                    f"{format_date_label(d)} — {preview}",
-                    key=f"timeline_{selected_ticker}_{d}",
-                    use_container_width=True,
-                    type="primary" if is_current else "secondary",
-                ):
-                    st.session_state.selected_date = d
-                    st.rerun()
+
+                date_col, title_col = st.columns([1, 3])
+                with date_col:
+                    if st.button(
+                        format_date_label(d),
+                        key=f"timeline_{selected_ticker}_{d}",
+                        use_container_width=True,
+                        type="primary" if is_current else "secondary",
+                    ):
+                        st.session_state.selected_date = d
+                        st.rerun()
+                with title_col:
+                    st.write(preview or "(no summary)")
 
 st.divider()
 st.caption(
