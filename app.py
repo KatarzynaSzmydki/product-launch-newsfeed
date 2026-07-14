@@ -168,6 +168,15 @@ for group in confirmed_groups:
 
 available_dates = sorted(groups_by_date.keys())
 
+# Ticker -> every distinct date it has a confirmed launch on, newest first --
+# powers both the global search (jump to a company regardless of date) and
+# the per-company timeline tab.
+groups_by_ticker = {}
+for d, companies_for_d in groups_by_date.items():
+    for t in companies_for_d:
+        groups_by_ticker.setdefault(t, set()).add(d)
+groups_by_ticker = {t: sorted(dates, reverse=True) for t, dates in groups_by_ticker.items()}
+
 if "date_window_start" not in st.session_state:
     st.session_state.date_window_start = max(0, len(available_dates) - DATE_WINDOW_SIZE)
 if "selected_date" not in st.session_state and available_dates:
@@ -179,65 +188,99 @@ with left:
     st.title("Product Launches")
     st.caption(f"NASDAQ · tracked in the news · last update {last_updated(state) or 'never'}")
 
+    total_launches = sum(len(v) for v in groups_by_date.values())
+    st.caption(
+        f"{total_launches} launches · {len(groups_by_ticker)} companies"
+        + (f" · since {format_date_label(available_dates[0])}" if available_dates else "")
+    )
+
     if not available_dates:
         st.info("No confirmed launches with a generated brief yet.")
     else:
-        start = st.session_state.date_window_start
-        window_dates = available_dates[start : start + DATE_WINDOW_SIZE]
+        search_query = st.text_input(
+            "Search company or ticker", key="search_query", placeholder="Search company or ticker…"
+        )
 
-        nav_cols = st.columns([0.5] + [1] * len(window_dates) + [0.5])
-        with nav_cols[0]:
-            if st.button("◀", disabled=(start <= 0), key="date_prev"):
-                st.session_state.date_window_start = max(0, start - DATE_WINDOW_SIZE)
-                st.rerun()
-        for i, d in enumerate(window_dates):
-            with nav_cols[i + 1]:
-                selected = d == st.session_state.get("selected_date")
-                if st.button(
-                    format_date_label(d),
-                    key=f"datecard_{d}",
-                    use_container_width=True,
-                    type="primary" if selected else "secondary",
-                ):
-                    st.session_state.selected_date = d
-                    st.session_state.pop("selected_ticker", None)
+        if search_query.strip():
+            q = search_query.strip().lower()
+            matches = sorted(
+                (
+                    (d, t)
+                    for t, dates in groups_by_ticker.items()
+                    if q in t.lower() or q in ticker_to_name.get(t, "").lower()
+                    for d in dates
+                ),
+                reverse=True,
+            )
+
+            st.write("")
+            if not matches:
+                st.info(f'No launches match "{search_query}".')
+            else:
+                with st.container(border=True):
+                    for d, t in matches:
+                        label = f"{ticker_to_name.get(t, t)}  ·  {t}  —  {format_date_label(d)}"
+                        if st.button(label, key=f"search_row_{d}_{t}", use_container_width=True):
+                            st.session_state.selected_date = d
+                            st.session_state.selected_ticker = t
+                            st.rerun()
+        else:
+            start = st.session_state.date_window_start
+            window_dates = available_dates[start : start + DATE_WINDOW_SIZE]
+
+            nav_cols = st.columns([0.5] + [1] * len(window_dates) + [0.5])
+            with nav_cols[0]:
+                if st.button("◀", disabled=(start <= 0), key="date_prev"):
+                    st.session_state.date_window_start = max(0, start - DATE_WINDOW_SIZE)
                     st.rerun()
-        with nav_cols[-1]:
-            if st.button(
-                "▶", disabled=(start + DATE_WINDOW_SIZE >= len(available_dates)), key="date_next"
-            ):
-                st.session_state.date_window_start = min(
-                    max(0, len(available_dates) - DATE_WINDOW_SIZE), start + DATE_WINDOW_SIZE
-                )
-                st.rerun()
-
-        selected_date = st.session_state.selected_date
-        companies_for_date = groups_by_date.get(selected_date, {})
-        tickers = sorted(companies_for_date, key=lambda t: ticker_to_name.get(t, t))
-
-        st.write("")
-        st.write("")
-
-        # Each row is a single button (name + ticker in one label) rather than
-        # a button next to separate table cells/grid lines -- a button's own
-        # box never lines up pixel-for-pixel with independent column/divider
-        # grid lines, which read as misalignment. One shape per row sidesteps
-        # that entirely. Native st.dataframe row-selection was tried first and
-        # dropped: its click target isn't the visible row, so clicks silently
-        # did nothing (see project history).
-        with st.container(border=True):
-            for t in tickers:
-                selected = t == st.session_state.get("selected_ticker")
-                label = f"{ticker_to_name.get(t, t)}  ·  {t}"
+            for i, d in enumerate(window_dates):
+                with nav_cols[i + 1]:
+                    selected = d == st.session_state.get("selected_date")
+                    if st.button(
+                        format_date_label(d),
+                        key=f"datecard_{d}",
+                        use_container_width=True,
+                        type="primary" if selected else "secondary",
+                    ):
+                        st.session_state.selected_date = d
+                        st.session_state.pop("selected_ticker", None)
+                        st.rerun()
+            with nav_cols[-1]:
                 if st.button(
-                    label,
-                    key=f"company_row_{selected_date}_{t}",
-                    use_container_width=True,
-                    type="primary" if selected else "secondary",
-                    help=ticker_to_name.get(t, t),
+                    "▶", disabled=(start + DATE_WINDOW_SIZE >= len(available_dates)), key="date_next"
                 ):
-                    st.session_state.selected_ticker = t
+                    st.session_state.date_window_start = min(
+                        max(0, len(available_dates) - DATE_WINDOW_SIZE), start + DATE_WINDOW_SIZE
+                    )
                     st.rerun()
+
+            selected_date = st.session_state.selected_date
+            companies_for_date = groups_by_date.get(selected_date, {})
+            tickers = sorted(companies_for_date, key=lambda t: ticker_to_name.get(t, t))
+
+            st.write("")
+            st.write("")
+
+            # Each row is a single button (name + ticker in one label) rather than
+            # a button next to separate table cells/grid lines -- a button's own
+            # box never lines up pixel-for-pixel with independent column/divider
+            # grid lines, which read as misalignment. One shape per row sidesteps
+            # that entirely. Native st.dataframe row-selection was tried first and
+            # dropped: its click target isn't the visible row, so clicks silently
+            # did nothing (see project history).
+            with st.container(border=True):
+                for t in tickers:
+                    selected = t == st.session_state.get("selected_ticker")
+                    label = f"{ticker_to_name.get(t, t)}  ·  {t}"
+                    if st.button(
+                        label,
+                        key=f"company_row_{selected_date}_{t}",
+                        use_container_width=True,
+                        type="primary" if selected else "secondary",
+                        help=ticker_to_name.get(t, t),
+                    ):
+                        st.session_state.selected_ticker = t
+                        st.rerun()
 
 with right:
     selected_ticker = st.session_state.get("selected_ticker")
@@ -257,58 +300,95 @@ with right:
                 st.session_state.pop("selected_ticker", None)
                 st.rerun()
 
-        # A company can have more than one confirmed group on the same date
-        # (e.g. one corroborated under "introduces", another under "launches")
-        # -- that split is an artifact of the corroboration keyword, not
-        # something a reader cares about, so all groups for this company/date
-        # merge into one view: one stock snapshot, every summary, one combined
-        # headline list.
-        parsed_groups = []
-        for group in ticker_groups:
-            brief_path = REPO_ROOT / group["brief_path"]
-            if not brief_path.exists():
-                st.error(f"Brief file missing on disk: {group['brief_path']}")
-                continue
-            parsed_groups.append((group, parse_brief(brief_path)))
+        ticker_dates = groups_by_ticker.get(selected_ticker, [])
+        launch_tab, timeline_tab = st.tabs(["This launch", f"Timeline ({len(ticker_dates)})"])
 
-        st.markdown("**Stock snapshot**")
-        stock = next((p["stock"] for _, p in parsed_groups if p["stock"]), None)
-        if stock:
-            pct = stock["pct_change_1y"]
-            arrow = "▲" if pct >= 0 else "▼"
-            color = "#1a7f37" if pct >= 0 else "#cf222e"
-            st.caption("1-year change")
-            st.markdown(
-                f"<span style='font-size:2rem;font-weight:600;color:{color}'>"
-                f"{arrow} {pct:+.1f}%</span>",
-                unsafe_allow_html=True,
-            )
-            st.caption(
-                f"Current price \\${stock['current_price']:.2f} · "
-                f"52-week range \\${stock['week52_low']:.2f}–\\${stock['week52_high']:.2f}"
-            )
-        else:
-            st.caption("Stock data unavailable for this run.")
+        with launch_tab:
+            # A company can have more than one confirmed group on the same date
+            # (e.g. one corroborated under "introduces", another under "launches")
+            # -- that split is an artifact of the corroboration keyword, not
+            # something a reader cares about, so all groups for this company/date
+            # merge into one view: one stock snapshot, every summary, one combined
+            # headline list.
+            parsed_groups = []
+            for group in ticker_groups:
+                brief_path = REPO_ROOT / group["brief_path"]
+                if not brief_path.exists():
+                    st.error(f"Brief file missing on disk: {group['brief_path']}")
+                    continue
+                parsed_groups.append((group, brief_path, parse_brief(brief_path)))
 
-        st.markdown("**Summary**")
-        for _, parsed in parsed_groups:
-            st.write(parsed["summary"])
+            st.markdown("**Stock snapshot**")
+            stock = next((p["stock"] for _, _, p in parsed_groups if p["stock"]), None)
+            if stock:
+                pct = stock["pct_change_1y"]
+                arrow = "▲" if pct >= 0 else "▼"
+                color = "#1a7f37" if pct >= 0 else "#cf222e"
+                st.caption("1-year change")
+                st.markdown(
+                    f"<span style='font-size:2rem;font-weight:600;color:{color}'>"
+                    f"{arrow} {pct:+.1f}%</span>",
+                    unsafe_allow_html=True,
+                )
+                st.caption(
+                    f"Current price \\${stock['current_price']:.2f} · "
+                    f"52-week range \\${stock['week52_low']:.2f}–\\${stock['week52_high']:.2f}"
+                )
 
-        # A story can corroborate more than one keyword-group, so dedup by
-        # URL rather than listing it once per group.
-        seen_urls = set()
-        headline_events = []
-        for group, _ in parsed_groups:
-            for e in group.get("trigger_events", []):
-                if e.get("url") and e["url"] not in seen_urls:
-                    seen_urls.add(e["url"])
-                    headline_events.append(e)
+                # Older briefs (published before this sidecar existed) simply
+                # have no .prices.json -- render nothing rather than an error.
+                price_series = None
+                for _, brief_path, _ in parsed_groups:
+                    sidecar_path = brief_path.with_suffix(".prices.json")
+                    if sidecar_path.exists():
+                        try:
+                            price_series = json.loads(sidecar_path.read_text(encoding="utf-8"))["series"]
+                        except (json.JSONDecodeError, KeyError):
+                            price_series = None
+                        if price_series:
+                            break
+                if price_series:
+                    st.line_chart(price_series, height=100)
+            else:
+                st.caption("Stock data unavailable for this run.")
 
-        if headline_events:
-            st.markdown("**Headlines & Sources**")
-            for e in headline_events:
-                source = e.get("source_name") or "unknown source"
-                st.markdown(f"- [{e['title']}]({e['url']}) ({source})")
+            st.markdown("**Summary**")
+            for _, _, parsed in parsed_groups:
+                st.write(parsed["summary"])
+
+            # A story can corroborate more than one keyword-group, so dedup by
+            # URL rather than listing it once per group.
+            seen_urls = set()
+            headline_events = []
+            for group, _, _ in parsed_groups:
+                for e in group.get("trigger_events", []):
+                    if e.get("url") and e["url"] not in seen_urls:
+                        seen_urls.add(e["url"])
+                        headline_events.append(e)
+
+            if headline_events:
+                st.markdown("**Headlines & Sources**")
+                for e in headline_events:
+                    source = e.get("source_name") or "unknown source"
+                    st.markdown(f"- [{e['title']}]({e['url']}) ({source})")
+
+        with timeline_tab:
+            for d in ticker_dates:
+                day_groups = groups_by_date.get(d, {}).get(selected_ticker, [])
+                if not day_groups:
+                    continue
+                preview_path = REPO_ROOT / day_groups[0]["brief_path"]
+                preview = parse_brief(preview_path)["summary"] if preview_path.exists() else ""
+                preview = (preview[:90] + "…") if len(preview) > 90 else preview
+                is_current = d == selected_date
+                if st.button(
+                    f"{format_date_label(d)} — {preview}",
+                    key=f"timeline_{selected_ticker}_{d}",
+                    use_container_width=True,
+                    type="primary" if is_current else "secondary",
+                ):
+                    st.session_state.selected_date = d
+                    st.rerun()
 
 st.divider()
 st.caption(
