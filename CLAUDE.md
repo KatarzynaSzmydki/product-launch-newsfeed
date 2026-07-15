@@ -33,23 +33,25 @@ for design rationale see `product-launch-tracker-scope.md`.
 ## Branching policy
 
 Streamlit Cloud auto-redeploys from `master`, so anything that lands there is live immediately.
-Where a change goes depends on whether it touches the deployed frontend:
+Where a change goes depends on whether it's daily-run output or anything else:
 
-- **`app.py` — never push to `master`.** Branch, push the branch, open a PR, and stop. The user
+- **Daily-run output — straight to `master`, no approval.** `data/state.json` and
+  `data/briefs/*.md` are the mechanical/generation pipeline's own output (see the **daily-run**
+  skill) and need no branch and no PR.
+
+- **Everything else — branch + PR, awaiting approval.** `app.py`, `src/*`, config, docs, skills
+  — anything that isn't daily-run output. Branch, push the branch, open a PR, and stop. The user
   reviews and merges it; the PR *is* the approval step, so do not merge it yourself and do not
   ask for a shortcut around it.
 
   ```
   git switch -c <feature-branch>
-  git add app.py && git commit
+  git add <files> && git commit
   git push -u origin <feature-branch>
   gh pr create          # then hand the PR link to the user and stop
   ```
 
-- **Everything else — straight to `master`.** Daily-run output (`data/state.json`,
-  `data/briefs/*.md`) and pipeline source (`src/*`, config, docs) need no branch and no PR.
-
-`.git/hooks/pre-push` enforces this: it rejects any push that puts `app.py` on `master`, and has
-no override. Pushing `app.py` to a non-master branch is unrestricted. The hook lives in `.git/`
-and is therefore local-only — it won't survive a fresh clone, so treat the policy above as the
-source of truth, not the hook.
+`.git/hooks/pre-push` enforces the `app.py` case specifically: it rejects any push that puts
+`app.py` on `master`, and has no override. It does not enforce the broader rule above for other
+files. The hook lives in `.git/` and is therefore local-only — it won't survive a fresh clone, so
+treat the policy above as the source of truth, not the hook.
