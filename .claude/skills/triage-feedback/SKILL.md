@@ -18,10 +18,33 @@ and waits for a separate, explicit ask.
 
 `data/pending_triage/` is tracked in git (no longer git-ignored), because this skill runs
 scheduled/headless: a plan or reply written only to the run's own sandbox never reaches the
-user's checkout — that's a real bug we hit (issue #13's plan was lost this way). So every write
-*and* every delete of a `data/pending_triage/*.md` file must be committed and pushed, per issue,
-right after it happens — not batched at the end of a run, so an interrupted run still persists
-what it already decided:
+user's checkout — that's a real bug we hit (issue #13's plan was lost this way). So the files
+this skill writes and deletes must be committed and pushed. This is the one place the skill
+touches this repo's git history; it goes straight to `master`, no PR (see `CLAUDE.md` — staging
+output is exempt from the branch+PR rule). Always scope the add to the folder —
+`git add data/pending_triage` (which also stages deletions in that path); never `git add -A`,
+because `data/pending_generation/` is still ignored and must never be committed.
+
+**Automatic run — one commit at the very end, then label.** Don't commit per issue. Do all the
+file work first (the sync deletions in step 1, the drafted plans in step 4, the drafted replies
+in step 5) and hold off on the gating labels. When every issue has been processed:
+
+1. `git add data/pending_triage`
+2. `git commit -m "Triage run: <n> plans, <m> replies, <k> stale removed"` — skip if nothing is
+   staged.
+3. `git pull --rebase && git push`
+4. **Only after the push succeeds**, apply the gating labels — `triage:reviewed` for each drafted
+   plan (step 4), `pending-approval` for each drafted reply (step 5). The exact `gh issue edit`
+   commands are in those steps.
+
+This ordering is deliberate: the gating label is what makes a future run skip an issue, so a file
+must be committed *before* its label exists. If the run is interrupted before the end-commit,
+nothing was labeled and nothing was committed, so the next run re-processes those issues cleanly.
+(The low-value close in step 4 and its fixed comment hit GitHub directly and have no staged file,
+so they can happen inline as you go.)
+
+**Ad-hoc single-issue actions** (publishing a reply, declining a proposal) each change exactly one
+file — commit that one change immediately, no batching:
 
 ```
 git add data/pending_triage
@@ -29,10 +52,7 @@ git commit -m "Triage: <what changed> for issue #<n>"
 git pull --rebase && git push
 ```
 
-Use `git rm` instead of `git add` when the change is a deletion. This is the one place the skill
-touches this repo's git history; it goes straight to `master`, no PR (see `CLAUDE.md` — staging
-output is exempt from the branch+PR rule). Never `git add -A` — `data/pending_generation/` is
-still ignored and must never be committed.
+Use `git rm` (or the folder-scoped `git add`) for a deletion.
 
 ## 1. Sync already-reviewed issues
 
@@ -44,9 +64,10 @@ implemented (a PR with a closing keyword merged and auto-closed it) or explicitl
 gh issue list --repo KatarzynaSzmydki/product-launch-newsfeed --label triage:reviewed --state closed --json number
 ```
 
-For each `<number>` returned, delete `data/pending_triage/<number>_plan.md` if it exists, then
-commit the deletion (see "Committing staging files" below) — these files are tracked, so a local
-delete alone would be resurrected on the next `git pull`.
+For each `<number>` returned, delete `data/pending_triage/<number>_plan.md` if it exists. Don't
+commit the deletion here — it's part of the run's single end-of-run commit (see "Committing
+staging files" above). These files are tracked, so a local delete alone would be resurrected on
+the next `git pull`, which is exactly why the deletion must reach that commit.
 
 ## 2. List candidates
 
@@ -73,12 +94,14 @@ automatically low-value), plus whether it's already covered, feasible given the 
 mechanical/LLM-split architecture, or a duplicate of another open issue.
 
 **Adds value** → write `data/pending_triage/<number>_plan.md` (issue link/title, problem
-summary, proposed approach, affected files), commit it (see "Committing staging files"), then:
+summary, proposed approach, affected files). Don't commit it now, and don't label the issue yet —
+the plan is committed in the run's single end-of-run commit, and only after that push succeeds do
+you apply the label (see "Committing staging files"):
 ```
 gh issue edit <number> --repo KatarzynaSzmydki/product-launch-newsfeed --add-label triage:reviewed
 ```
-Do not comment, do not close. The issue stays open; the plan is staged (committed but not acted
-on) until the user decides to act on it.
+Do not comment, do not close. The issue stays open; the plan is staged until the user decides to
+act on it.
 
 **Doesn't add value** → close it immediately with this exact fixed comment (hardcoded here,
 never regenerated per issue — that's what makes it safe to ship with no approval step):
@@ -91,8 +114,9 @@ No extra label is needed — closed issues are already excluded from future `--s
 
 ## 5. General questions — draft, stage, wait
 
-Write the drafted short reply to `data/pending_triage/<number>_reply.md`, commit it (see
-"Committing staging files"), then:
+Write the drafted short reply to `data/pending_triage/<number>_reply.md`. Don't commit it now, and
+don't label the issue yet — the reply is committed in the run's single end-of-run commit, and only
+after that push succeeds do you apply the label (see "Committing staging files"):
 ```
 gh issue edit <number> --repo KatarzynaSzmydki/product-launch-newsfeed --add-label pending-approval
 ```
@@ -103,8 +127,9 @@ separate, explicit step (below), initiated by the user per issue.
 
 One digest: per issue, its number, title, classification, and the action taken — closed with
 the fixed template, plan drafted at `<path>`, or reply staged at `<path>` awaiting approval.
-Each plan/reply file was already committed as it was written (see "Committing staging files");
-the low-value close and its fixed comment hit GitHub directly, not this repo's git history.
+All staged files were committed and pushed in one end-of-run commit, and the gating labels were
+applied afterward (see "Committing staging files"); the low-value close and its fixed comment hit
+GitHub directly, not this repo's git history.
 
 ## Review pending items (on demand, not part of the automatic run)
 
