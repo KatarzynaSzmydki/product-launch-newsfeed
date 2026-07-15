@@ -42,6 +42,14 @@ flowchart LR
 
 Python · Streamlit · Google News · Yahoo Finance data · Claude (Anthropic)
 
+## Feedback loop
+
+A feedback form on the dashboard files every submission as a GitHub issue. Each one is
+triaged (manually, via a Claude Code skill): concrete bugs or feature requests that add value
+get a local implementation proposal drafted for review; low-value requests are auto-closed
+with a standard reply; general questions get a drafted answer staged for approval before
+posting. Nothing is posted to GitHub or acted on without an explicit review step.
+
 ## A note on the content
 
 This is not investment advice. The stock data shown is historical/current
