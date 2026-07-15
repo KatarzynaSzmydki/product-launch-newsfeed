@@ -8,7 +8,3 @@ venv/
 # generation step. Never committed: it's the one place raw scraped
 # article text can transiently live, and this repo is public.
 data/pending_generation/
-
-# Staged, not-yet-posted feedback-triage drafts (replies awaiting
-# approval, local implementation proposals). Never committed.
-data/pending_triage/

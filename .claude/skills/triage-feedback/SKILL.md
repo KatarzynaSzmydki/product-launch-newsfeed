@@ -11,8 +11,28 @@ This skill classifies each open one and routes it, using GitHub labels (not a lo
 to track what's already been handled.
 
 Never post a comment to GitHub in this skill except in the fixed low-value-close and
-declined-proposal cases below. Everything else is staged locally and waits for a separate,
-explicit ask.
+declined-proposal cases below. Everything else is staged as a file under `data/pending_triage/`
+and waits for a separate, explicit ask.
+
+## Committing staging files
+
+`data/pending_triage/` is tracked in git (no longer git-ignored), because this skill runs
+scheduled/headless: a plan or reply written only to the run's own sandbox never reaches the
+user's checkout — that's a real bug we hit (issue #13's plan was lost this way). So every write
+*and* every delete of a `data/pending_triage/*.md` file must be committed and pushed, per issue,
+right after it happens — not batched at the end of a run, so an interrupted run still persists
+what it already decided:
+
+```
+git add data/pending_triage
+git commit -m "Triage: <what changed> for issue #<n>"
+git pull --rebase && git push
+```
+
+Use `git rm` instead of `git add` when the change is a deletion. This is the one place the skill
+touches this repo's git history; it goes straight to `master`, no PR (see `CLAUDE.md` — staging
+output is exempt from the branch+PR rule). Never `git add -A` — `data/pending_generation/` is
+still ignored and must never be committed.
 
 ## 1. Sync already-reviewed issues
 
@@ -24,7 +44,9 @@ implemented (a PR with a closing keyword merged and auto-closed it) or explicitl
 gh issue list --repo KatarzynaSzmydki/product-launch-newsfeed --label triage:reviewed --state closed --json number
 ```
 
-For each `<number>` returned, delete `data/pending_triage/<number>_plan.md` if it exists.
+For each `<number>` returned, delete `data/pending_triage/<number>_plan.md` if it exists, then
+commit the deletion (see "Committing staging files" below) — these files are tracked, so a local
+delete alone would be resurrected on the next `git pull`.
 
 ## 2. List candidates
 
@@ -51,12 +73,12 @@ automatically low-value), plus whether it's already covered, feasible given the 
 mechanical/LLM-split architecture, or a duplicate of another open issue.
 
 **Adds value** → write `data/pending_triage/<number>_plan.md` (issue link/title, problem
-summary, proposed approach, affected files), then:
+summary, proposed approach, affected files), commit it (see "Committing staging files"), then:
 ```
 gh issue edit <number> --repo KatarzynaSzmydki/product-launch-newsfeed --add-label triage:reviewed
 ```
-Do not comment, do not close. The issue stays open; the plan is purely local until the user
-decides to act on it.
+Do not comment, do not close. The issue stays open; the plan is staged (committed but not acted
+on) until the user decides to act on it.
 
 **Doesn't add value** → close it immediately with this exact fixed comment (hardcoded here,
 never regenerated per issue — that's what makes it safe to ship with no approval step):
@@ -69,7 +91,8 @@ No extra label is needed — closed issues are already excluded from future `--s
 
 ## 5. General questions — draft, stage, wait
 
-Write the drafted short reply to `data/pending_triage/<number>_reply.md`, then:
+Write the drafted short reply to `data/pending_triage/<number>_reply.md`, commit it (see
+"Committing staging files"), then:
 ```
 gh issue edit <number> --repo KatarzynaSzmydki/product-launch-newsfeed --add-label pending-approval
 ```
@@ -80,8 +103,31 @@ separate, explicit step (below), initiated by the user per issue.
 
 One digest: per issue, its number, title, classification, and the action taken — closed with
 the fixed template, plan drafted at `<path>`, or reply staged at `<path>` awaiting approval.
-No git commit is implied here — label edits and issue-closes hit GitHub directly, not this
-repo's git history.
+Each plan/reply file was already committed as it was written (see "Committing staging files");
+the low-value close and its fixed comment hit GitHub directly, not this repo's git history.
+
+## Review pending items (on demand, not part of the automatic run)
+
+Invoked separately from the steps above (e.g. "what's waiting in triage?", "show me the pending
+plans"). The committed `data/pending_triage/` folder is the queue — read it directly, don't
+re-query GitHub or re-classify anything:
+
+- List `data/pending_triage/*.md`. The suffix is the type: `<n>_plan.md` is a drafted
+  implementation proposal (issue is `triage:reviewed`); `<n>_reply.md` is a drafted answer to a
+  general question (issue is `pending-approval`).
+- `Read` each file and present one digest, grouped by type — each file already embeds its issue
+  link/title, so no GitHub call is needed just to list. For plans, surface the problem, proposed
+  approach, and affected files; for replies, the question and the drafted answer.
+- Then **stop and wait.** This section decides nothing on its own — it only surfaces what's
+  awaiting a human call.
+
+When the user acts on an item, route to the matching section below (each already handles the
+GitHub write and the committed file deletion):
+
+- `<n>_reply.md` → **Publishing an approved reply** (or discard: delete the file and commit the
+  deletion, no GitHub post).
+- `<n>_plan.md`, implement → **Implementing an approved proposal**.
+- `<n>_plan.md`, decline → **Declining a proposal**.
 
 ## Publishing an approved reply (separate, user-initiated per issue)
 
@@ -90,8 +136,9 @@ When told to post the reply for a specific issue (e.g. "post the reply for issue
 gh issue comment <number> --repo KatarzynaSzmydki/product-launch-newsfeed --body-file data/pending_triage/<number>_reply.md
 gh issue edit <number> --repo KatarzynaSzmydki/product-launch-newsfeed --remove-label pending-approval --add-label answered
 ```
-Then delete `data/pending_triage/<number>_reply.md`. This is never done as part of a triage
-run — only on explicit per-issue approval.
+Then delete `data/pending_triage/<number>_reply.md` and commit the deletion (see "Committing
+staging files"). This is never done as part of a triage run — only on explicit per-issue
+approval.
 
 ## Declining a proposal (separate, user-initiated per issue)
 
@@ -99,11 +146,15 @@ When told to decline a functionality proposal (e.g. "decline the proposal for is
 ```
 gh issue close <number> --repo KatarzynaSzmydki/product-launch-newsfeed --comment "Change declined by the owner."
 ```
-Then delete `data/pending_triage/<number>_plan.md` immediately — don't wait for the next
-triage run's sync step. Never done as part of an automatic triage run; deciding to decline is
-always a human call.
+Then delete `data/pending_triage/<number>_plan.md` immediately and commit the deletion (see
+"Committing staging files") — don't wait for the next triage run's sync step. Never done as part
+of an automatic triage run; deciding to decline is always a human call.
 
 ## Implementing an approved proposal
+
+Build from the saved `data/pending_triage/<number>_plan.md` — that committed file is the spec
+(problem, approach, affected files). Don't re-triage or re-plan the issue from scratch; the
+plan was already reviewed and approved, so the implementation starts from it.
 
 When a proposal is built, make sure the PR body closes every issue it resolves with its own
 closing keyword — `Fixes #4, fixes #6`, not `Fixes #4 and #6` (GitHub only recognizes a
