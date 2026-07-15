@@ -97,7 +97,7 @@ st.markdown(
        when the toolbar itself is hidden -- reclaim that space so the title
        sits near the top instead of floating mid-viewport. */
     div.block-container {
-        padding-top: 2rem !important;
+        padding-top: 0.75rem !important;
     }
     </style>
     """,
@@ -244,6 +244,14 @@ left, right = st.columns([1.3, 1], gap="large")
 with left:
     st.title("Product Launches")
     st.caption(f"NASDAQ · tracked in the news · last update {last_updated(state) or 'never'}")
+
+    st.markdown(
+        "Each NASDAQ-100 company is checked daily for product-launch news. A launch is "
+        "listed here only once **independent sources corroborate it**, which filters out "
+        "routine press releases and financial coverage. Every confirmed launch gets a "
+        "short plain-language brief and a current stock snapshot.\n\n"
+        "**To use it:** pick a date, then a company, to read its brief."
+    )
 
     st.write("")
     st.write("")
