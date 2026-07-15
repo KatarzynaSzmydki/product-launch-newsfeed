@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.streamlit/secrets.toml
 
 # Staged facts used between the mechanical pipeline step and the
 # generation step. Never committed: it's the one place raw scraped
