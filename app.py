@@ -462,23 +462,26 @@ st.caption(
     "the launch."
 )
 
-with st.expander("Feedback / questions", expanded=False):
-    if st.session_state.get("feedback_submitted"):
-        st.success("Thanks — your feedback was submitted.")
-    else:
-        feedback_text = st.text_area(
-            "Comment, question, or suggestion",
-            key="feedback_text",
-            placeholder="What's on your mind?",
-            max_chars=FEEDBACK_MAX_LENGTH,
-        )
-        token_missing = not get_feedback_token()
-        if st.button("Submit", key="feedback_submit", disabled=token_missing):
-            ok, message = submit_feedback(feedback_text)
-            if ok:
-                st.session_state.feedback_submitted = True
-                st.rerun()
-            else:
-                st.error(message)
-        if token_missing:
-            st.caption("Feedback is temporarily unavailable.")
+st.write("")
+st.write("")
+with st.container(border=True):
+    with st.expander("Feedback / questions", expanded=False):
+        if st.session_state.get("feedback_submitted"):
+            st.success("Thanks — your feedback was submitted.")
+        else:
+            feedback_text = st.text_area(
+                "Comment, question, or suggestion",
+                key="feedback_text",
+                placeholder="What's on your mind?",
+                max_chars=FEEDBACK_MAX_LENGTH,
+            )
+            token_missing = not get_feedback_token()
+            if st.button("Submit", key="feedback_submit", disabled=token_missing):
+                ok, message = submit_feedback(feedback_text)
+                if ok:
+                    st.session_state.feedback_submitted = True
+                    st.rerun()
+                else:
+                    st.error(message)
+            if token_missing:
+                st.caption("Feedback is temporarily unavailable.")
