@@ -65,6 +65,25 @@
         }
       ]
     },
+    "CTAS::announces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-15",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "pending",
+      "ticker": "CTAS",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "announces",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Cintas Corporation Announces Fiscal 2026 Fourth Quarter and Full Year Results - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxONFFLM0pXWHEyZEZ1ejU1azJybEc4czNLQVhSYWtyNTNKaGJoRS1RenlPOWRqQ1J1Y1E1OWVoNzZ4dkhkRHZSUlVya1BzZjFzQTFLcVoyak43U01YSGtBSk9iUjFyOVBKNC1zT0UzdUpkX2N3NVJhUHZjTzBNNUJYUk9tbFFJbFBXRHQ5REs3QjdjQ2RNWWJkeVctemV1bFpJZHZsX3AxbTQ?oc=5"
+        }
+      ]
+    },
     "EA::launches": {
       "brief_path": null,
       "confirmed_at": null,
@@ -127,6 +146,14 @@
           "tier": "other",
           "title": "Google announces Gemma 4 optimized for the Pixel 10\u2019s TPU - 9to5Google",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9rZ1RTaDhoTjVxS3g5TDFKTjJQSFdGX3VEVkZtck1SRzdCSlZZOFNqbDQ3bnlLTkJBU3VoMFphaE1hRFNYR1VmRmZhRnM1X1hkNTBoTVZmZlJKZHlRak0zTw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "announces",
+          "source_name": "Gadgets 360",
+          "tier": "other",
+          "title": "Google Announces Play Catalog Access Program for Third-Party App Stores on Android Devices - Gadgets 360",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPX01fM0tIWWdyV0RBaExnZ2kyc0h0aEJ2T2dKYmdtajgycDFFYWdmVERQR2RuV0U2QjV0d1NzaWFiZDl6R0NRUGgtYVFkSFVtWFFCYkNGZmRXejlBUWNOdWpac0NEZi1jcjg5NGpvT2hDT2ZpWmFpcjhvel96cFdYa2Z0Vm00c3lEUHhfbzM5RE5XMm1Ldkp3eS1XQWdHZEhaNXV4VmFRLW9SdVVYUlHSAbMBQVVfeXFMTnFlbmNSaWFuV0dKeXRKQTg0NF9famk5YTVpc2ZpOTRIdEt4VHl2a0tzWngzWWZZVnQyQjUtWnNxVjB0am5GMEF1X2g1NV8xYjh2Qk41cVN1ZE45ZVpDTTBIX0hSaGxERlJVR2hkejlDZHJibWVzNGhmdlh2Yk9vcldNRzBOOUlldC1uS05wUmtQVUt0V2JvTEdsSkpOUzgzWjU3ZXdOQTNZbklEZjlZMDU1VjA?oc=5"
         }
       ]
     },
@@ -505,6 +532,14 @@
           "tier": "other",
           "title": "BTC Price Rises As Strategy Launches Bitcoin Banking Adoption Index - MarketForces Africa",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQazMybnhIWm5XUW94dXVYM1FRSElPLXF0ckx5Zm1uMGpSNm1rYlRkZkdzblQtRWdLWkZ4cGNwSlRCNl80QThJN0p6akdWcFQwbXczN0FOV0dWVHdsNUJqVXFqRTNNQ0FzVDNXMU41akwwcmZ6Ym96VkpXZXp3ZW9tNnVsX0Nid1VISHBtZUszdS1UT29XRzRSdzdn?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "launches",
+          "source_name": "simplywall.st",
+          "tier": "other",
+          "title": "Strategy (MSTR) Launches Bitcoin Banking Index As It Reworks Capital Allocation - simplywall.st",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSjl3MVB4VjVPX0tEN2lpbG1iX28zV0hYeldlM3oxQUxVRDhpc1hhcVhzc3otaGhTS3h2Z0RJQl9UODNVM2pSNGFqX0ZZejE5NDNyTW9VeElpcWNiQnpVZHNJS3dpSjR1TDRONGJySGdMaDREWnZwTElDOVFzVm52eEQxZFE0TTlycXRPRm0yUEd6RWpIemRYbkhmWWJabklncWptZ2h4Vy16eGdIQlNFc0JONUplT0R4VGMxUTJZWFVqTVlHTGfSAcsBQVVfeXFMTnhBM0s5SkRfQndBRkZEYVdNRXA1dnZoTlZLR2t0VDhIWW1qZHo0cWZkWS15WVhFMzY1dV93UmdPU2hFWnZjRmtGTmVVTTV6Xzl3eWZxYy1OaTNvTk9xYXpzTXdBZ3llSWRlNFBsOUxSRDNjMFR0ZXZtRnhXc0ZySW1IX1hwcmMwMURFX1NNckRfUlRXWUZPZC1zTEM0MmNkN3R2MXc5a2MxaF8zbTBqZ2dncnB2dU5ySTUzTEtjRkVOTUN3N0twaTBRb28?oc=5"
         }
       ]
     },
