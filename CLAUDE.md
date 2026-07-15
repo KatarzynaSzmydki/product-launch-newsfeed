@@ -35,12 +35,13 @@ for design rationale see `product-launch-tracker-scope.md`.
 Streamlit Cloud auto-redeploys from `master`, so anything that lands there is live immediately.
 Where a change goes depends on whether it's daily-run output or anything else:
 
-- **Daily-run output — straight to `master`, no approval.** `data/state.json` and
-  `data/briefs/*.md` are the mechanical/generation pipeline's own output (see the **daily-run**
-  skill) and need no branch and no PR.
+- **Mechanical/staging output — straight to `master`, no approval.** `data/state.json` and
+  `data/briefs/*.md` (the **daily-run** pipeline's output) and `data/pending_triage/*.md` (the
+  **triage-feedback** skill's staged plans/replies, which a scheduled headless run commits so its
+  output survives outside its sandbox) need no branch and no PR.
 
 - **Everything else — branch + PR, awaiting approval.** `app.py`, `src/*`, config, docs, skills
-  — anything that isn't daily-run output. Branch, push the branch, open a PR, and stop. The user
+  — anything that isn't mechanical/staging output. Branch, push the branch, open a PR, and stop. The user
   reviews and merges it; the PR *is* the approval step, so do not merge it yourself and do not
   ask for a shortcut around it.
 
