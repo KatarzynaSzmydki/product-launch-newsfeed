@@ -145,7 +145,7 @@ RETRY_BACKOFF_SECONDS = 2
 # run rather than every RSS result. Corroboration only needs 2 distinct
 # sources (or 1 tier-1 hit), so a handful is plenty and keeps the daily
 # run fast even at 100-company scale.
-MAX_EVENTS_PER_COMPANY = 3
+MAX_EVENTS_PER_COMPANY = 5
 
 
 def _strip_legal_suffix(name):
