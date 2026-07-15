@@ -21,11 +21,11 @@
     },
     "AAPL::unveils": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-15",
       "first_seen": "2026-07-13",
       "generated_at": null,
       "keyword": "unveils",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "AAPL",
       "trigger_events": [
         {
@@ -35,6 +35,14 @@
           "tier": "other",
           "title": "Apple unveils $30bn chip deal with Broadcom - Sharecast.com",
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN1V4U09VU29DaTBDRU12RXA2VXJMU0diZVFCamhOOTZYdW5ZbEp0ZWJSMDdhZ043Zmh0WVcwQlp2NWdvNDZYWmEtX3ZOeW9QVThsaTF2eHRrLVkzUERyWVJsQ0NMeEpPYVU3bF9lNkZYZ015YlhHVGFhSlM5b2FIejVzV0ZoZEtWNkRQUTJpXzN4cVdXbkVwaE81QUU3M1hMNG8zOEFGVmw5WGhtYzNTbUFn?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "unveils",
+          "source_name": "Apple",
+          "tier": "other",
+          "title": "Apple Original Films unveils trailer for action-packed \u201cMayday,\u201d starring Ryan Reynolds and Kenneth Branagh - Apple",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPSHctQ19CbDJhX0JCUXpEdW9NM2syaVNjZDJseFJzelozWGFKNFY3T0ZEdGRES0xQMG1TUGVWQ1ZwWHlkcC1Ra2c5eVBFY0ItWTlETTM4Y3BpaE5yclZHdVNUeFVJLXhzOEhBdXk0c3VIVmpjN2lBbnJVV2UxSjZkYzd5RmU5QzcyUUR0aVB4VHdkSnVWMEdlWFF5UDE1TG1iTFl2bFo2emhVNVFVWkdzTl9FdnRWSFF3Y3BiTWVESjMwSmJ1ZThndHpaYjNNOTVTanowRVFaT1g3cEVycjV3?oc=5"
         }
       ]
     },
@@ -76,13 +84,32 @@
         }
       ]
     },
-    "GOOGL::announces": {
+    "FTNT::announces": {
       "brief_path": null,
       "confirmed_at": null,
-      "first_seen": "2026-07-13",
+      "first_seen": "2026-07-15",
       "generated_at": null,
       "keyword": "announces",
       "status": "pending",
+      "ticker": "FTNT",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "announces",
+          "source_name": "marketscreener.com",
+          "tier": "other",
+          "title": "Fortinet Announces New Capabilities for Fortiendpoint Unified Endpoint Platform - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQeklWNFNZcDRlX1FZZGJoTlNhX2ZWTzVTcXVEZldxbkNJS2lQWmtDR2gwZlppbk5rWjdDWWN5NXl4QXk3RXpmMnJRVG9QMU53U3NiSkpHQ1dTY1ZDSzhWdXdySGR0NVY3dkpRZUxNZDNYdUxLZ2RJbk01UHlHQ1VhZldwSlZkZnFBY1VjSm0xNWNhRkVXOEdnNnVvTktUYTJCX3FWbWlWSmhsTEs2U0RndENJbWE5dHU3bEtSOWl2Vk45Z3QxaGZnOU9iWUU?oc=5"
+        }
+      ]
+    },
+    "GOOGL::announces": {
+      "brief_path": null,
+      "confirmed_at": "2026-07-15",
+      "first_seen": "2026-07-13",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "confirmed",
       "ticker": "GOOGL",
       "trigger_events": [
         {
@@ -92,6 +119,14 @@
           "tier": "other",
           "title": "Google announces Pixel 11 launch event in August - The Verge",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE11SmV0MnpXLUdrREM2QUlsN2tEV3QxcXl0NzZMX3BMWjIydlJna3hTZ1hqSlM4aWstTTAwREVIdXh5ZWI5M2s0MUdzUzVpbHdtRnNiOEhmM1ptd1BaaFEtcVhJLUt0UHBJMUVZd18tUWZmdFpHYmtBdEI4MXByZw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "announces",
+          "source_name": "9to5Google",
+          "tier": "other",
+          "title": "Google announces Gemma 4 optimized for the Pixel 10\u2019s TPU - 9to5Google",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9rZ1RTaDhoTjVxS3g5TDFKTjJQSFdGX3VEVkZtck1SRzdCSlZZOFNqbDQ3bnlLTkJBU3VoMFphaE1hRFNYR1VmRmZhRnM1X1hkNTBoTVZmZlJKZHlRak0zTw?oc=5"
         }
       ]
     },
@@ -119,6 +154,14 @@
           "tier": "other",
           "title": "Google Introduces AI Disclosure Labels For Ads Across Search, YouTube And Discover - ETV Bharat",
           "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQOTN2Q3RUMl9RRkpPWndkVFhsUlYyRm1DbnlxSng3REZwX3B5UFpyOUhRRFBfSS1JeWptMTUtQ2RLYXRvWEI2Y1M0T1ZCaWRQUVhxTGlYU3lJLVk4ODRyUzRfRE0tQ2s1TjlDUmJZaVhfTGp1VXdzdWM5RmJObHVMZWlBVHZrV2pYdXdfd2gtMEhzblhhQ2VTbkxZYkx5TmMyYy1keUZrYnkwdUtmTTJBdWp6aURKSV9rMzB1dUNiX2pVN09GS2o0eFNSZGRUQVVkTlHSAdcBQVVfeXFMTUhuRTMxSkNLWFhhTC1VY3JxYUpka1lieXB1TnRiOU9SUHR4ZU1hRHd1N0RuczdudWdwNEp2cnlJOXJra1hfQWszQ3VWQmlhSzBOWXk0OV9Dcng3cGpNcmxzOTRyT1FVMXBHNzh1Q01tS3ZOcjhTUW1NT1NMTVVMMWY5SUVBRWpTNnFKRnNrWG40RE9OZkhnX0JKSGR1XzBITFFXb0RJX184QnprQm5vd1d4YURfNkRkWFhzTTNBNHdiOWd4R0dLMXNIOVRJdm1yNUJQdWd6S0k?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "introduces",
+          "source_name": "Social Media Today",
+          "tier": "other",
+          "title": "Google Images introduces Pinterest-style UI - Social Media Today",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSXBBSnJkQTNyeVFHaVEwMGxNdG9KVFlKRXlzX1RWNEt6X3FvS3gtT3FFVEx4a3FvNFFhOExhZktkMzlpY2RLdmVtNnNCbXJmc0ZHQmFWaXdRYkNDSzlQcm5DQW1qX3liUnZvS2JkVy1xaTdkN0x6b2VpQ2t4M2pFLWV6OWNxYnBzRGpTb2dDc3lRM0U?oc=5"
         }
       ]
     },
@@ -154,6 +197,14 @@
           "tier": "other",
           "title": "Google launches free AI research foundations curriculum in India, it will teach you how to build LLMs - India Today",
           "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNcG5KQ1ZvdkdiNlhyR0tFZGpZdXVZSmZCUXB2c0RMYl9acGlXTEdLVF83VVJzcldiSDNaNTdsUVpRdkp2cTBVZWtJb3A3NzVDRnl3Y0d3NFVvV1ByRFBHM2w1TnlPenZYeXVaakoyYWJZRmltendIWlNUc01JelpvcVFfa19HUXBkV1JPSWMySVdOTGU4S18tWGVLeVJJWkl4SHFYYXBORnJ4YXdyV1N6OW11U3hPMWQ0X0VMdkRuUUpOWVR1SUNXaFppRGVxMWtOSE9yMzNEeGptQmtvZkw3YkNhNnVVYWRyRktDblZTbkhFenkwQUVrZkplSdIBgAJBVV95cUxOVXhuR3E2VkFnUTd5SE9TN2lpTm9uVG1YaFRaMlFTRlFGX0hGVDZ6dVczcFpSMy1SQWw2RENjb3JqcVFsUkp5WlFuWF91STJZa3huWVd2V3RzY01sUmVFQTg4UEp0U0lVczg0YU1QcjN1MlB3dUZFd3FPdmZvaHRJampxTm1EdWNmZjRWX2U3cFJyMm5zTFNFUXBhWk96T0hLMVlWMGQxR2IteTNrY1p6aWlzNDlLdWlkQUVXYmNGTjVURU9KM2F2Z2NKXzJqZklzX3NveHZpT1pfTXlmNjR0V2M5a3BMRFBOYzlhdXppVHVWb2JvT3VNcHlaOXFvNE9M?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "launches",
+          "source_name": "CNET",
+          "tier": "other",
+          "title": "Google Launches Two New Features to Celebrate 25 Years of Google Images - CNET",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPX1NmNHpMVTc4aFFwRGhGY0tRNXhIczNyWXctLV9vdDd5MFN2REpsR1c4Y0owQ0FEMFVWVzZGN0NKRTYtSXhWVWRfQTB2U0lEOW9yeWE1T1FpekV3WVpJUVBYUEhmbHh5ZTRqRm11clhxREFjdEN2LVNmR092eDg1Q3VLdmRzSmhVV3A1YVk2UldZeVU4Uldpd21R?oc=5"
         }
       ]
     },
@@ -252,6 +303,25 @@
         }
       ]
     },
+    "META::announces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-15",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "pending",
+      "ticker": "META",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "announces",
+          "source_name": "play 103.7",
+          "tier": "other",
+          "title": "Meta announces $13-billion Alberta data centre investment, creating thousands of jobs - play 103.7",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeU9tUkV2c1F0Y2k1QVFLYWlfWVVCb1Q5dlBYMGJfZklnOEFTQjB6ZlRqQmRWZkY4eEhiNEgySFJ6WjhkazFHN1BkbVk5SEVWLWpXc09uTDUtamk2ZDZuYlg5VElJblRyWENDV1UtdFpnNnFLanFTdFpqWUdIeEFxbE94Z3o4dWNjd052QkcwVHdrcFZsODViSVR5NVhiX2YwUWNRazAtX242UlpZNmJROS1odEk1Q09yaURN?oc=5"
+        }
+      ]
+    },
     "META::introduces": {
       "brief_path": null,
       "confirmed_at": null,
@@ -319,16 +389,24 @@
           "tier": "other",
           "title": "Meta launches Muse Image in Meta AI for chats & apps - IT Brief New Zealand",
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONmpvQ2hZMDNWMmVhd2FSMnJ4M0NpVGlBOTZZaVd2M0wwbGpadk54MzFnTXVnQ2NEMmxOc1g1WkxFQUtISjZrT0hZMldwSWQxUHdReFFBSmp5LXNvcGNlUnRHeEVpOEZDczBYTmhqZDhSc3RsRFdyczBydHNvUFllVHB0el8?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "launches",
+          "source_name": "Tech Edition",
+          "tier": "other",
+          "title": "Meta launches Pocket app for creating AI-generated mini games - Tech Edition",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQa3duYzFTMll3MnppNFlCLUlmU3h4MlRHeElpUXVhMzdmMFRDZFVLSzd0TWthVHdkdFA1aWM0cWJ1c0FBalh6NTFGbzRSdTVuUnh1R2VDRUtRNnp3cVhnYWZZMUx5ZlIzMkhBTXpIUkN4eUxhTHRsYWdocHRHSmZKcHdmM2tGT1kwbjE3cEpB?oc=5"
         }
       ]
     },
     "META::unveils": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-15",
       "first_seen": "2026-07-13",
       "generated_at": null,
       "keyword": "unveils",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "META",
       "trigger_events": [
         {
@@ -338,6 +416,14 @@
           "tier": "other",
           "title": "Meta unveils two AI models - Semafor",
           "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5lSnhyemJUWjNTVjdIYnkxaS1uQnFKUjE2ZklWZXpMWWZYVDdjLS1mc2p3UEJLN2tGaGFkUVc5aVhJRjZoaGlQS2hZV0NEWjlYUzVSTDliT0V1ZnQxUUtmX2FTVjgtdzc1VXYybDNJRllaNWR1b1dpNQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "unveils",
+          "source_name": "WQAD",
+          "tier": "other",
+          "title": "Meta unveils plans for massive Louisiana data center - WQAD",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNMk5Fb1FxODhHTmFLTHlJRXY4cVJmV0ZVc1ZWQzVpY3FnZnBwSmJ5WG52eWJFLVV5YjBIQzE1Ul93S0lwbW8zeVJYalh4cnBiNVlJTE8xTlZYNzdiQktxcGdKMEgzbnV6X094MVlUb0xnNVJIZFRkcE9mM1ppSFdIWFc4SDRaTG0zQ3NBaWxBTEk0c19ZTFp2QktYNGJfalVYcVNFcS1OSmotbThsOUd3QVFLeUtzMkFtYlpDYnFtWVpoZ28?oc=5"
         }
       ]
     },
@@ -388,12 +474,12 @@
       ]
     },
     "MSTR::launches": {
-      "brief_path": null,
-      "confirmed_at": null,
+      "brief_path": "data/briefs/2026-07-15_MSTR_launches.md",
+      "confirmed_at": "2026-07-15",
       "first_seen": "2026-07-14",
-      "generated_at": null,
+      "generated_at": "2026-07-15",
       "keyword": "launches",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "MSTR",
       "trigger_events": [
         {
@@ -403,6 +489,41 @@
           "tier": "other",
           "title": "Strategy Launches Bitcoin Bank Adoption Index With 32% Overall Score - Cryptonews.net",
           "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE12REJjU3M2bzVGa2NZSWNrWlQ2bjdUd3VFZ21pSjRKSXk0azFaLWU4eE1OYnZleDJZWDNFamFSZGFud1R2Ukl6S2xJY284NzdkZHJvZ3hIZ0c?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "launches",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Strategy (MSTR) Launches Bitcoin Banking Index As It Builds A $3 Billion Reserve - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSEJRQXU0clM0dVhnY1VmVkpPdUhKSXZKS0EzVzVNbFItWlVkVkZaaTBiU3ljWFhJNm80Q21aVDB5aHpwZ0ZvenZfWXlpd0szMGNRMmlYNjRYRWlHTGo0cUxhTzdWNzlsdlYxTjd4OXg0aVRzSDhId2RZbEpHYmpOaS16Q2hNRFdzSWd1U19faUl1UjFVRVlseWtJM1FaMGhUcFA0UkR3?oc=5"
+        },
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "launches",
+          "source_name": "MarketForces Africa",
+          "tier": "other",
+          "title": "BTC Price Rises As Strategy Launches Bitcoin Banking Adoption Index - MarketForces Africa",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQazMybnhIWm5XUW94dXVYM1FRSElPLXF0ckx5Zm1uMGpSNm1rYlRkZkdzblQtRWdLWkZ4cGNwSlRCNl80QThJN0p6akdWcFQwbXczN0FOV0dWVHdsNUJqVXFqRTNNQ0FzVDNXMU41akwwcmZ6Ym96VkpXZXp3ZW9tNnVsX0Nid1VISHBtZUszdS1UT29XRzRSdzdn?oc=5"
+        }
+      ]
+    },
+    "MSTR::reveals": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-15",
+      "generated_at": null,
+      "keyword": "reveals",
+      "status": "pending",
+      "ticker": "MSTR",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-15",
+          "keyword": "reveals",
+          "source_name": "The Crypto Times",
+          "tier": "other",
+          "title": "Strategy\u2019s Cash Reserve Shift Reveals Weaknesses in Leveraged Bitcoin Balance Sheet - The Crypto Times",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNQWJsME42c0xwdUJrZUFZNUpGemJDdzlBYkY3TXZycGdIVlMwNHVWejFtd2hXb2pDYkRQVXJYV3BVRnB5TWozR3Z3SE16V1pIXzA2czhxZHpRb2kwcFVfb2JwZVV0QUtxRlY2NW9xTDU5ZzJzTFdYMkdVMFVOSG1YUEN6OHlLUzBQaVhMVE1WZFFkVzRBdkF5OFNTOWNySXZtV0YxZHlsdFRhcWdrYW9kR0ZFREYtdG9POXJJbVpR?oc=5"
         }
       ]
     },
