@@ -245,6 +245,15 @@ with left:
     st.title("Product Launches")
     st.caption(f"NASDAQ · tracked in the news · last update {last_updated(state) or 'never'}")
 
+    with st.expander("How this works", expanded=True):
+        st.markdown(
+            "Each NASDAQ-100 company is checked daily for product-launch news. A launch is "
+            "listed here only once **independent sources corroborate it**, which filters out "
+            "routine press releases and financial coverage. Every confirmed launch gets a "
+            "short plain-language brief and a current stock snapshot.\n\n"
+            "**To use it:** pick a date, then a company, to read its brief."
+        )
+
     st.write("")
     st.write("")
 
