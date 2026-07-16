@@ -10,11 +10,31 @@ Full design: [`PROJECT_PLAN.md`](./PROJECT_PLAN.md).
 
 ## Status
 
-**Phase 0 — Foundations.** Module scaffold, a provider-agnostic
-`LLMClient`, and a Streamlit smoke-test page that proves the LLM call
-works end to end. Nothing here answers real questions yet — that starts
-with the dataset (Phase 1) and the dbt/MetricFlow semantic layer
-(Phases 2–3).
+**Phase 1 — Dataset & DuckDB.** On top of the Phase 0 scaffold (a
+provider-agnostic `LLMClient` and a Streamlit smoke-test page), there's now
+a DuckDB star schema seeded from the live app's **real** output — the
+company universe plus every confirmed, briefed launch and its sources and
+stock snapshot. No synthetic *rows* (no backfilled history, no feedback);
+every row is real. Only the empty *attribute columns* on those real rows are
+filled: company `sector`/`industry`/`market_cap_bucket`/`hq_country` from a
+curated real-world map (`company_attrs.csv`), `launches.category` synthesized
+(sector-correlated), `launches.confidence_score` a heuristic over real signals
+(`num_sources` + wire tier), and `stock_snapshots.change_1d` synthesized.
+The dbt/MetricFlow semantic layer and the NL query flow land in Phases 2+.
+
+### Dataset
+
+```
+python -m analytics.data.generate_data   # build analytics/data/analytics.duckdb (real data only)
+python -m analytics.data.run_sanity      # print the Phase 1 sanity-check queries
+```
+
+`analytics.duckdb` is gitignored and fully regenerable from the repo — the
+generator reads `data/state.json` and `data/briefs/*` read-only and never
+writes them. It's deterministic (fixed seed for the two synthesized columns),
+so a rebuild is byte-stable. `launches.product_name` stays empty — the real
+name lives in the summary prose and isn't extracted yet. See `data/schema.sql`
+for which columns are real, curated, derived, or synthesized.
 
 ## Setup
 

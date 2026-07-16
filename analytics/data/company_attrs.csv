@@ -1,0 +1,103 @@
+ticker,sector,industry,market_cap_bucket,hq_country
+ASML,Information Technology,Semiconductor Equipment,mega,Netherlands
+ADBE,Information Technology,Application Software,mega,United States
+AMD,Information Technology,Semiconductors,mega,United States
+ABNB,Consumer Discretionary,Hotels & Leisure,large,United States
+ALNY,Health Care,Biotechnology,large,United States
+GOOGL,Communication Services,Interactive Media,mega,United States
+AMZN,Consumer Discretionary,Broadline Retail,mega,United States
+AEP,Utilities,Electric Utilities,large,United States
+AMGN,Health Care,Biotechnology,large,United States
+ADI,Information Technology,Semiconductors,large,United States
+APP,Information Technology,Application Software,large,United States
+AAPL,Information Technology,Technology Hardware,mega,United States
+AMAT,Information Technology,Semiconductor Equipment,large,United States
+ARM,Information Technology,Semiconductors,large,United Kingdom
+ALAB,Information Technology,Semiconductors,mid,United States
+ADSK,Information Technology,Application Software,large,United States
+ADP,Industrials,Human Resource Services,large,United States
+AXON,Industrials,Aerospace & Defense,large,United States
+BKR,Energy,Energy Equipment & Services,large,United States
+BKNG,Consumer Discretionary,Hotels & Leisure,mega,United States
+AVGO,Information Technology,Semiconductors,mega,United States
+CSX,Industrials,Rail Transportation,large,United States
+CDNS,Information Technology,Application Software,large,United States
+CHTR,Communication Services,Cable & Media,large,United States
+CTAS,Industrials,Diversified Support Services,large,United States
+CSCO,Information Technology,Communications Equipment,mega,United States
+CCEP,Consumer Staples,Beverages,large,United Kingdom
+CMCSA,Communication Services,Media,large,United States
+CEG,Utilities,Electric Utilities,large,United States
+CPRT,Industrials,Diversified Support Services,large,United States
+CRWV,Information Technology,Cloud Infrastructure,large,United States
+COST,Consumer Staples,Consumer Staples Retail,mega,United States
+CRWD,Information Technology,Security Software,large,United States
+DDOG,Information Technology,Application Software,large,United States
+DXCM,Health Care,Health Care Equipment,large,United States
+FANG,Energy,Oil & Gas E&P,large,United States
+DASH,Consumer Discretionary,Internet Retail & Delivery,large,United States
+EA,Communication Services,Interactive Entertainment,large,United States
+EXC,Utilities,Electric Utilities,large,United States
+FAST,Industrials,Trading & Distribution,large,United States
+FER,Industrials,Construction & Engineering,large,Netherlands
+FTNT,Information Technology,Security Software,large,United States
+GEHC,Health Care,Health Care Equipment,large,United States
+GILD,Health Care,Biotechnology,large,United States
+HONA,Industrials,Aerospace & Defense,mid,United States
+HON,Industrials,Industrial Conglomerates,mega,United States
+IDXX,Health Care,Health Care Equipment,large,United States
+INTC,Information Technology,Semiconductors,large,United States
+INTU,Information Technology,Application Software,mega,United States
+ISRG,Health Care,Health Care Equipment,mega,United States
+KLAC,Information Technology,Semiconductor Equipment,large,United States
+KDP,Consumer Staples,Beverages,large,United States
+LRCX,Information Technology,Semiconductor Equipment,large,United States
+LIN,Materials,Industrial Gases,mega,United Kingdom
+LITE,Information Technology,Communications Equipment,mid,United States
+MAR,Consumer Discretionary,Hotels & Leisure,large,United States
+MRVL,Information Technology,Semiconductors,large,United States
+MELI,Consumer Discretionary,Broadline Retail,large,Argentina
+META,Communication Services,Interactive Media,mega,United States
+MCHP,Information Technology,Semiconductors,large,United States
+MU,Information Technology,Semiconductors,large,United States
+MSFT,Information Technology,Systems Software,mega,United States
+MDLZ,Consumer Staples,Packaged Foods,large,United States
+MPWR,Information Technology,Semiconductors,large,United States
+MNST,Consumer Staples,Beverages,large,United States
+NVDA,Information Technology,Semiconductors,mega,United States
+NXPI,Information Technology,Semiconductors,large,Netherlands
+NBIS,Information Technology,Cloud Infrastructure,mid,Netherlands
+NFLX,Communication Services,Entertainment,mega,United States
+ORLY,Consumer Discretionary,Specialty Retail,large,United States
+ODFL,Industrials,Trucking,large,United States
+PCAR,Industrials,Commercial Vehicles,large,United States
+PDD,Consumer Discretionary,Broadline Retail,large,China
+PLTR,Information Technology,Application Software,large,United States
+PANW,Information Technology,Security Software,large,United States
+PYPL,Financials,Transaction & Payments,large,United States
+PAYX,Industrials,Human Resource Services,large,United States
+PEP,Consumer Staples,Beverages,mega,United States
+QCOM,Information Technology,Semiconductors,mega,United States
+REGN,Health Care,Biotechnology,large,United States
+RKLB,Industrials,Aerospace & Defense,mid,United States
+ROP,Industrials,Industrial Conglomerates,large,United States
+ROST,Consumer Discretionary,Specialty Retail,large,United States
+SNDK,Information Technology,Technology Hardware,mid,United States
+STX,Information Technology,Technology Hardware,large,United States
+SHOP,Information Technology,Internet Services,large,Canada
+SBUX,Consumer Discretionary,Restaurants,large,United States
+MSTR,Information Technology,Application Software,large,United States
+SNPS,Information Technology,Application Software,large,United States
+TMUS,Communication Services,Wireless Telecom,mega,United States
+TTWO,Communication Services,Interactive Entertainment,large,United States
+TSLA,Consumer Discretionary,Automobiles,mega,United States
+TXN,Information Technology,Semiconductors,mega,United States
+KHC,Consumer Staples,Packaged Foods,large,United States
+TRI,Industrials,Professional Services,large,Canada
+VRTX,Health Care,Biotechnology,large,United States
+WMT,Consumer Staples,Consumer Staples Retail,mega,United States
+WBD,Communication Services,Entertainment,large,United States
+WDC,Information Technology,Technology Hardware,large,United States
+WDAY,Information Technology,Application Software,large,United States
+XEL,Utilities,Electric Utilities,large,United States
+ZS,Information Technology,Security Software,large,United States

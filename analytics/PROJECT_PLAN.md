@@ -221,7 +221,7 @@ Each phase ends with something demoable and committed. Roughly one weekend-ish b
 
 ### Phase 1 — Dataset & DuckDB
 - Define the raw schema (DDL).
-- Write seeded `generate_data.py`: real + synthetic backfill.
+- Write seeded `generate_data.py`: real.
 - Load into `analytics.duckdb` (gitignored; regenerable).
 - **Done when:** you can run 5 hand-written analytical queries returning sensible numbers.
 
