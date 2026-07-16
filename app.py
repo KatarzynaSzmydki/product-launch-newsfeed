@@ -360,6 +360,12 @@ with right:
     if not ticker_groups:
         st.info("Select a company on the left to view its brief.")
     else:
+        # Streamlit's fixed top toolbar overlaps the first ~60px of the page;
+        # without this spacer the close button's top edge renders underneath it.
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
         header_col, close_col = st.columns([5, 1])
         with header_col:
             st.subheader(f"{selected_ticker} · {ticker_to_name.get(selected_ticker, selected_ticker)}")
