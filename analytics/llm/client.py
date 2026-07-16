@@ -28,7 +28,7 @@ class GeminiClient:
     def __init__(
         self,
         api_key: str | None = None,
-        model: str = "gemini-2.5-flash",
+        model: str = "gemini-flash-latest",
         embedding_model: str = "gemini-embedding-001",
     ) -> None:
         api_key = api_key or os.environ.get("GEMINI_API_KEY")
