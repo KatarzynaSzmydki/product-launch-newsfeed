@@ -18,7 +18,7 @@ stock snapshot. No synthetic *rows* (no backfilled history, no feedback);
 every row is real. Only the empty *attribute columns* on those real rows are
 filled: company `sector`/`industry`/`market_cap_bucket`/`hq_country` from a
 curated real-world map (`company_attrs.csv`), `launches.category` synthesized
-(sector-correlated), `launches.confidence_score` derived from real signals
+(sector-correlated), `launches.confidence_score` a heuristic over real signals
 (`num_sources` + wire tier), and `stock_snapshots.change_1d` synthesized.
 The dbt/MetricFlow semantic layer and the NL query flow land in Phases 2+.
 

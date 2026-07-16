@@ -24,12 +24,13 @@ from pathlib import Path
 import duckdb
 import yaml
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+HERE = Path(__file__).resolve().parent
+REPO_ROOT = HERE.parents[1]
 STATE_PATH = REPO_ROOT / "data" / "state.json"
 COMPANIES_PATH = REPO_ROOT / "config" / "companies.yaml"
-ATTRS_PATH = Path(__file__).resolve().parent / "company_attrs.csv"
-SCHEMA_PATH = Path(__file__).resolve().parent / "schema.sql"
-DEFAULT_DB_PATH = Path(__file__).resolve().parent / "analytics.duckdb"
+ATTRS_PATH = HERE / "company_attrs.csv"
+SCHEMA_PATH = HERE / "schema.sql"
+DEFAULT_DB_PATH = HERE / "analytics.duckdb"
 
 # Seed for the two synthesized attribute columns (launches.category and
 # stock_snapshots.change_1d). Fixed so re-runs are byte-stable.
@@ -68,6 +69,8 @@ CATEGORIES_BY_SECTOR = {
 }
 DEFAULT_CATEGORIES = ["product", "platform", "service", "feature"]
 
+# These match the exact table rows rendered by src/brief_template.py
+# render_stock_section — a format change there silently degrades parsing to NULLs.
 _PRICE_RE = re.compile(r"Current price \| \$([\-0-9.]+)")
 _CHANGE_1Y_RE = re.compile(r"1-year change \| \$?([\-0-9.]+)%")
 _HIGH_RE = re.compile(r"52-week high \| \$([\-0-9.]+)")
@@ -134,7 +137,7 @@ def _parse_stock(md_text: str) -> dict | None:
 
 
 def _snapshot_date(brief_path: Path, fallback: str | None) -> str | None:
-    prices_path = brief_path.with_suffix("").with_suffix(".prices.json")
+    prices_path = brief_path.with_suffix(".prices.json")
     if prices_path.exists():
         try:
             return json.loads(prices_path.read_text(encoding="utf-8")).get("as_of", fallback)
@@ -148,8 +151,8 @@ def _synth_category(rng: random.Random, sector: str | None) -> str:
 
 
 def _confidence(num_sources: int, has_tier1: bool) -> float:
-    """Derived (not synthesized) from real corroboration signals: more distinct
-    sources and any tier-1 wire hit raise confidence."""
+    """Heuristic score correlated with real corroboration signals (hand-picked
+    constants): more distinct sources and any tier-1 wire hit raise confidence."""
     score = 0.55 + 0.09 * min(num_sources, 4) + (0.12 if has_tier1 else 0.0)
     return round(min(score, 0.97), 2)
 
@@ -181,7 +184,7 @@ def load_real_launches(
         for g in state["groups"].values()
         if g.get("status") == "confirmed" and g.get("brief_path")
     ]
-    confirmed.sort(key=lambda g: (g["brief_path"]))  # stable order
+    confirmed.sort(key=lambda g: g["brief_path"])  # stable order
 
     for group in confirmed:
         ticker = group["ticker"]
