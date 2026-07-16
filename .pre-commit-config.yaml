@@ -1,0 +1,15 @@
+# Scoped to analytics/ only — the existing pipeline in src/ and app.py
+# predates this config and isn't opted in.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        files: ^analytics/
+        args: [--fix]
+
+  - repo: https://github.com/psf/black
+    rev: 24.8.0
+    hooks:
+      - id: black
+        files: ^analytics/
