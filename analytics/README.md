@@ -10,9 +10,18 @@ Full design: [`PROJECT_PLAN.md`](./PROJECT_PLAN.md).
 
 ## Status
 
+**Phase 2 — dbt project + models.** On top of the Phase 1 DuckDB star schema
+(below), there's now a **dbt-duckdb** project (`analytics/dbt/`) over the same
+file: `staging` views clean each raw table, `marts` build the star schema
+(`dim_companies`, `fct_launches`, `fct_stock_snapshots`, `br_launch_sources`),
+and dbt `unique`/`not_null`/`relationships` tests plus column descriptions
+document and guard it. `dbt build` runs green (9 models, 20 tests). The
+MetricFlow semantic layer (`dbt-metricflow` is already installed) and the NL
+query flow land in Phases 3+.
+
 **Phase 1 — Dataset & DuckDB.** On top of the Phase 0 scaffold (a
-provider-agnostic `LLMClient` and a Streamlit smoke-test page), there's now
-a DuckDB star schema seeded from the live app's **real** output — the
+provider-agnostic `LLMClient` and a Streamlit smoke-test page), there's a
+DuckDB star schema seeded from the live app's **real** output — the
 company universe plus every confirmed, briefed launch and its sources and
 stock snapshot. No synthetic *rows* (no backfilled history, no feedback);
 every row is real. Only the empty *attribute columns* on those real rows are
@@ -20,7 +29,6 @@ filled: company `sector`/`industry`/`market_cap_bucket`/`hq_country` from a
 curated real-world map (`company_attrs.csv`), `launches.category` synthesized
 (sector-correlated), `launches.confidence_score` a heuristic over real signals
 (`num_sources` + wire tier), and `stock_snapshots.change_1d` synthesized.
-The dbt/MetricFlow semantic layer and the NL query flow land in Phases 2+.
 
 ### Dataset
 
@@ -35,6 +43,25 @@ writes them. It's deterministic (fixed seed for the two synthesized columns),
 so a rebuild is byte-stable. `launches.product_name` stays empty — the real
 name lives in the summary prose and isn't extracted yet. See `data/schema.sql`
 for which columns are real, curated, derived, or synthesized.
+
+### dbt models
+
+The `dbt/` project transforms the raw tables into a documented, tested star
+schema in the **same** DuckDB file. Regenerate the raw data first, then build:
+
+```
+python -m analytics.data.generate_data                              # raw tables
+dbt build --project-dir analytics/dbt --profiles-dir analytics/dbt  # staging + marts + tests
+dbt docs generate --project-dir analytics/dbt --profiles-dir analytics/dbt   # catalog
+```
+
+Run dbt from the repo root (the profile's DuckDB `path` is repo-root-relative;
+override with `DBT_DUCKDB_PATH` for an absolute path). `staging/stg_*` are
+views that clean each raw table; `marts/` are the tables the semantic layer
+will sit on — `dim_companies`, `fct_launches`, `fct_stock_snapshots`,
+`br_launch_sources` (feedback stays staging-only while empty). Because dbt
+writes into the same file the generator rebuilds from scratch, always
+regenerate then `dbt build`, not the reverse.
 
 ## Setup
 

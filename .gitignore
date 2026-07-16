@@ -12,3 +12,8 @@ data/pending_generation/
 # analytics/ (self-service NL analytics side project)
 analytics/.env
 analytics.duckdb
+# dbt build artifacts (regenerable) and the machine-local anonymous-usage id
+analytics/dbt/target/
+analytics/dbt/dbt_packages/
+analytics/dbt/logs/
+analytics/dbt/.user.yml

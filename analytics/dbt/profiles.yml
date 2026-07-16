@@ -1,0 +1,14 @@
+# dbt-duckdb profile for the analytics side project.
+#
+# `path` is resolved relative to dbt's working directory, so run dbt from the
+# repo root:  dbt build --project-dir analytics/dbt --profiles-dir analytics/dbt
+# (or set DBT_DUCKDB_PATH to an absolute path). Same DuckDB file that
+# generate_data.py builds; dbt adds the stg_/dim_/fct_ models alongside the raw
+# tables, so regenerate the raw data first, then `dbt build`.
+analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', 'analytics/data/analytics.duckdb') }}"
+      threads: 1
