@@ -65,13 +65,59 @@
         }
       ]
     },
-    "CTAS::announces": {
+    "ASML::announces": {
       "brief_path": null,
       "confirmed_at": null,
-      "first_seen": "2026-07-15",
+      "first_seen": "2026-07-16",
       "generated_at": null,
       "keyword": "announces",
       "status": "pending",
+      "ticker": "ASML",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "announces",
+          "source_name": "Azat TV",
+          "tier": "other",
+          "title": "ASML Announces 30% Capacity Expansion Amid Surging AI Chip Demand - Azat TV",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5qTE1XejFNVDFDRUdMVklPbHhBT3Z4N29NUEg2RFBYbUFudXZGNUxzd1RwZ3JER3RjYkROU2ZIOUFVMFlIMmptSWdSTHhVclQ4dmRFbHJOVW40Y2lSYTgzWm5vS0FMRmUt?oc=5"
+        }
+      ]
+    },
+    "CDNS::introduces": {
+      "brief_path": "data/briefs/2026-07-16_CDNS_introduces.md",
+      "confirmed_at": "2026-07-16",
+      "first_seen": "2026-07-16",
+      "generated_at": "2026-07-16",
+      "keyword": "introduces",
+      "status": "confirmed",
+      "ticker": "CDNS",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "introduces",
+          "source_name": "marketscreener.com",
+          "tier": "other",
+          "title": "Cadence Introduces AuraStack AI Super Agent, the World?s First Agentic AI Platform for PCB and Advanced Packaging - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQYXlQV2JYUHhSYmVaemw1YlgwZlJYOVI5UkZmeHduZ1NVRXZEZkduRzlVLUpGVlIwVTJpakU4bnh6UkpRd3NCUVA4MS01Mkc1WHQ5SW5aMkd0UU5TMlhRVDRqYm82ZE0tWktoZ25pTWpmbVJjbVdmTkMtMXhfMUtodlk2QV95dllsemVxcXhReDBDZXE1VEhVcVdFa21vOUhOb1phWWRURnhUemxYRUtSVDRaSmVQZGtldEV5TFdsUU1ZMGpZWmxUQzkzZmxOaEFOMm5aNlNGZFhuM1hOR2t0aWFKcTBUVTQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "introduces",
+          "source_name": "Business Wire",
+          "tier": "other",
+          "title": "Cadence Introduces AuraStack AI Super Agent, the World\u2019s First Agentic AI Platform for PCB and Advanced Packaging - Business Wire",
+          "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNcTIwY0VtQWhpLTNteVNKVFpPd2thdmZxbmk3TmNNSGg0VUZ0OU1DY01VYl9GbzdCOUhiRXZ1ekVOcnA4eEp2c1kyNk9UVDZhUXBTNTAtRkV0aXpWUTBGcXI1N3pnS25RdkQ4cFpZMVB2TmREQ2Fta084VEs3Q1VtdXktbXRjUUQyVEhPVDU3TUZHQzBObmR4cVZ2SE83NGFzTGx2ZFBEMFRiQ2VILVQtWllxa3RNNU9JOUQxUTJwUndtdVI4emtUU3hRZVVwZ2M2MXIzY3Awamg4cXM5M2hwa2dvXzNUdkxzcV9qVG5sNENnTWRKdUcxYUw0NWU?oc=5"
+        }
+      ]
+    },
+    "CTAS::announces": {
+      "brief_path": null,
+      "confirmed_at": "2026-07-16",
+      "first_seen": "2026-07-15",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "confirmed",
       "ticker": "CTAS",
       "trigger_events": [
         {
@@ -81,6 +127,14 @@
           "tier": "other",
           "title": "Cintas Corporation Announces Fiscal 2026 Fourth Quarter and Full Year Results - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxONFFLM0pXWHEyZEZ1ejU1azJybEc4czNLQVhSYWtyNTNKaGJoRS1RenlPOWRqQ1J1Y1E1OWVoNzZ4dkhkRHZSUlVya1BzZjFzQTFLcVoyak43U01YSGtBSk9iUjFyOVBKNC1zT0UzdUpkX2N3NVJhUHZjTzBNNUJYUk9tbFFJbFBXRHQ5REs3QjdjQ2RNWWJkeVctemV1bFpJZHZsX3AxbTQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "announces",
+          "source_name": "Business Wire",
+          "tier": "other",
+          "title": "Cintas Corporation Announces Fiscal 2026 Fourth Quarter and Full Year Results - Business Wire",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQelNCOHRNNUY1VmlSckhOd0dLcXhFMWFnMFRqZVlRQVNQQV9xd05tUEZOT3RsZkg3dzZLUmFTaHJINHZ6Wk4xODMzVk5naGhKREFacWhYejVnWmtEQjE4RkpPYW9uNFM3MUdMVHJBRjQyQzNlWHpxZ2VrUVR2MlhDSGxHM2FfU2hLZkl0MXBiekdySG1yRU1fajVhRUdmQVBubVEtWXBwMmk3SWhtUkk3eFZ1bV9qdEpVZ3N1NzItUXhpdlJvaTJKaVlUVlBpekk?oc=5"
         }
       ]
     },
@@ -123,10 +177,10 @@
       ]
     },
     "GOOGL::announces": {
-      "brief_path": null,
+      "brief_path": "data/briefs/2026-07-15_GOOGL_announces.md",
       "confirmed_at": "2026-07-15",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-15",
       "keyword": "announces",
       "status": "confirmed",
       "ticker": "GOOGL",
@@ -240,16 +294,24 @@
           "tier": "other",
           "title": "Google Launches Two New Features to Celebrate 25 Years of Google Images - CNET",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPX1NmNHpMVTc4aFFwRGhGY0tRNXhIczNyWXctLV9vdDd5MFN2REpsR1c4Y0owQ0FEMFVWVzZGN0NKRTYtSXhWVWRfQTB2U0lEOW9yeWE1T1FpekV3WVpJUVBYUEhmbHh5ZTRqRm11clhxREFjdEN2LVNmR092eDg1Q3VLdmRzSmhVV3A1YVk2UldZeVU4Uldpd21R?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "launches",
+          "source_name": "TradingView",
+          "tier": "other",
+          "title": "Google Launches Gemini Omni, Personal Avatars Updates For Google Vids - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPRlBjXzlyWWRaRVVrdk5pNDNGSWNJVW1Pb2gtNldoTk1rNEdOYW9OSGlBZmU1NlJRZUVxVlRkWHNLeXl6eUhoZXhIRUpFanEtZE9DN1p4Um1VVllxLU1mazBsUWJCLUJCOUZlUWNGV0dqTlVkNzhwaEtSZkpRY0JJQldqQmpmRG5oY244U3V3QWhPNHgydHh2TGxOU2FRR1NSRjFzb0RlRkJUUUx3VjAyV2N1eEJiazRPd0FyQ1BFb1hjM1pnLVVoRUxDak5sTmplTWI3Qw?oc=5"
         }
       ]
     },
     "GOOGL::reveals": {
-      "brief_path": null,
-      "confirmed_at": null,
+      "brief_path": "data/briefs/2026-07-16_GOOGL_reveals.md",
+      "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-16",
       "keyword": "reveals",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "GOOGL",
       "trigger_events": [
         {
@@ -259,16 +321,32 @@
           "tier": "other",
           "title": "Google Pixel 11 Pro Fold leak reveals what\u2019s different this year - Android Police",
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNT2RIZ3gwSlY3a21nbFdUaEY3ZUdrcUVaRXRseWlZdU9qVklva1RDV1ZUZmVLNVM2UkJNMURUS0hNc2VnM21jUGptTl80MjQyNVZycU0yUURXTXU3TERXZHhfXzNvVUxHMERvd3J2ek56RHlCTWNMZnBtcmZ4b3REWW1qbmpyWlpYd19JZ0EwZGhheldkNHF4UzFR?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "reveals",
+          "source_name": "NDTV",
+          "tier": "other",
+          "title": "Google DeepMind Employee Reveals Why He Quit Company: 'Couldn't Stay In Good Conscience' - NDTV",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNY29TMjlzdk1naWt0VzZGRUZLb0ktTDV5U3ljbDZHMUlyVV9MSFdSaVhvTnMxNlB5WGRQYTRFS2liem0yOHVqWEpaWWtqMnNFakNvbk5tcnkyb29oTGRFaTZiNWI5VlM5c0piaVlTYVltOWRTSENQSU9VZHhYWGFRTUhScGczZE1YVnZHWjVUTlNmRHh2azk1a3pWdW5HVGRSMUZoQThoUkEzbUh2WGJ1RjhwOEVfWDlWZVh1M2FxONIBxwFBVV95cUxOME83Ym1MRElJUlp3MlhsemF1clV1c050VXdMVlBKRmVna05EWUFMYUFHNWhjeWh6dlZkNzZKSzc5azZMWUtLV3VXaGw5NVdvb2lHTWJnSTlwalVQMnEzd1ZvTWlwUlRaQXVIcXg2aDN1emU3Y25IZUhFMEkxdkdDcXdYMjdfVGtYUDhBWGMtMWViUkhvRkpoN0MyWTBVYmYtLVJ0ekNrcFBWblh5OEo1WUhsdjFFelY1amNmVU5FYXI5ZGV1dE04?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "reveals",
+          "source_name": "PhoneArena",
+          "tier": "other",
+          "title": "Google finally reveals what Pixel Glow will really look like on the Pixel 11 series - PhoneArena",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPVjRJY1h0eXZEYkJNNi1OTkhjYWdrenkyR3dhVkctOV8wWnBsYUdjUnVQRHFSMmE5S3pvWDVYeTZDd1Mxb2VSUnFHWV9lajhJQ3FTT3RaaUJXdnBVSkNmN3duNFY5WlE1bklOTV9PdldRclVyOWFOVUgzRkdYTlFzaUFrSVhsQ2VGOFFtc1ZfNkRsMW5seFhid2pBMTByUzZ5dlNGdi1OeU0yemh2QlV6czJ6dHV1Zk4xV1dGeDVudGN2dw?oc=5"
         }
       ]
     },
     "GOOGL::unveils": {
-      "brief_path": null,
-      "confirmed_at": null,
+      "brief_path": "data/briefs/2026-07-16_GOOGL_unveils.md",
+      "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-16",
       "keyword": "unveils",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "GOOGL",
       "trigger_events": [
         {
@@ -278,6 +356,22 @@
           "tier": "other",
           "title": "Google Unveils Agentic Media-Buying Tools At NewFront 03/23/2026 - MediaPost",
           "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxON3RyTzktNzRqZUV3WjVrbGFxWTNZcWJVd01JTG9XcXAya180VDNxQUpsT0ZtUkFicmFaRGpkTHJ2OU5PMERZUXduZ0pJMmxxd1lMYnZrTUREbTBldk0tM1hSOE1kRXI0ZkY3SXZ4RDY4RGdmREtuSnBLNmpudWxnMmRzQ25XXy1YSUwwTkNON3FNRnRFQklCN0NCbGdvUFpIbFF3cmx6MTVSNG5PTTFwZ0Z5V3QzU01rdzVoSWZYTjREUQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "unveils",
+          "source_name": "Richmond Times-Dispatch",
+          "tier": "other",
+          "title": "Google unveils plans for 3 data center campuses in Chesterfield as citizens voice concerns - Richmond Times-Dispatch",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQY253NENwbjE5cU5HNlJBQU9PQjlDQjlFN3l3TGdZUGc5NEk1M3Fzb0RmM25NblFkM25UWkF2dUhiWmJjanhVdjJfX1BTbFpUMGlHX0ZITGhsMFN1V2MwRDFwNjRlOVg3ZVU3WHFVUTFEVDN5Wk1TazZhSjNmSVdoQVNPZVQ0OTFvNmJGcUtLTDhRaVlB?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "unveils",
+          "source_name": "NDTV Profit",
+          "tier": "other",
+          "title": "Google Unveils Pixel 11 Teaser Ahead Of Launch, Pixel Glow Feature Official - NDTV Profit",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZzdyUVZ2M05BYWxwM2RXQ1I2REh4cDBNTmRQWTN2Vk1XZXZSNE81VUdMWkZsY3hSVVFyUndCUUtPY2M1UzRUWER3YUEwMVM3UUM4N2p0bGFydWJveDBLMUptLWpwM0FKaTBrLVY0XzV4ckVnOFJLUUhtQnN3UDFRWmRscEtIc0RvUmM1T2VPTXo2aGpiTDFRRFVqdVl2TUY5aTlFWmlOMVNTVjl0VFZOZFBoNjU3UXpiN0l4a1J30gHGAUFVX3lxTE1GVjZERzVTajg1Q2d2MVNCMFFTdkQxcDNJZUVQcGk5M2k3ODM5ZGFsUzNEZVB0UTlFWEFjMUVzR2Z5VkpRdHlxTDlvbXNSeG1jSGRjYm1DNFk4cEhxbzRrRTN4QWYteExXYmRSR2E2UlZPRXA5eFROMldocjZXZ1VpZWpwa3pfN2doVDV0bzVRZU9PRFl6emRNRy1YbWRqYy02d0VuaDlQZWUzTWhUSUdwMC0yVW5VaU1JT3FELWZGNGZXbkRNZw?oc=5"
         }
       ]
     },
@@ -340,11 +434,11 @@
     },
     "META::announces": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-15",
       "generated_at": null,
       "keyword": "announces",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "META",
       "trigger_events": [
         {
@@ -354,16 +448,24 @@
           "tier": "other",
           "title": "Meta announces $13-billion Alberta data centre investment, creating thousands of jobs - play 103.7",
           "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeU9tUkV2c1F0Y2k1QVFLYWlfWVVCb1Q5dlBYMGJfZklnOEFTQjB6ZlRqQmRWZkY4eEhiNEgySFJ6WjhkazFHN1BkbVk5SEVWLWpXc09uTDUtamk2ZDZuYlg5VElJblRyWENDV1UtdFpnNnFLanFTdFpqWUdIeEFxbE94Z3o4dWNjd052QkcwVHdrcFZsODViSVR5NVhiX2YwUWNRazAtX242UlpZNmJROS1odEk1Q09yaURN?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "announces",
+          "source_name": "gHacks",
+          "tier": "other",
+          "title": "Meta Announces First AI Data Center, Prometheus, Coming Online in 2026 With More Superclusters Planned - gHacks",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNT1RkYWtQVGhBU3JvUjVpM3IwQldYdGhtQVB2dmNRMkhXYldJc0x0WWg3OVFnTjVFRjFHMHpfMjhtWUpzTXFBTUxuWkMyN1pURm9RVlNfNlNpb3RsLW95a1pkU0I0bGZNN1I2ZXNGWFFidENZaU5ZQ2hiUnQ2a0ZjODdGVUxPZVpvZTRncEtVWHlpdkRSMnJTajVwQTE2Wk9RTnRxbzVIbUducXpvaEJfdVNiN1NRUkhlQ0JnbnF6ZVA4OU1JOTFtWXFqaHpjS2ZL?oc=5"
         }
       ]
     },
     "META::introduces": {
-      "brief_path": null,
-      "confirmed_at": null,
+      "brief_path": "data/briefs/2026-07-16_META_introduces.md",
+      "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-16",
       "keyword": "introduces",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "META",
       "trigger_events": [
         {
@@ -373,6 +475,14 @@
           "tier": "other",
           "title": "Meta introduces AI-powered room visualization feature - Retail Dive",
           "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWE85emFycmx0OHFVNFh0UHpJNG80N21qc1E2MlduVTF4Z2kzNkp4Z05qakUyUThSMnpWa2RZcHZ2Y0J0dUl1NURyS0tkSVBod2t1R2x0SVpHMzdBYzFuY2ljSXpGTkF4OGpoOHhfbG5HQTdaVTZ1bUUtREJFNEl0RzAtRzRaZnU5eld4TWt5OWIzYTVjM3l0dQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "introduces",
+          "source_name": "The Irish Times",
+          "tier": "other",
+          "title": "Meta introduces new protections for teen AI interactions - The Irish Times",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZUlJSkMyN1FqTlJUWHBFUDBJS2JfM3AtR3BPQmVHMTl4aDFEdlFLazN2N216WFNHSnJNVXEtT0dCakJhM2VSRDBPb0xBUWlSUmwwR202bEV6c1B3NUNremZNOEVZcXJJQkY1ZWRRUEZOSDF4Zm5nLVRmZWJlVHdPWkoxeHZ1cm5xUExraXo5ZU5KYmFqMVYxdWhKRTdFM2FpdVBLTWxmVQ?oc=5"
         }
       ]
     },
@@ -440,14 +550,38 @@
           "tier": "other",
           "title": "META stock pops as Meta Platforms launches AI image model - MSN",
           "url": "https://news.google.com/rss/articles/CBMiywJBVV95cUxQaEI1MVlaRm5qUl9fQ0FJc1FuaS1vQ2UtQm9kWjNGX1VkcWl6eXA3MTFVOFExdi1WMGxTS2NLd09FZ2htN1hrMVc2bXpkUVdlOWhmelZLS01vVnV4OUl3d2UtVU10Yjd1RktDTldSSEZlMjRHdmNHY0tCTnZEcFJwa09IbUdBcEtVM3FrUjZfRC1PcUxsOFE4TmVnMUx2MWU5aFZnZlhWUnh0QWNXSXlOc01xMHNXa3YwQTJVbzI1SzM4WDF4eDRTOV9GSkxCOE4wV3FtYjJ6TlFveFA0bXVQSjZHb3BkUHBCUDd2c3pvcDl6cE9kZmFWMEU5OTVlSXZwWlVFaTRZeVY0dFJWTGRvUDFXV2hwemR3cmk0cnY5VWthMzdsb01VRkZteEdEd2pVd3ZRUWpWMG5YMEVGcndITHhUUHBPdy1RVHhV?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "launches",
+          "source_name": "ABC News - Breaking News, Latest News and Videos",
+          "tier": "other",
+          "title": "Video Meta launches parent alerts in new teen safety measures - ABC News - Breaking News, Latest News and Videos",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE93cThfcVBjdE14YjFmZ0s4cEN0elEtZ1JaVl9uVUpBNHJGY0Jqb2E1WHRlcm5qV09BTzFPbVJFYkNQZjcyR3p3YnBENEI?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "launches",
+          "source_name": "Mshale",
+          "tier": "other",
+          "title": "Meta Launches Paid Facebook, Instagram & WhatsApp Plans | Vantage On Firstpost | 4K Dave Ramsey (oZxZYgwXC2) - Mshale",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9BWlFpcTNtVG14aGZwMjlGUXVhNUhGbEpua2RKSktKYUhaRHpBWlV1dmV3YXVUdDJXTWFYN3J3S1JPRWItTW8zRE9lMk1wU3NuSnU2clk0NXVRWFloUE41Yw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "launches",
+          "source_name": "NewsBytes",
+          "tier": "other",
+          "title": "Meta launches parental alerts for teens' AI suicide self-harm chats - NewsBytes",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOOEFzbWZ0bk9pV0NCS1RzYjNYMHJjRGpFUzdGLV9JRVZ1alRaQW5BMDlDem5tUGotd3A4ZGE1WFg5R051UnkyVE9lMUVTRGFmTDRrcWFXNnB3QV9DOVVVWjZwcTkwZy1MYUNvblRBR1RCMll5d0luRG5EZUdGUm1jRi1kWU96U3djNWlkYUxrUEREMHg2YUt3VDZsYVVmUDFsc3V5bWd5bGhIS282cUlva21ITQ?oc=5"
         }
       ]
     },
     "META::unveils": {
-      "brief_path": null,
+      "brief_path": "data/briefs/2026-07-15_META_unveils.md",
       "confirmed_at": "2026-07-15",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-15",
       "keyword": "unveils",
       "status": "confirmed",
       "ticker": "META",
@@ -615,11 +749,11 @@
     },
     "MU::announces": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-13",
       "generated_at": null,
       "keyword": "announces",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "MU",
       "trigger_events": [
         {
@@ -629,6 +763,33 @@
           "tier": "other",
           "title": "Micron Announces Up to $3 Billion Strategic Investment to Strengthen U.S. Semiconductor Ecosystem - Investing News Network",
           "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQQnpNalpycGlqS2tIX09IdTZxSFN3Sng0aVltb042MG93cEM0VnIyQk1KdnBzOE9CSUZEOC1ObmhxZFRBTUN6TEJPNThTS0h5czUxNUlqcmpMUXo0U3hiZmxaRzZxUk1zbGJvZzFaZTlzTVoweWZlTnd5UU1fUDVmQzJKWGRXZ0JYY1A0VUhLMEhjdm5ldUprbHVwUTctZXpHOUpua2N4XzZESldmOHZNQUxSbDJvR3N4V2cwWl9WSQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "announces",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Micron Announces Participation in Investor Event - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOUDMxT1YtNTBkM3FnRDJoVVRTUkljRWZ1Z2g5UjhJWi15ZGtrMGhVU3JqU29kbXRrY2tBQUtOZEVlS3YtNEtDZXA5eVMySG1GR3VFeEowVUtqeF8xLXFWZmNFTUNaTVNwcERORThCWmczMC1HSXI2WlE5LUJIMzZvSGcwc3hiVDl6ZURVV0hlRWxKRjdONGNkc0dhSHVkZFhZb3FRZHpncEE1Zw?oc=5"
+        }
+      ]
+    },
+    "NBIS::unveils": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-16",
+      "generated_at": null,
+      "keyword": "unveils",
+      "status": "pending",
+      "ticker": "NBIS",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "unveils",
+          "source_name": "Yahoo! Finance Canada",
+          "tier": "other",
+          "title": "Nebius Unveils an Asset-Light AI Cloud Model: Key to Faster Growth? - Yahoo! Finance Canada",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNT016dFY1d0p2LW13c2Nmb2pGOVk2UWZtaHBSOS1ESGl3Mk5KRE0wTjJ0cmtQeEVhRlZWWjU2cTlqSS1rNXFESnRtSkhoakNPd2J3MkRCZXI4c0FLeEhqa1E5cS1DRGktaEdwek9MaXJhb25SbHpzOTR5Z21fcWUzWnhseHE?oc=5"
         }
       ]
     },
@@ -697,13 +858,32 @@
         }
       ]
     },
-    "NVDA::launches": {
+    "NVDA::introduces": {
       "brief_path": null,
       "confirmed_at": null,
-      "first_seen": "2026-07-13",
+      "first_seen": "2026-07-16",
       "generated_at": null,
-      "keyword": "launches",
+      "keyword": "introduces",
       "status": "pending",
+      "ticker": "NVDA",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "introduces",
+          "source_name": "NVIDIA Blog",
+          "tier": "other",
+          "title": "NVIDIA Introduces New Jetson Thor Computers to Advance Mainstream Robotics and Edge AI - NVIDIA Blog",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1NRjVKNXJiNnAwN25VRXlZaGF4OEVRREJsWEhiU2RNRlNITGhHTko5WEJvZ2JaN0VHVl9sOVdnSHo0aTNnNWk4dVlxeEo1MkdIS1pEaXpGbkU4QXFISzU1LS1vT2NxMEtwQnRPcWRNTUVSeVU?oc=5"
+        }
+      ]
+    },
+    "NVDA::launches": {
+      "brief_path": "data/briefs/2026-07-16_NVDA_launches.md",
+      "confirmed_at": "2026-07-16",
+      "first_seen": "2026-07-13",
+      "generated_at": "2026-07-16",
+      "keyword": "launches",
+      "status": "confirmed",
       "ticker": "NVDA",
       "trigger_events": [
         {
@@ -713,16 +893,24 @@
           "tier": "other",
           "title": "Nvidia Supplier Unimicron Launches $1.4 Billion Share Sale to Ride AI Wave - finance.biggo.com",
           "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1nc05ZNy1RNXhnYUtpMzg2MWQxZk81eGEyREctYlJWRFo5NFFVbmdSR0JMV0tFeXlXWjl3eVd3RktJckwwWURBUHlWR1hEZmN2X2VRbmxlcWQ3Z3dNSXVMd09Lc3U1Qzk2MU9EeGN5TkJQZmstaFE?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "launches",
+          "source_name": "marketscreener.com",
+          "tier": "other",
+          "title": "Nvidia Launches Jetson T3000, T2000 Edge AI Modules - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRkU4R3lra3NoV0J4Y051RnVpaUMwUmtERDVQVnNBLUNoVld1UDZHVnBSenVvMzhfM2VXSktsM04zNFJZSkoteC1NVkQzQ1lEbjZ2dkQ3LTVsaDF5cnE1dXloMU1EeGJLSFFRNlZyMmhFSTJVMFZKaTNpRWRpMldxSnFNeHBYeWplWmhkbmZYVlhHTzlRSDIwbTVIbU5hcWpOTEpWVUxn?oc=5"
         }
       ]
     },
     "NVDA::unveils": {
-      "brief_path": null,
-      "confirmed_at": null,
+      "brief_path": "data/briefs/2026-07-16_NVDA_unveils.md",
+      "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-16",
       "keyword": "unveils",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "NVDA",
       "trigger_events": [
         {
@@ -732,6 +920,30 @@
           "tier": "other",
           "title": "NVIDIA-Backed Mindbeam AI Unveils AI-Based Research For Better Pain Medications - Sahm",
           "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOb0VKNFI5LVR1bks5bDZhVFN4YXNtWFpVODhYMzU0NXV2WmJCc0tMdjYzczlOUXFIS1loaDFMRjQyTUExTG4wc2tDOFZzQnVOZWFWb3JlUWplNlhEdFJNSlMyakpxMEVqRi1fM1Y3WGd1a05xRlhQLWU0VVlfN0lwMmRpcGowWHV6QkRlQ2lNeHVfN2FWbU55UVFvTzlaY29sVkljMlhNUFROVmNJYzhfNGlvaG5UeXhNTVh2S3Rpc2ZlUDNhRjhRT1RhQQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "unveils",
+          "source_name": "finance.biggo.com",
+          "tier": "other",
+          "title": "NVIDIA Unveils New Robotics Modules Targeting Lower Power, Memory, and Cost - finance.biggo.com",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8zOTNyWHhyRU9oTEdDX1ItUWFURzBueHR2ZUQxc2hCOE9qZDJKVjBFVDRDX29MckJDRndPcTBKVFN0MTlZUUp5NWxwY3dydVlsaktVQjZfaTBXOFRhNlpQM2tyWDhPRlZvcTlIVVNaT3hqTHFMLUE?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "unveils",
+          "source_name": "finance.biggo.com",
+          "tier": "other",
+          "title": "NVIDIA Unveils New Edge AI Products Jetson T3000/T2000, Accelerates Robotics Strategy in Japan - finance.biggo.com",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5ONW1zcFFRUEZ2UXdFeVkyOVJlVVhzWF9yN0MxX0pSeTBWU0Q0VGIzYVJMcmpoQUhoQnp1Ynd1UGExX3B0akN2SWY2OEhBYVVncnRlWGNYZDl1SktoTmtzbFdCOW1KY2xmMWVmYXBYSWZjbzFGbEE?oc=5"
+        },
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "unveils",
+          "source_name": "MoneyCheck",
+          "tier": "other",
+          "title": "Nvidia (NVDA) Stock Gains as Jensen Huang Unveils Major Japan Robotics and AI Healthcare Partnerships - MoneyCheck",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQSXJxekxSS2MxWkM0NXdPVWhva3djQlRJNWhvdDRfNjR2ZUxRc1hOdzlIQkI0VDlEbGV3R3g5TnJQR3NZTXZpbUtyV3J5TVAxVlotbkJhal9VaXVPd3hIUVJfWFl3UE9JUnRyLVk5TXVYUzVNbDJ4NDZBdEpOVk16QjctVnVlMTJ5ZVlFbUlpdjRZU1RmZHVtVkx0R0hJOHA0U2JqcVhBazR0Y1U2dnl2S0hiaFFMMjNaSzFaV2xYMDc?oc=5"
         }
       ]
     },
@@ -789,6 +1001,25 @@
           "tier": "other",
           "title": "Warner Bros. Discovery Announces Agentic AI-Powered Advertising Technology Built on AWS, its Preferred Cloud Provider - WebWire",
           "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5qZGtiREhWMl9hNDF4MDh3MmUxTmVPMFN1a21NNlZ0c1RjRkNpekNrcFlfOVhmclMzNk1zdHJOaTNieGNodFJYZlRfamVDMkQwOEUxR1FwT2xjZ3hHcUVaYw?oc=5"
+        }
+      ]
+    },
+    "ZS::announces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-16",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "pending",
+      "ticker": "ZS",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-16",
+          "keyword": "announces",
+          "source_name": "marketscreener.com",
+          "tier": "other",
+          "title": "Zscaler Announces Appointment of Nikhil Mehrotra as Senior Director, Marketing - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOb2VNQTZQNURuQ1AxdFJaRE13R2N4SDJvTVJ6YTRRRVhyRUxJUUxQc2xPMWZmSUxVbUpRWnJzWWZTamNCeGl1RmpGeHBETFJnZGQ1eDA0aFlyVFFac2dLbE00VTlienBEQU1vMHRrcEhYT3NHdmFseWJuOVFLZU9heF9Ua1NTTkV4TjRsa3BCSUxNdmZyT2RyR0pMQ3l4MENNN3hCN1ZoUldzWF93OUxSNncwM3ZQNk5EbjNXYkZjRFdlSF9jYmd3SjRn?oc=5"
         }
       ]
     }
