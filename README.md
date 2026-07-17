@@ -50,6 +50,10 @@ get a local implementation proposal drafted for review; low-value requests are a
 with a standard reply; general questions get a drafted answer staged for approval before
 posting. Nothing is posted to GitHub or acted on without an explicit review step.
 
+## **New component (WIP):** Self-Service NL Analytics
+
+An app where a non-technical user types a plain-English question about NASDAQ-100 product launches, and the system checks whether it has answered something similar before, translates the question into a governed metric query (not raw SQL), lets MetricFlow compile and run guaranteed-correct SQL, and returns an answer plus an auto-chosen chart — while always showing its work.
+
 ## A note on the content
 
 This is not investment advice. The stock data shown is historical/current
