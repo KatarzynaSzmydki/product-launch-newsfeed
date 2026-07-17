@@ -40,6 +40,10 @@ semantic_models:
         description: Launches corroborated by 2+ distinct sources.
         agg: sum
         expr: "case when num_sources >= 2 then 1 else 0 end"
+      - name: companies_with_launches
+        description: Distinct companies with confirmed launches.
+        agg: count_distinct
+        expr: company_id
 
 metrics:
   - name: launch_count
@@ -67,3 +71,9 @@ metrics:
     type_params:
       numerator: multi_sourced_launches
       denominator: launch_count
+  - name: companies_with_launches
+    description: Distinct companies with confirmed launches.
+    label: Companies with launches
+    type: simple
+    type_params:
+      measure: companies_with_launches
