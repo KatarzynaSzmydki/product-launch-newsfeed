@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: metricflow_time_spine
+    description: >
+      Daily date spine backing MetricFlow's time handling. Not a business mart —
+      infrastructure for the semantic layer.
+    time_spine:
+      standard_granularity_column: date_day
+    columns:
+      - name: date_day
+        description: One row per calendar day.
+        granularity: day
+        data_tests: [unique, not_null]

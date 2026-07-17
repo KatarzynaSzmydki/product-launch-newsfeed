@@ -1,0 +1,69 @@
+version: 2
+
+semantic_models:
+  - name: launches
+    description: One row per confirmed product launch. Joins to companies via the company entity.
+    model: ref('fct_launches')
+    defaults:
+      agg_time_dimension: launch_date
+    entities:
+      - name: launch
+        type: primary
+        expr: launch_id
+      - name: company
+        type: foreign
+        expr: company_id
+    dimensions:
+      - name: launch_date
+        type: time
+        type_params:
+          time_granularity: day
+      - name: keyword
+        description: Matched launch verb (unveils / launches / ...).
+        type: categorical
+      - name: category
+        description: Synthesized, sector-correlated product category.
+        type: categorical
+      - name: source_type
+        description: "'wire' if a tier-1 wire corroborated, else 'multi_outlet'."
+        type: categorical
+    measures:
+      - name: launch_count
+        description: Distinct confirmed launches.
+        agg: count_distinct
+        expr: launch_id
+      - name: avg_confidence
+        description: Mean heuristic confidence score in [0,1].
+        agg: average
+        expr: confidence_score
+      - name: multi_sourced_launches
+        description: Launches corroborated by 2+ distinct sources.
+        agg: sum
+        expr: "case when num_sources >= 2 then 1 else 0 end"
+
+metrics:
+  - name: launch_count
+    description: Number of confirmed product launches.
+    label: Launch count
+    type: simple
+    type_params:
+      measure: launch_count
+  - name: multi_sourced_launches
+    description: Launches corroborated by two or more distinct sources.
+    label: Multi-sourced launches
+    type: simple
+    type_params:
+      measure: multi_sourced_launches
+  - name: avg_confidence
+    description: Average confidence score across launches.
+    label: Average confidence
+    type: simple
+    type_params:
+      measure: avg_confidence
+  - name: confirmation_rate
+    description: Share of launches corroborated by two or more sources.
+    label: Confirmation rate
+    type: ratio
+    type_params:
+      numerator: multi_sourced_launches
+      denominator: launch_count

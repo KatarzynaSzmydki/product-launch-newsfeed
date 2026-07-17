@@ -1,0 +1,50 @@
+version: 2
+
+semantic_models:
+  - name: stock_snapshots
+    description: One stock snapshot per launch, captured at brief time. Joins to companies and launches.
+    model: ref('fct_stock_snapshots')
+    defaults:
+      agg_time_dimension: snapshot_date
+    entities:
+      - name: stock_snapshot
+        type: primary
+        expr: snapshot_id
+      - name: launch
+        type: foreign
+        expr: launch_id
+      - name: company
+        type: foreign
+        expr: company_id
+    dimensions:
+      - name: snapshot_date
+        type: time
+        type_params:
+          time_granularity: day
+    measures:
+      - name: avg_launch_day_move
+        description: Mean synthesized 1-day % price move on launch days.
+        agg: average
+        expr: change_1d
+      - name: avg_1y_change
+        description: Mean trailing 1-year % change.
+        agg: average
+        expr: change_1y
+      - name: snapshot_count
+        description: Distinct stock snapshots.
+        agg: count_distinct
+        expr: snapshot_id
+
+metrics:
+  - name: avg_launch_day_move
+    description: Average 1-day stock price change on launch days.
+    label: Avg launch-day move (%)
+    type: simple
+    type_params:
+      measure: avg_launch_day_move
+  - name: avg_1y_change
+    description: Average trailing 1-year stock price change.
+    label: Avg 1-year change (%)
+    type: simple
+    type_params:
+      measure: avg_1y_change

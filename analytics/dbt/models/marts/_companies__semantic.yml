@@ -1,0 +1,33 @@
+version: 2
+
+# Dimension-only semantic model: no measures of its own, it supplies company
+# attributes (sector, industry, ...) to launch and stock metrics via the
+# shared `company` entity. No agg_time_dimension because it has no time column.
+semantic_models:
+  - name: companies
+    description: NASDAQ-100 company dimension. Joined into fact metrics via the company entity.
+    model: ref('dim_companies')
+    entities:
+      - name: company
+        type: primary
+        expr: company_id
+    dimensions:
+      - name: ticker
+        description: Stock ticker (natural key), groupable for per-company answers.
+        type: categorical
+      - name: company_name
+        description: Company name.
+        type: categorical
+        expr: name
+      - name: sector
+        description: Curated GICS-style sector.
+        type: categorical
+      - name: industry
+        description: Curated industry.
+        type: categorical
+      - name: hq_country
+        description: Curated headquarters country.
+        type: categorical
+      - name: market_cap_bucket
+        description: Size bucket — mega / large / mid.
+        type: categorical

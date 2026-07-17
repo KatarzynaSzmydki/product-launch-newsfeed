@@ -10,14 +10,42 @@ Full design: [`PROJECT_PLAN.md`](./PROJECT_PLAN.md).
 
 ## Status
 
+**Phase 3 — MetricFlow semantic layer.** On top of the Phase 2 marts there's now
+a **dbt + MetricFlow** semantic layer: `semantic_models` over each mart declare
+entities, dimensions and measures, and `metrics` (`launch_count`,
+`confirmation_rate`, `avg_launch_day_move`, `avg_confidence`, `source_count`, …)
+sit on top. `mf` compiles a metric query into guaranteed-correct DuckDB SQL,
+joining `companies` into the fact metrics via the shared `company` entity. A
+catalog loader (`analytics/nl2metric/catalog.py`) reads the compiled semantic
+manifest into a compact metric/dimension block for the Phase 4 prompt. The four
+launch/company/stock canonical questions each answer with a hand-written `mf
+query`; the feedback question stays deferred while `feedback` is empty (see
+Phase 1). This needs `dbt-metricflow` (installed via `requirements.txt`), which
+pins **dbt-core < 1.12**. The NL→spec engine lands in Phase 4.
+
+### Semantic layer
+
+Regenerate the raw data and build (as in Phase 2), then query metrics. `mf` runs
+from the dbt project dir and resolves the DuckDB `path` relative to its own cwd,
+so point it at the file with an absolute `DBT_DUCKDB_PATH`:
+
+```
+export DBT_DUCKDB_PATH="$(pwd)/analytics/data/analytics.duckdb"   # absolute
+dbt parse --project-dir analytics/dbt --profiles-dir analytics/dbt   # (re)build the semantic manifest
+cd analytics/dbt && DBT_PROFILES_DIR=. mf list metrics
+DBT_PROFILES_DIR=. mf query --metrics launch_count --group-by company__sector,metric_time__quarter
+```
+
+Re-run `dbt parse` after editing any semantic-model YAML — `mf` reads the cached
+`target/semantic_manifest.json`, it does not re-parse on its own. Print the
+prompt catalog with `python -m analytics.nl2metric.catalog`.
+
 **Phase 2 — dbt project + models.** On top of the Phase 1 DuckDB star schema
-(below), there's now a **dbt-duckdb** project (`analytics/dbt/`) over the same
+(below), there's a **dbt-duckdb** project (`analytics/dbt/`) over the same
 file: `staging` views clean each raw table, `marts` build the star schema
 (`dim_companies`, `fct_launches`, `fct_stock_snapshots`, `br_launch_sources`),
 and dbt `unique`/`not_null`/`relationships` tests plus column descriptions
-document and guard it. `dbt build` runs green (9 models, 20 tests). The
-MetricFlow semantic layer (`dbt-metricflow` is already installed) and the NL
-query flow land in Phases 3+.
+document and guard it. `dbt build` runs green.
 
 **Phase 1 — Dataset & DuckDB.** On top of the Phase 0 scaffold (a
 provider-agnostic `LLMClient` and a Streamlit smoke-test page), there's a
