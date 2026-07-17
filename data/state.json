@@ -65,6 +65,25 @@
         }
       ]
     },
+    "AMD::launches": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-17",
+      "generated_at": null,
+      "keyword": "launches",
+      "status": "pending",
+      "ticker": "AMD",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "launches",
+          "source_name": "finance.biggo.com",
+          "tier": "other",
+          "title": "AMD Launches $329 Ryzen 7 7700X3D, the Most Power-Efficient 3D V-Cache Chip Yet - finance.biggo.com",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBwQnd5cFNvTmEyOHdFdGZzOTR3U1ZwR2xHbDljZXhHd0l3aGZtX2l1ZGppY09MdndMWjl4ZGx2dzFhX3EzbHZFMFdDa3E2MXM1LUlCMmI4MVZkMW0wdnhoQWYxNlhtZXJ2dndCa0tpWWtzLTV2RWc?oc=5"
+        }
+      ]
+    },
     "ASML::announces": {
       "brief_path": null,
       "confirmed_at": null,
@@ -81,6 +100,25 @@
           "tier": "other",
           "title": "ASML Announces 30% Capacity Expansion Amid Surging AI Chip Demand - Azat TV",
           "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5qTE1XejFNVDFDRUdMVklPbHhBT3Z4N29NUEg2RFBYbUFudXZGNUxzd1RwZ3JER3RjYkROU2ZIOUFVMFlIMmptSWdSTHhVclQ4dmRFbHJOVW40Y2lSYTgzWm5vS0FMRmUt?oc=5"
+        }
+      ]
+    },
+    "ASML::unveils": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-17",
+      "generated_at": null,
+      "keyword": "unveils",
+      "status": "pending",
+      "ticker": "ASML",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "unveils",
+          "source_name": "Sahm",
+          "tier": "other",
+          "title": "ASML Unveils Bold Capacity Expansion As AI Customers Keep Spending - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOTERSRW9hQ2RnUFg3cHZWWWNHQ1pLZ0xnU3RmeU5jeTI4eEwxRjFQTUpENmN1TXFJV2NGX25MYkdKTkdseEo5aWgxdGhEZW1PWDRpanpXZkxGUVJJNnJpbVgzTjhQdFhneDJaMlR3eWYxa2l3ZndNcEQwZXNfR1VCTl96N214VmpxeXhERmwxUW5vY1NKY3ppdXNLcmxHNnZmSXBYVUthNVRCUkJ6cVZySDhEUC0yTTZTbFE?oc=5"
         }
       ]
     },
@@ -108,6 +146,14 @@
           "tier": "other",
           "title": "Cadence Introduces AuraStack AI Super Agent, the World\u2019s First Agentic AI Platform for PCB and Advanced Packaging - Business Wire",
           "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNcTIwY0VtQWhpLTNteVNKVFpPd2thdmZxbmk3TmNNSGg0VUZ0OU1DY01VYl9GbzdCOUhiRXZ1ekVOcnA4eEp2c1kyNk9UVDZhUXBTNTAtRkV0aXpWUTBGcXI1N3pnS25RdkQ4cFpZMVB2TmREQ2Fta084VEs3Q1VtdXktbXRjUUQyVEhPVDU3TUZHQzBObmR4cVZ2SE83NGFzTGx2ZFBEMFRiQ2VILVQtWllxa3RNNU9JOUQxUTJwUndtdVI4emtUU3hRZVVwZ2M2MXIzY3Awamg4cXM5M2hwa2dvXzNUdkxzcV9qVG5sNENnTWRKdUcxYUw0NWU?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "introduces",
+          "source_name": "marketscreener.com",
+          "tier": "other",
+          "title": "Cadence Introduces AuraStack AI Super Agent, the World's First Agentic AI Platform for PCB and Advanced Packaging - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQU2o1cUF4di11dHlOa1hXZHBCdjdOSmZOV2p0SzhDQmhWUUQ0TzVmdjlrOTl3MzNZOVlwS21xNGJ6THJIcU1HTUMtaXZsZVczYVo1WlhVNUZNZnhiVnVOYWpSYnBSY2pYZ0tNbFZJbWU5eWpVTTB6T2dsVlVCSXpSOWZERElZWnFHNVJxYlFITWJBa0Zic3J2NW15YUZpNjBvYmdNdHBYNGo5TnZKa2p5SkNkSEZQUFpZVldOeEE3dmwwdkZheTRKcDBLdExkTmpQOElKWk1JOW9NdlEtamdpSXRoWkI0Y1E?oc=5"
         }
       ]
     },
@@ -154,6 +200,25 @@
           "tier": "other",
           "title": "EA SPORTS\u2122 College Football 27 Launches Worldwide, Bringing New Era of College Football to Life - Caledonian Record",
           "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPNVE1UzdTdm10Ni10VXFTLXJEXy1jLVBWM1JiM1czdFhYbTA1d3E4R0VrNWxvdWtvb3FONnFCVXVOV2R5OVl0emJ6VU16Z09lSnNuZGpMT2lHcU01QjkzakpUYndVbmhZNFFTcDlvVUpBVjhhRnp5clF0T19QV3BEcVRmTkd1bkdNQ1p1dXZ3V2J3YmJXWWJfQThPMGtWbGoxZkVoVTJnc2ljWDMxdEFRODl3R3JrTjRsWElPRndkNzZ3TjJZSERCUVgxd3pvUU9oNXB2eWtSUTZCb0g5TVRYbk9XZnV3dGUxTUZzUFFJNVdnUzZ2YWQ3OUpENkxXR29LRzdORUVpSQ?oc=5"
+        }
+      ]
+    },
+    "FAST::announces": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-17",
+      "generated_at": null,
+      "keyword": "announces",
+      "status": "pending",
+      "ticker": "FAST",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "announces",
+          "source_name": "marketscreener.com",
+          "tier": "other",
+          "title": "Fastenal Company Announces Director Changes, Effective July 16, 2026 - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNkZFY29xVTZqOVlub213aXNoSDhrSWM1M3FLUWFSelU2NExpT1p0ZzdESy05Z0Z3Ni1DUVNOekZYWGhHbFpZSE5YNEVPR1pCc3VuZEdXbGZlSUh3UlNCTUxFcklEcHFYM05wLWpScGpBYTR1NlVOXy12S01qUHpJRklWVThlNHoydE5GblVfNjdnV1c0dUxFSmNLTS11ZHVFdkp6MWhOYnBjcG1MSlY5VVpxclVLVk1LWlYw?oc=5"
         }
       ]
     },
@@ -251,6 +316,22 @@
           "tier": "other",
           "title": "Google Images introduces Pinterest-style UI - Social Media Today",
           "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNSXBBSnJkQTNyeVFHaVEwMGxNdG9KVFlKRXlzX1RWNEt6X3FvS3gtT3FFVEx4a3FvNFFhOExhZktkMzlpY2RLdmVtNnNCbXJmc0ZHQmFWaXdRYkNDSzlQcm5DQW1qX3liUnZvS2JkVy1xaTdkN0x6b2VpQ2t4M2pFLWV6OWNxYnBzRGpTb2dDc3lRM0U?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "introduces",
+          "source_name": "Cybersecurity Insiders",
+          "tier": "other",
+          "title": "Google introduces \u201cAgentic Defense\u201d following $32 Billion Wiz Acquisition - Cybersecurity Insiders",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUmZSaGwzdjFRbUpJRVB3bHhUMlRsSGhrR3FHZVhLVG5YMTBxWHI1bnhDaTlhRlpxWkx4TTBTMmVuVkQ0a1NYV2dubGhkOTF4QkJGTWE5bnBtYjBaN3RuYWhsckRsWUczak4tRUJjS3RlNTBGc1k3bDV1STFCNGxLTnVaYy1LUVowY0JGUnMwb3dJWFpVUU0yeDZxRTJ6ZEQzcHd6TWVWSGtybC1DY0V3?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "introduces",
+          "source_name": "VOI.id",
+          "tier": "other",
+          "title": "Gemini is More Human-Like, Google Introduces AI Personality Settings - VOI.id",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9Ya1B0S25NbkkyV3ZWWno2bC1SN21PUFVqMWFUUG82TlMxMzBUS0NXYWx5TXJMWi1CLTJCdDFUQXBzTUZ4REl5V2k3Z9IBQkFVX3lxTE1MV3Q1U2F3OVUyM1p2M01NbW9ZdHQ5V0RfV1RDTHpzdTQta2V0MEt4UnkwemlVaS1LRVZHbTZRSW55QQ?oc=5"
         }
       ]
     },
@@ -302,6 +383,14 @@
           "tier": "other",
           "title": "Google Launches Gemini Omni, Personal Avatars Updates For Google Vids - TradingView",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPRlBjXzlyWWRaRVVrdk5pNDNGSWNJVW1Pb2gtNldoTk1rNEdOYW9OSGlBZmU1NlJRZUVxVlRkWHNLeXl6eUhoZXhIRUpFanEtZE9DN1p4Um1VVllxLU1mazBsUWJCLUJCOUZlUWNGV0dqTlVkNzhwaEtSZkpRY0JJQldqQmpmRG5oY244U3V3QWhPNHgydHh2TGxOU2FRR1NSRjFzb0RlRkJUUUx3VjAyV2N1eEJiazRPd0FyQ1BFb1hjM1pnLVVoRUxDak5sTmplTWI3Qw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "launches",
+          "source_name": "Root-Nation.com",
+          "tier": "other",
+          "title": "A Blow to Adobe and Canva: Google Launches Pics, a Next-Generation Image Generator - Root-Nation.com",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB2MVBvMHVvWEIyY05wS1RQLXdJNWJWeEFzZlVHUVJEeFpPNmhSY2hUNHdnQ3J1VEd1ZVQ1Qk9PclFFRU9POGtNRWdoREkzelloYTJaLU95SWpucjhJeUowWjRJY0RCTTBFSHVJOWYtR0R5SWhtTjhTTFJ3?oc=5"
         }
       ]
     },
@@ -372,6 +461,22 @@
           "tier": "other",
           "title": "Google Unveils Pixel 11 Teaser Ahead Of Launch, Pixel Glow Feature Official - NDTV Profit",
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQZzdyUVZ2M05BYWxwM2RXQ1I2REh4cDBNTmRQWTN2Vk1XZXZSNE81VUdMWkZsY3hSVVFyUndCUUtPY2M1UzRUWER3YUEwMVM3UUM4N2p0bGFydWJveDBLMUptLWpwM0FKaTBrLVY0XzV4ckVnOFJLUUhtQnN3UDFRWmRscEtIc0RvUmM1T2VPTXo2aGpiTDFRRFVqdVl2TUY5aTlFWmlOMVNTVjl0VFZOZFBoNjU3UXpiN0l4a1J30gHGAUFVX3lxTE1GVjZERzVTajg1Q2d2MVNCMFFTdkQxcDNJZUVQcGk5M2k3ODM5ZGFsUzNEZVB0UTlFWEFjMUVzR2Z5VkpRdHlxTDlvbXNSeG1jSGRjYm1DNFk4cEhxbzRrRTN4QWYteExXYmRSR2E2UlZPRXA5eFROMldocjZXZ1VpZWpwa3pfN2doVDV0bzVRZU9PRFl6emRNRy1YbWRqYy02d0VuaDlQZWUzTWhUSUdwMC0yVW5VaU1JT3FELWZGNGZXbkRNZw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "unveils",
+          "source_name": "Dark Reading",
+          "tier": "other",
+          "title": "Google Unveils Agentic Defense After Wiz Deal - Dark Reading",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcUh2akp1OEhaU2pYcTJ1My1UakFLX3JQWlJOdUhadDhqTXBVZVAtWVNBbktGQVptRDcyNzJOVy1FU0xwUk0xSzVXYnd1LUNuQXk1dEhvYTlsRmlnQVVnY2tSV0htaVRWU1Bkb1lzQWlnVURJQUxIWV9EVDhieVlKZlZMMWtDUENYT0ZvdFhWT3BtOWt6UEFZMnl1LUtudw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "unveils",
+          "source_name": "Roanoke Times",
+          "tier": "other",
+          "title": "Google unveils plans for 3 data center campuses in Chesterfield as citizens voice concerns - Roanoke Times",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOaXpVT192akIxWW1NY1cxRzlELWRfZVFPYVhTTGFtUGVhYXVMb3RXeVVxci1KTUFwREFBZl9OQ082ZTRDd2kyTHkwOVIyai1OSHNxSnVuT2FWYmVIRF81Y2tqNkxpREhRYmNueU44WHZwbE1zRWhSQ1dOMGJFbjQxa3d1bWl4d1UwOHFaTk5uck1uV2VPc0Y5U25TTDRhZ2M?oc=5"
         }
       ]
     },
@@ -433,10 +538,10 @@
       ]
     },
     "META::announces": {
-      "brief_path": null,
+      "brief_path": "data/briefs/2026-07-16_META_announces.md",
       "confirmed_at": "2026-07-16",
       "first_seen": "2026-07-15",
-      "generated_at": null,
+      "generated_at": "2026-07-16",
       "keyword": "announces",
       "status": "confirmed",
       "ticker": "META",
@@ -456,6 +561,22 @@
           "tier": "other",
           "title": "Meta Announces First AI Data Center, Prometheus, Coming Online in 2026 With More Superclusters Planned - gHacks",
           "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNT1RkYWtQVGhBU3JvUjVpM3IwQldYdGhtQVB2dmNRMkhXYldJc0x0WWg3OVFnTjVFRjFHMHpfMjhtWUpzTXFBTUxuWkMyN1pURm9RVlNfNlNpb3RsLW95a1pkU0I0bGZNN1I2ZXNGWFFidENZaU5ZQ2hiUnQ2a0ZjODdGVUxPZVpvZTRncEtVWHlpdkRSMnJTajVwQTE2Wk9RTnRxbzVIbUducXpvaEJfdVNiN1NRUkhlQ0JnbnF6ZVA4OU1JOTFtWXFqaHpjS2ZL?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "announces",
+          "source_name": "WSYX",
+          "tier": "other",
+          "title": "Meta announces new alert system for parents if teens\u2019 AI chats suggest self-harm, suicide - WSYX",
+          "url": "https://news.google.com/rss/articles/CBMiygJBVV95cUxQMTMzdFIyVklWSF9ZYWVCVmVEdUpTaEpkNndZX09hbkhfdUNGYTN2TUhlbGJDZS1FbTVmZnJrM3FVVUhfcVpkUW90V2EzSy0tSFY2NGxjMVlWVlFzVEtERzdZQ0F3M1hEUlBJZkJvd3FZMklKbEZxdmxxMl9DY3h6aTVDV2hpME5uV05oWXZ3Nms2QWVPLVptVGRVQVNLSjJBUkpjb1J4a2RMckR0MGxTNlFvZktZWDlUUGhFVFk2ZjBTQm9oMFotbWx2Q2s0RHJWNS10bTV2ZTFXQ2RjRmdVY3VhZWhyU0F1SUhsbFM4ZHlDd01oYXBhNEt6MEhIckdudWQxZGY2cHU1YWstNWotZEJISXphU0FwWHpjTzdPazRFTUNZN3pObURlR0lUaTdKY2tEM1RleDRRU1RWMmNjeDhLU280ZThtd3c?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "announces",
+          "source_name": "myfox28columbus.com",
+          "tier": "other",
+          "title": "Meta announces new alert system for parents if teens\u2019 AI chats suggest self-harm, suicide - myfox28columbus.com",
+          "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxPU3d1WEI3NEsyY3JacktyUXMwbEJrSkVSZnFMd19GWER2MnNIcXJLZXZ1Rmhub01VV09LV1FlZUx4c01RT1VmZzRaaG0tOGZiTXU5MU5DNHB0THlGT2YwUHlod21adHdiaDRkclpBYjhqNHp1TVozOGhzSlpSMkd0SzJCNEVnOTN0T2pabFNKWXZvaEVkVFFCbFFBYk96MDlSSTNGRXppNTdGcm5QZURuZllaX1dfNTJvRm1XZ1BuRDZCVk5NY1Y5aGIzM1V3aXR5SkQ1aVY1YzRHc1JqSy1HbzlSMVQzc3JFMmMya2JUZEF0ZTB5NmJEb05iTEN3WlZJeFhqUE5YQVJtVmhuYzdpWmdKaXRyRENZWGdWMmVwUW9OZ0lFODdZUUx1UkJtWU1rbTBaZnlrWU1ybjJtR2NmNGZVd2dpVHA3Y05CMWp4UUdtSmdSRUE?oc=5"
         }
       ]
     },
@@ -483,6 +604,22 @@
           "tier": "other",
           "title": "Meta introduces new protections for teen AI interactions - The Irish Times",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZUlJSkMyN1FqTlJUWHBFUDBJS2JfM3AtR3BPQmVHMTl4aDFEdlFLazN2N216WFNHSnJNVXEtT0dCakJhM2VSRDBPb0xBUWlSUmwwR202bEV6c1B3NUNremZNOEVZcXJJQkY1ZWRRUEZOSDF4Zm5nLVRmZWJlVHdPWkoxeHZ1cm5xUExraXo5ZU5KYmFqMVYxdWhKRTdFM2FpdVBLTWxmVQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "introduces",
+          "source_name": "Yahoo News Canada",
+          "tier": "other",
+          "title": "Business Matters: Meta introduces new safety feature in Canada for young users - Yahoo News Canada",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOR1lEbHI0Yy1JNnhNZGMwYWhRa1EybXFqcDBhNHg0dDMzdGstTEpVS1pvLXNERUhqeF9UZEtuS2NyX0VmVGxKMkpQdmZOOFFQb2cxV2JwRndvYldGRXZLSHV0WlcyNmRLblRSa2VaZ3h6UE9pdHAySmVrZXptX1hZbmh3NndjZVE?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "introduces",
+          "source_name": "Gadgets 360",
+          "tier": "other",
+          "title": "Meta Introduces New Parental Alerts for Teen Suicide and Self-Harm Conversations - Gadgets 360",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWGlUMEFrY1RIMlJ6N1BkemhycF9vdjRmSkFPdjQ4elIxYUlMaWQtblNsbll2dkNTWExWUmljRmNtenJTV203UDZyQzZZbUJpWm9ndHhIS29Cb1dIeGhVeDE2eGpWRjN4ZWxjUEh2NEJGcUlUWVJBV2tEU1pXRUVrcjFUSUpfOGlrOEp3QVNpRlFmYlk2eEhIOWF2TERKd19KaVhmZDRsV3B0LUJQMzFEcEpmONIBuAFBVV95cUxPMWxQSnh3RmNwbHJHODRsWWlTQzhFaG1YdWdrM19JOWZxVEE4ZU84NFV3Skh4Rk44Zy11eXc3QWROUmZDY2ttNFgxeERSWmlaby1HdUhOdUZwZ3RxMzJZSGFoRlR4amYydGdrQ0twOFE1d3dBenF1TjJMRjJobG1PenA1bkhMNDhsU0xYdk5NczBkejI4RlJ2dmI4R0tNTnlIQnFoMWFrNEJURzF3Z3Y3MHdHVE0xcDZP?oc=5"
         }
       ]
     },
@@ -574,6 +711,14 @@
           "tier": "other",
           "title": "Meta launches parental alerts for teens' AI suicide self-harm chats - NewsBytes",
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOOEFzbWZ0bk9pV0NCS1RzYjNYMHJjRGpFUzdGLV9JRVZ1alRaQW5BMDlDem5tUGotd3A4ZGE1WFg5R051UnkyVE9lMUVTRGFmTDRrcWFXNnB3QV9DOVVVWjZwcTkwZy1MYUNvblRBR1RCMll5d0luRG5EZUdGUm1jRi1kWU96U3djNWlkYUxrUEREMHg2YUt3VDZsYVVmUDFsc3V5bWd5bGhIS282cUlva21ITQ?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "launches",
+          "source_name": "Mshale",
+          "tier": "other",
+          "title": "Meta Launches Paid Facebook, Instagram & WhatsApp Plans | Vantage On Firstpost | 4K Dave Ramsey (oZxZYgwXC2) - Mshale",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9UYW03RTBMZnVqTEFib0d5TlF4WmtJLUI0OTJVamJFdlZYNjJNSjM0TzVDNDhaTFp6VUFTWDhLaTlXMzJyY1FWM1FXTmxQTkZXenNaX0NNaGphYk0?oc=5"
         }
       ]
     },
@@ -771,16 +916,43 @@
           "tier": "other",
           "title": "Micron Announces Participation in Investor Event - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOUDMxT1YtNTBkM3FnRDJoVVRTUkljRWZ1Z2g5UjhJWi15ZGtrMGhVU3JqU29kbXRrY2tBQUtOZEVlS3YtNEtDZXA5eVMySG1GR3VFeEowVUtqeF8xLXFWZmNFTUNaTVNwcERORThCWmczMC1HSXI2WlE5LUJIMzZvSGcwc3hiVDl6ZURVV0hlRWxKRjdONGNkc0dhSHVkZFhZb3FRZHpncEE1Zw?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "announces",
+          "source_name": "Sahm",
+          "tier": "other",
+          "title": "Micron Announces Participation in Investor Event - Sahm",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxObHpzSGdyOUJDZ0tHdC05NVhBTVJRcS01YXBuV2NWM0dzY1pjSzRfODE1TDR4aTJnNko1bmFrN3c3ME9JbFltQ0dCbmNQN1JRbmNRQV8xUl9ZM05TWUo0TDhmS0hWR0pIckdtbnpNNUZpcXZrQVJnOHI1ZnhlS2lUdDhIcDVnYWpRbm1YcW9YdnB1Z3gzWnd3Q2pqWlZRUEFyc3c?oc=5"
+        }
+      ]
+    },
+    "NBIS::launches": {
+      "brief_path": null,
+      "confirmed_at": null,
+      "first_seen": "2026-07-17",
+      "generated_at": null,
+      "keyword": "launches",
+      "status": "pending",
+      "ticker": "NBIS",
+      "trigger_events": [
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "launches",
+          "source_name": "Yahoo! Finance Canada",
+          "tier": "other",
+          "title": "Nebius (NBIS) Launches Asset Light AI Cloud Model Through Partner Data Centers - Yahoo! Finance Canada",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQa3hmZHY3N19USWwydmdOcHQ3LXRGVDBZMnF3dGZQR3BtT3Z5OTJ5ZWctU2lKUHU4c2daaXBsejBQQmgxTjE0T2dHWTN3NEtDLUU4MjNJQnFTSkRmX3lVM2M3aHBTNHNCS2RPcTdoaVhxaE5zY0tKRW01S196ZlhELW9RX0h1Zm1q?oc=5"
         }
       ]
     },
     "NBIS::unveils": {
       "brief_path": null,
-      "confirmed_at": null,
+      "confirmed_at": "2026-07-17",
       "first_seen": "2026-07-16",
       "generated_at": null,
       "keyword": "unveils",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "NBIS",
       "trigger_events": [
         {
@@ -790,6 +962,14 @@
           "tier": "other",
           "title": "Nebius Unveils an Asset-Light AI Cloud Model: Key to Faster Growth? - Yahoo! Finance Canada",
           "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNT016dFY1d0p2LW13c2Nmb2pGOVk2UWZtaHBSOS1ESGl3Mk5KRE0wTjJ0cmtQeEVhRlZWWjU2cTlqSS1rNXFESnRtSkhoakNPd2J3MkRCZXI4c0FLeEhqa1E5cS1DRGktaEdwek9MaXJhb25SbHpzOTR5Z21fcWUzWnhseHE?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "unveils",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "Nebius Unveils an Asset-Light AI Cloud Model: Key to Faster Growth? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMU55MG9ncG5PbE01N3hsX2FydFBQTTVrY0t2NG5CbW01bGZaNHlWU3hPc1NNdWhiWjdGYXM4UXg4QXVYdEFkMjFQYUhuRUJPMHk3YklNQS1PQnpPSDlGdTFzazJKWEdVOU1GdzRIN0Z3ekhkem1MTlB3eDk1a1NkY3BCdTRpZFJzT1JzeVhrUHZhekQ3blFyYw?oc=5"
         }
       ]
     },
@@ -813,12 +993,12 @@
       ]
     },
     "NFLX::reveals": {
-      "brief_path": null,
-      "confirmed_at": null,
+      "brief_path": "data/briefs/2026-07-17_NFLX_reveals.md",
+      "confirmed_at": "2026-07-17",
       "first_seen": "2026-07-13",
-      "generated_at": null,
+      "generated_at": "2026-07-17",
       "keyword": "reveals",
-      "status": "pending",
+      "status": "confirmed",
       "ticker": "NFLX",
       "trigger_events": [
         {
@@ -836,6 +1016,14 @@
           "tier": "other",
           "title": "Netflix Reveals \u2018The Gentlemen\u2019 Season 2 Release Date and First Look at Italy-Set Sequel - What's on Netflix",
           "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQZmtGMF9TQ25oS1dwNlRmWnBCWThMbGNvOF9ia3JyUWNGSE1qQl9JajNtUTZpZTk2NVR2RVNtSFFlOTk2bTdIQUJTM1p6eVFvRDIyVTF0d3hHNTNFNk02eHQ2X0lCVk9ZakQzS1pfS3ZNNWpjY2VPQ3FicXRmYmJKZlEwM1JPYW1UeTBNNno5ZDk?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "reveals",
+          "source_name": "finance.biggo.com",
+          "tier": "other",
+          "title": "Netflix Reveals AI Touched Nearly 300 Titles in 2026, Slashing Costs in Half on Key Scenes - finance.biggo.com",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8yNGJKSDUySU9PbWVfYjdWS1dxUnpfQzFQUkJLWS1UZ1FXc2ZhQTVsaS0tbFM0cmJ1WDRmenRmSGlURmJwQ0wzREhjUlY0amJtaHJZUl81T1YxSHhFRUQzMzdtbXhzeUdPUEdLT3ByQ1Q4b2dwTmc?oc=5"
         }
       ]
     },
@@ -901,6 +1089,14 @@
           "tier": "other",
           "title": "Nvidia Launches Jetson T3000, T2000 Edge AI Modules - marketscreener.com",
           "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRkU4R3lra3NoV0J4Y051RnVpaUMwUmtERDVQVnNBLUNoVld1UDZHVnBSenVvMzhfM2VXSktsM04zNFJZSkoteC1NVkQzQ1lEbjZ2dkQ3LTVsaDF5cnE1dXloMU1EeGJLSFFRNlZyMmhFSTJVMFZKaTNpRWRpMldxSnFNeHBYeWplWmhkbmZYVlhHTzlRSDIwbTVIbU5hcWpOTEpWVUxn?oc=5"
+        },
+        {
+          "detected_at": "2026-07-17",
+          "keyword": "launches",
+          "source_name": "Yahoo Finance",
+          "tier": "other",
+          "title": "NVDA Stock Alert: What to Know as Nvidia Launches New AI Model - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPMDVEQXlhQkNOQ2x1eUdDeExEMXVlVVZSZGxTeWFoRGh6dGRiWlFaUzlvT2IzN25XbjJkYzA5S3czSE4zTkhlZ040R3VURHY3VkJsWW83aVNVcm8zbVpkVVRzSjJuVGJjRkphbHU0XzlCeE1obWJtMHVHbWdvcVhXR0d5Q0M1bWczNmpiSkZGaDIxU3RiWnFF?oc=5"
         }
       ]
     },
