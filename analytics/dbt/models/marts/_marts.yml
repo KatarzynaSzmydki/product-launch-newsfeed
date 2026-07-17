@@ -1,0 +1,126 @@
+version: 2
+
+models:
+  - name: dim_companies
+    description: >
+      Company dimension — the NASDAQ-100 universe. Real ticker/name enriched with
+      curated real-world sector/industry/HQ/market-cap attributes.
+    columns:
+      - name: company_id
+        description: Surrogate primary key.
+        data_tests: [unique, not_null]
+      - name: ticker
+        description: Stock ticker (natural key).
+        data_tests: [unique, not_null]
+      - name: name
+        description: Company name.
+        data_tests: [not_null]
+      - name: sector
+        description: Curated GICS-style sector (company_attrs.csv).
+      - name: industry
+        description: Curated industry (company_attrs.csv).
+      - name: hq_country
+        description: Curated headquarters country (company_attrs.csv).
+      - name: market_cap_bucket
+        description: Curated size bucket — mega / large / mid (company_attrs.csv).
+
+  - name: fct_launches
+    description: >
+      Launch fact — one row per confirmed, briefed product launch. `category` is
+      synthesized (sector-correlated) and `confidence_score` is a heuristic over
+      real corroboration signals; all other columns are real.
+    columns:
+      - name: launch_id
+        description: Surrogate primary key.
+        data_tests: [unique, not_null]
+      - name: company_id
+        description: FK to dim_companies.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_companies')
+                field: company_id
+      - name: launch_date
+        description: Date the launch was confirmed.
+      - name: keyword
+        description: Matched launch verb (unveils / launches / ...).
+      - name: product_name
+        description: Product name — not yet extracted from the brief prose (NULL).
+      - name: category
+        description: Synthesized product category, correlated with the company's sector.
+      - name: confidence_score
+        description: Heuristic in [0,1] over num_sources and wire-tier presence.
+      - name: num_sources
+        description: Count of distinct corroborating sources (real).
+      - name: source_type
+        description: "'wire' if a tier-1 wire corroborated, else 'multi_outlet'."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["wire", "multi_outlet"]
+      - name: summary
+        description: Launch Summary prose from the published brief (real).
+      - name: is_synthetic
+        description: Always FALSE under "real data only"; reserved for future backfill.
+
+  - name: fct_stock_snapshots
+    description: >
+      Stock snapshot fact — one row per launch, captured at brief time. `change_1d`
+      is synthesized (the app captures no intraday move); the rest are real.
+    columns:
+      - name: snapshot_id
+        description: Surrogate primary key.
+        data_tests: [unique, not_null]
+      - name: company_id
+        description: FK to dim_companies.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_companies')
+                field: company_id
+      - name: launch_id
+        description: FK to fct_launches.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_launches')
+                field: launch_id
+      - name: snapshot_date
+        description: As-of date of the snapshot.
+      - name: price
+        description: Current price at brief time (real).
+      - name: change_1d
+        description: Synthesized 1-day % move.
+      - name: change_1y
+        description: 1-year % change (real).
+      - name: week52_high
+        description: 52-week high (real).
+      - name: week52_low
+        description: 52-week low (real).
+
+  - name: br_launch_sources
+    description: >
+      Bridge — one row per corroborating outlet hit, linking a source to its launch.
+    columns:
+      - name: source_id
+        description: Surrogate primary key.
+        data_tests: [unique, not_null]
+      - name: launch_id
+        description: FK to fct_launches.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_launches')
+                field: launch_id
+      - name: outlet_name
+        description: Publishing outlet name.
+      - name: url
+        description: Article URL.
+      - name: published_at
+        description: Proxy publish date (run detection time).
+      - name: is_wire
+        description: True if a tier-1 wire hit.

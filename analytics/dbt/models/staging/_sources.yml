@@ -1,0 +1,22 @@
+version: 2
+
+# Raw tables built by analytics/data/generate_data.py into the same DuckDB file.
+# dbt only reads them; the generator owns their shape (see analytics/data/schema.sql).
+sources:
+  - name: raw
+    schema: main
+    description: >
+      Star schema seeded from the live product-launch-newsfeed output. Every row
+      is real; only empty attribute columns are curated/synthesized by the
+      generator. See analytics/data/schema.sql for per-column provenance.
+    tables:
+      - name: companies
+        description: NASDAQ-100 universe (real ticker/name) enriched with curated sector attributes.
+      - name: launches
+        description: Confirmed, briefed launches — one row per launch.
+      - name: sources
+        description: Corroborating outlet hits per launch (bridge to launches).
+      - name: stock_snapshots
+        description: Stock snapshot captured at brief time, one per launch.
+      - name: feedback
+        description: Reader feedback. Empty under "real data only" (lives in GitHub Issues).
