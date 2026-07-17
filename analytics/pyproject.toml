@@ -5,6 +5,11 @@ target-version = "py311"
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
 
+[tool.ruff.lint.per-file-ignores]
+# The NL->spec prompt is mostly long, deliberately-formatted text and few-shot
+# JSON examples that read worse when wrapped to fit the line limit.
+"nl2metric/prompt.py" = ["E501"]
+
 [tool.black]
 line-length = 100
 target-version = ["py311"]

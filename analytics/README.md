@@ -10,6 +10,28 @@ Full design: [`PROJECT_PLAN.md`](./PROJECT_PLAN.md).
 
 ## Status
 
+**Phase 4 — NL→metric-query engine + validation.** The `analytics/nl2metric/`
+package now turns a plain-English question into a governed metric query. A prompt
+(`prompt.py`) injects the Phase 3 catalog block and a strict JSON contract;
+`generate.py` calls the swappable `LLMClient` and extracts the spec the model
+returns; `spec.py` parses it into a `MetricQuerySpec` and **validates** it against
+the catalog — every metric/dimension/filter must exist, a limit is required and
+row-capped, operators are whitelisted, unknown fields are rejected — so a bad
+model answer is refused before it ever reaches the database; `runner.py` renders a
+validated spec to `mf query` arguments and executes it (subprocess, timeout, row
+cap, results parsed from `--csv`, optional compiled SQL via `--explain`). The LLM
+never writes SQL. The engine runs offline and is unit-tested end to end with a
+fake `LLMClient`; the executor has a live smoke test that runs when a built DuckDB
+file and the `mf` CLI are present. Try it:
+
+```
+python -m analytics.nl2metric.catalog   # the metric/dimension block the prompt injects
+python -m pytest analytics/tests -q      # spec validation + generation + runner
+```
+
+The remaining wiring (semantic cache, chart synthesis, Streamlit UX) lands in
+Phases 5–7.
+
 **Phase 3 — MetricFlow semantic layer.** On top of the Phase 2 marts there's now
 a **dbt + MetricFlow** semantic layer: `semantic_models` over each mart declare
 entities, dimensions and measures, and `metrics` (`launch_count`,

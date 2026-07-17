@@ -17,8 +17,11 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-# Grains MetricFlow exposes on the special ``metric_time`` dimension. Group by
-# ``metric_time__<grain>``; filter on ``metric_time``.
+# The special dimension MetricFlow exposes for time. Group by
+# ``metric_time__<grain>``; filter on ``metric_time`` with a grain.
+METRIC_TIME = "metric_time"
+
+# Grains MetricFlow exposes on ``metric_time``.
 TIME_GRAINS = ["day", "week", "month", "quarter", "year"]
 
 _DEFAULT_MANIFEST = (
@@ -54,8 +57,8 @@ class Catalog:
 
     def dimension_names(self) -> set[str]:
         names = {d.name for d in self.dimensions}
-        names.add("metric_time")
-        names.update(f"metric_time__{g}" for g in TIME_GRAINS)
+        names.add(METRIC_TIME)
+        names.update(f"{METRIC_TIME}__{g}" for g in TIME_GRAINS)
         return names
 
     def to_prompt_block(self) -> str:
