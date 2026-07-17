@@ -1,0 +1,43 @@
+version: 2
+
+semantic_models:
+  - name: launch_sources
+    description: One row per corroborating outlet hit. Joins to launches via the launch entity.
+    model: ref('br_launch_sources')
+    defaults:
+      agg_time_dimension: published_at
+    entities:
+      - name: source
+        type: primary
+        expr: source_id
+      - name: launch
+        type: foreign
+        expr: launch_id
+    dimensions:
+      - name: published_at
+        type: time
+        type_params:
+          time_granularity: day
+      - name: outlet_name
+        description: Publishing outlet name.
+        type: categorical
+      - name: is_wire
+        description: True if a tier-1 wire hit.
+        type: categorical
+    measures:
+      - name: source_count
+        description: Distinct corroborating source hits.
+        agg: count_distinct
+        expr: source_id
+      - name: wire_source_count
+        description: Corroborating hits from tier-1 wires.
+        agg: sum
+        expr: "case when is_wire then 1 else 0 end"
+
+metrics:
+  - name: source_count
+    description: Number of corroborating source hits.
+    label: Source count
+    type: simple
+    type_params:
+      measure: source_count
