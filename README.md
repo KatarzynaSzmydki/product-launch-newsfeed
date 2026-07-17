@@ -1,6 +1,6 @@
 # Product Launch Tracker
 
-**[🔗 Live app](https://appuct-launch-newsfeed-ikdapki88wvs4vnnhwezyx.streamlit.app/)**
+**[🔗 Live app](https://tech-launch-newsfeed.streamlit.app/)**
 
 A daily-refreshing dashboard that tracks NASDAQ-100 companies for real
 product-launch news, cross-checks it against multiple sources before
