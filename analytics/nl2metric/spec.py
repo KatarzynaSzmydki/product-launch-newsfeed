@@ -14,10 +14,10 @@ fully unit-testable with no LLM and no database.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 from typing import Any
 
-from analytics.nl2metric.catalog import TIME_GRAINS, Catalog
+from analytics.nl2metric.catalog import METRIC_TIME, TIME_GRAINS, Catalog
 
 # Hard row cap. The validator requires a limit and refuses anything larger, so
 # a runaway "select everything" spec can't be compiled. Also the executor's cap.
@@ -25,12 +25,7 @@ MAX_LIMIT = 1000
 
 # The only comparison operators a filter may use. "in" takes a list value;
 # every other operator takes a scalar.
-_SCALAR_OPERATORS = frozenset({"=", "!=", "<", "<=", ">", ">="})
-_OPERATORS = _SCALAR_OPERATORS | {"in"}
-
-# The metric_time dimension and its per-grain variants share this prefix; filters
-# on them render as TimeDimension(...) rather than Dimension(...).
-_METRIC_TIME = "metric_time"
+_OPERATORS = frozenset({"=", "!=", "<", "<=", ">", ">=", "in"})
 
 
 class SpecError(ValueError):
@@ -75,7 +70,7 @@ class Filter:
         )
 
     def is_time(self) -> bool:
-        return self.dimension == _METRIC_TIME or self.dimension.startswith(f"{_METRIC_TIME}__")
+        return self.dimension == METRIC_TIME or self.dimension.startswith(f"{METRIC_TIME}__")
 
 
 @dataclass(frozen=True)
@@ -236,7 +231,7 @@ def _filter_to_where(f: Filter) -> str:
         if grain is None and "__" in f.dimension:
             grain = f.dimension.split("__", 1)[1]
         grain = grain or "day"
-        lhs = f"{{{{ TimeDimension('{_METRIC_TIME}', '{grain}') }}}}"
+        lhs = f"{{{{ TimeDimension('{METRIC_TIME}', '{grain}') }}}}"
     else:
         lhs = f"{{{{ Dimension('{f.dimension}') }}}}"
 
@@ -270,11 +265,3 @@ def to_mf_query_args(spec: MetricQuerySpec) -> list[str]:
     if spec.limit is not None:
         args += ["--limit", str(spec.limit)]
     return args
-
-
-def with_defaults(spec: MetricQuerySpec, *, default_limit: int = 100) -> MetricQuerySpec:
-    """Fill an omitted limit with a safe default. Convenience for callers that
-    would rather coerce than reject a limit-less spec."""
-    if spec.limit is None:
-        return replace(spec, limit=default_limit)
-    return spec

@@ -230,7 +230,8 @@ def test_render_time_where_uses_time_dimension():
         where=(Filter("metric_time", ">=", "2025-01-01", "day"),),
         limit=10,
     )
-    where = to_mf_query_args(spec)[to_mf_query_args(spec).index("--where") + 1]
+    args = to_mf_query_args(spec)
+    where = args[args.index("--where") + 1]
     assert where == "{{ TimeDimension('metric_time', 'day') }} >= '2025-01-01'"
 
 
@@ -240,7 +241,8 @@ def test_render_grain_inferred_from_dimension_name():
         where=(Filter("metric_time__quarter", ">=", "2025-01-01"),),
         limit=10,
     )
-    where = to_mf_query_args(spec)[to_mf_query_args(spec).index("--where") + 1]
+    args = to_mf_query_args(spec)
+    where = args[args.index("--where") + 1]
     assert "TimeDimension('metric_time', 'quarter')" in where
 
 
@@ -250,5 +252,6 @@ def test_render_in_clause_and_quote_escaping():
         where=(Filter("company__company_name", "in", ["Alphabet", "O'Reilly"]),),
         limit=10,
     )
-    where = to_mf_query_args(spec)[to_mf_query_args(spec).index("--where") + 1]
+    args = to_mf_query_args(spec)
+    where = args[args.index("--where") + 1]
     assert where == "{{ Dimension('company__company_name') }} in ('Alphabet', 'O''Reilly')"

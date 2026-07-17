@@ -30,7 +30,6 @@ from analytics.nl2metric.spec import (
     MetricQuerySpec,
     to_mf_query_args,
     validate_or_raise,
-    with_defaults,
 )
 
 _ANALYTICS_ROOT = Path(__file__).resolve().parents[1]
@@ -108,9 +107,8 @@ def run_spec(
     if catalog is not None:
         validate_or_raise(spec, catalog)
 
-    capped = with_defaults(spec, default_limit=row_cap)
-    if capped.limit is None or capped.limit > row_cap:
-        capped = replace(capped, limit=row_cap)
+    effective = spec.limit if spec.limit is not None else row_cap
+    capped = replace(spec, limit=min(effective, row_cap))
 
     db = Path(duckdb_path) if duckdb_path else _DEFAULT_DUCKDB
     if not db.exists():
