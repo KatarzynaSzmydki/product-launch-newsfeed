@@ -43,6 +43,11 @@ if "GEMINI_API_KEY" not in os.environ or not os.environ["GEMINI_API_KEY"]:
     if secret_key:
         os.environ["GEMINI_API_KEY"] = secret_key
 
+# A soft cap, not a security control: it resets on reload. It exists so a public
+# page can't quietly drain the free-tier Gemini quota, while still letting a
+# stranger try the demo without a login.
+MAX_QUESTIONS_PER_SESSION = 5
+
 EXAMPLE_QUESTIONS = [
     "Which companies launched the most products?",
     "How many launches did each sector have, by quarter?",
@@ -59,6 +64,11 @@ def _catalog():
 @st.cache_resource
 def _client():
     return get_default_client()
+
+
+def _questions_remaining() -> int:
+    # Namespaced key: session_state is shared with the newsfeed page under the router.
+    return MAX_QUESTIONS_PER_SESSION - st.session_state.get("analytics_questions_used", 0)
 
 
 def _prune_empty(value):
@@ -147,6 +157,12 @@ def _answer(question: str, *, show_sql: bool = True) -> None:
         st.error(str(exc))
         return
 
+    # Charged here and not earlier: the two guards above fail without ever reaching
+    # the API, so a missing key or manifest must not cost the visitor a question.
+    st.session_state.analytics_questions_used = (
+        st.session_state.get("analytics_questions_used", 0) + 1
+    )
+
     try:
         with st.spinner("Translating your question into a metric-query spec…"):
             gen = generate_spec(question, catalog, client)
@@ -194,5 +210,20 @@ show_sql = st.checkbox(
     "Show compiled SQL (runs a second MetricFlow pass, adds ~30s)", value=False
 )
 
-if st.button("Answer", type="primary") and question.strip():
+_capped = _questions_remaining() <= 0
+
+if st.button("Answer", type="primary", disabled=_capped) and question.strip():
     _answer(question.strip(), show_sql=show_sql)
+
+# Read after _answer() so the count reflects the question just asked.
+if _questions_remaining() <= 0:
+    st.info(
+        f"That's all {MAX_QUESTIONS_PER_SESSION} questions for this session. The demo "
+        "runs on a free-tier API key, so it's capped to keep it available for "
+        "everyone — **reload the page** to start over."
+    )
+else:
+    st.caption(
+        f"{_questions_remaining()} of {MAX_QUESTIONS_PER_SESSION} questions left "
+        "this session."
+    )

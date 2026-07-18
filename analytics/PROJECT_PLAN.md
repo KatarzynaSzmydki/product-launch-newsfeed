@@ -265,10 +265,55 @@ Each phase ends with something demoable and committed. Roughly one weekend-ish b
 - **Done when:** `pytest`/make target prints an accuracy % and flags regressions.
 
 ### Phase 9 — Auth, deploy, CI/CD, docs
-- Gate the app with simple auth; deploy (Streamlit Community Cloud, as your existing app).
-- GitHub Actions: lint + unit tests + `dbt build` + eval report on PR.
-- Architecture doc, demo GIF/Loom, README "how it works / known limitations."
-- **Done when:** it's live, protected, and the repo reads like a finished portfolio piece.
+
+This phase was written assuming the analytics app would deploy on its own. It
+didn't: it now runs as a page of the main app's `st.navigation` router (`app.py`),
+sharing one deploy, one `requirements.txt` and one entrypoint with the newsfeed.
+That closed two items early, changed the shape of a third, and created a fourth
+the original plan never anticipated.
+
+**Done — deploy.** Live on Streamlit Community Cloud as the "Ask the data" page of
+the existing app. Two constraints are non-obvious and recorded in `README.md`
+under *Deploying*: Cloud must be pinned to **Python 3.12** (dbt breaks on 3.13+,
+and the symptom is an unrelated-looking `mashumaro` trace), and the DuckDB file
+plus two dbt manifests must be **committed**, because Cloud builds from the repo
+alone and can't regenerate them.
+
+**Done — usage guard, in place of auth.** A per-session cap of 5 questions in
+`app.py`, not a login. Streamlit's built-in auth is app-wide, so gating "the app"
+would have gated the *public* newsfeed too — and a portfolio demo a stranger can't
+try is worth less than the quota it saves. The cap resets on reload by design: it's
+a spend guard against casual burn, not a security control.
+
+**Todo — CI/CD.** No `.github/` exists yet. One workflow on PR + `master`:
+- Python **3.12**, to match the deploy pin above.
+- Install `requirements-dev.txt`; run `ruff check` + `black --check` scoped to
+  `analytics/`, then `pytest analytics/tests`, then `dbt build`.
+- Mind the sequencing trap: regenerate the data *then* `dbt build`, never the
+  reverse (dbt writes into the same file the generator rebuilds from scratch).
+
+Higher stakes than when this was planned — a broken import or dep bump under
+`analytics/` now ships to the newsfeed page too.
+
+**Todo — artifact-freshness check.** A risk created by committing build artifacts:
+nothing enforces that `data/analytics.duckdb` and
+`dbt/target/{manifest,semantic_manifest}.json` still match the models. Edit a
+semantic YAML, forget `dbt parse`, and the deployed page silently serves a stale
+manifest — no error, just quietly wrong answers. Sketch: rebuild in CI, then
+`git diff --exit-code` the manifest. **Verify the rebuild is actually byte-stable
+before making this a blocking gate** — if the artifacts embed timestamps or
+absolute paths they'll diff on every run and the job becomes noise to ignore.
+
+**Todo — docs.** The Status section in `README.md` still says Phase 4 while the
+code is Phase 7-partial. The root `README.md`/`CLAUDE.md` don't mention that
+`app.py` is now a two-page router. And the root and `analytics/`
+`requirements.txt` are kept in sync **by hand** — an easy trap worth naming.
+
+**Deferred — eval report in CI.** Depends on Phase 8; `analytics/eval/` doesn't
+exist yet. Slots into the workflow above once it does.
+
+- **Done when:** it's live, spend-guarded, CI-gated, and the repo reads like a
+  finished portfolio piece.
 
 ### Phase 10 — Stretch (pick what's fun)
 - Multi-turn follow-ups ("now break that down by sector").
