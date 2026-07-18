@@ -34,9 +34,11 @@ class GeminiClient:
         api_key = api_key or os.environ.get("GEMINI_API_KEY")
         if not api_key:
             raise RuntimeError(
-                "GEMINI_API_KEY is not set. Copy analytics/.env.example to "
-                "analytics/.env and fill in a free key from "
-                "https://aistudio.google.com/apikey (no card required)."
+                "GEMINI_API_KEY is not set. Get a free key from "
+                "https://aistudio.google.com/apikey (no card required), then:\n"
+                "- deployed: add `GEMINI_API_KEY = \"...\"` under Settings > Secrets "
+                "in the Streamlit Cloud dashboard;\n"
+                "- local: copy analytics/.env.example to analytics/.env and fill it in."
             )
 
         from google import genai  # deferred import: rest of the package works without the SDK installed
