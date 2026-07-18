@@ -12,9 +12,15 @@ data/pending_generation/
 
 # analytics/ (self-service NL analytics side project)
 analytics/.env
-analytics.duckdb
-# dbt build artifacts (regenerable) and the machine-local anonymous-usage id
-analytics/dbt/target/
 analytics/dbt/dbt_packages/
 analytics/dbt/logs/
 analytics/dbt/.user.yml
+
+# analytics.duckdb and the two manifests below are build artifacts, but
+# Streamlit Cloud builds from the repo alone and has no way to regenerate
+# them, so the deployed analytics page needs them committed. Rebuild with
+# `python -m analytics.data.generate_data && dbt parse` and commit the diff.
+# The rest of target/ is local-only: docs, parse caches, per-run results.
+analytics/dbt/target/*
+!analytics/dbt/target/manifest.json
+!analytics/dbt/target/semantic_manifest.json
