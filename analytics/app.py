@@ -8,6 +8,9 @@ spec, the model's assumptions, and the compiled SQL.
 Deliberately partial: the semantic cache and 👍/👎 logging (Phase 5) and the
 richer Plotly chart synthesis (Phase 6) are not wired yet — this page skips
 straight to a working demo of Phase 4's engine over the Phase 3 semantic layer.
+
+Rendered as a page of the st.navigation router in app.py, which owns
+set_page_config for the whole app.
 """
 
 from __future__ import annotations
@@ -47,9 +50,6 @@ EXAMPLE_QUESTIONS = [
     "What's the confirmation rate by sector?",
     "How many launches happened each month?",
 ]
-
-st.set_page_config(page_title="NL Analytics — product launches", page_icon="📊", layout="wide")
-
 
 @st.cache_resource
 def _catalog():
