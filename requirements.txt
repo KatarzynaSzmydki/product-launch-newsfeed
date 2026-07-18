@@ -4,3 +4,10 @@ beautifulsoup4>=4.12.3
 pyyaml>=6.0.2
 streamlit>=1.38.0
 streamlit-autorefresh>=1.0.1
+
+# analytics/ page (see analytics/requirements.txt, kept in sync)
+google-genai>=1.2.0
+python-dotenv>=1.0.1
+duckdb>=1.0.0
+dbt-duckdb>=1.9.0
+dbt-metricflow>=0.13.0        # pins dbt-core<1.12; provides the `mf` CLI + semantic layer
