@@ -9,9 +9,11 @@ raise -- page-level title/icon go through st.Page instead.
 """
 import streamlit as st
 
+from views.feedback import render_sidebar
+
 st.set_page_config(page_title="Product Launch Tracker", layout="wide")
 
-st.navigation(
+page = st.navigation(
     [
         st.Page(
             "views/newsfeed.py",
@@ -25,4 +27,10 @@ st.navigation(
             icon=":material/insights:",
         ),
     ]
-).run()
+)
+
+# Before run(), so the form sits under the nav links rather than below whatever
+# the page happens to render into the sidebar.
+render_sidebar()
+
+page.run()
