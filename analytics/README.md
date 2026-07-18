@@ -119,7 +119,7 @@ regenerate then `dbt build`, not the reverse.
 pip install -r analytics/requirements-dev.txt   # runtime + ruff/black/pytest
 cp analytics/.env.example analytics/.env         # then fill in GEMINI_API_KEY
 pre-commit install                               # optional, scoped to analytics/
-streamlit run analytics/app.py
+streamlit run app.py                             # router; this page is "Ask the data"
 ```
 
 Get a free Gemini key (no card required) at
@@ -127,6 +127,20 @@ https://aistudio.google.com/apikey. Locally it's read from
 `analytics/.env`; when deployed it should instead go in Streamlit's
 `secrets.toml` under the same `GEMINI_API_KEY` name (never commit either
 file).
+
+## Deploying
+
+**Streamlit Cloud must run Python 3.12** (Advanced settings when creating the
+app). dbt doesn't support 3.13+: on 3.14 the `mf` CLI dies at import, deep
+inside `mashumaro`'s codegen, with `UnserializableField: Field "schema" ... is
+not serializable` — a stack trace that looks nothing like a version-support
+problem. Streamlit Cloud defaults to its newest Python, so this is not the
+default and the repo can't pin it (Cloud ignores `runtime.txt`).
+
+`analytics.duckdb` and `dbt/target/{manifest,semantic_manifest}.json` are
+committed, unlike the rest of `target/`: Cloud builds from the repo alone and
+can't regenerate them. After changing the models or the data, rebuild with
+`python -m analytics.data.generate_data && dbt parse` and commit the diff.
 
 ## Why a separate LLM provider from the main app
 
