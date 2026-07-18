@@ -24,6 +24,11 @@ METRIC_TIME = "metric_time"
 # Grains MetricFlow exposes on ``metric_time``.
 TIME_GRAINS = ["day", "week", "month", "quarter", "year"]
 
+
+def is_time_dimension(name: str) -> bool:
+    """True if ``name`` is the metric_time dimension or a ``metric_time__<grain>`` variant."""
+    return name == METRIC_TIME or name.startswith(f"{METRIC_TIME}__")
+
 _DEFAULT_MANIFEST = (
     Path(__file__).resolve().parents[1] / "dbt" / "target" / "semantic_manifest.json"
 )

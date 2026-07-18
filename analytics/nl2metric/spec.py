@@ -17,7 +17,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from analytics.nl2metric.catalog import METRIC_TIME, TIME_GRAINS, Catalog
+from analytics.nl2metric.catalog import METRIC_TIME, TIME_GRAINS, Catalog, is_time_dimension
 
 # Hard row cap. The validator requires a limit and refuses anything larger, so
 # a runaway "select everything" spec can't be compiled. Also the executor's cap.
@@ -70,7 +70,7 @@ class Filter:
         )
 
     def is_time(self) -> bool:
-        return self.dimension == METRIC_TIME or self.dimension.startswith(f"{METRIC_TIME}__")
+        return is_time_dimension(self.dimension)
 
 
 @dataclass(frozen=True)
