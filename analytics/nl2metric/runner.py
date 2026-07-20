@@ -36,7 +36,13 @@ _ANALYTICS_ROOT = Path(__file__).resolve().parents[1]
 _DBT_DIR = _ANALYTICS_ROOT / "dbt"
 _DEFAULT_DUCKDB = _ANALYTICS_ROOT / "data" / "analytics.duckdb"
 
-DEFAULT_TIMEOUT_S = 60
+# Every `mf query` pays ~20-30s of fixed CLI startup (project parse + adapter
+# init) before it touches data, and that roughly doubles when something else
+# holds the DuckDB file — the Streamlit app itself, typically. Measured spread on
+# the same query: 20s idle, 42s contended. 60s left almost no headroom and timed
+# out on healthy queries; the cap is here to catch a runaway, not to police
+# latency that is startup cost either way.
+DEFAULT_TIMEOUT_S = 150
 
 
 class QueryExecutionError(RuntimeError):
@@ -159,7 +165,11 @@ def _run(cmd: list[str], env: dict[str, str], timeout: int) -> subprocess.Comple
             timeout=timeout,
         )
     except subprocess.TimeoutExpired as exc:
-        raise QueryExecutionError(f"mf query timed out after {timeout}s") from exc
+        raise QueryExecutionError(
+            f"mf query timed out after {timeout}s. Most of a query's time is "
+            "MetricFlow CLI startup, so a timeout usually means the machine is "
+            "loaded rather than the question being expensive — retrying often works."
+        ) from exc
 
 
 def _read_csv(path: str) -> tuple[list[str], list[dict[str, str]]]:

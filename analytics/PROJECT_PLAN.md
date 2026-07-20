@@ -249,10 +249,26 @@ Each phase ends with something demoable and committed. Roughly one weekend-ish b
 - Store new validated question→spec pairs.
 - **Done when:** a repeat is a cache hit; a paraphrase is offered as a suggestion; an unrelated question misses. Document why the threshold is high (the correctness trap).
 
-### Phase 6 — Answer & chart synthesis
-- Rule-based chart from result shape: metric over time → line; category × metric → bar; single scalar → metric card; two numerics → scatter.
-- Optional LLM one-liner grounded strictly in the returned rows (never invents figures).
-- **Done when:** the 5 canonical questions render a sensible chart + one-liner.
+### Phase 6 — Chart synthesis
+
+**Done — rule-based charts.** `analytics/viz/chart.py` picks a chart from the
+result's shape alone: single scalar → metric card; a time dimension → line (one
+line per category when a category is also present); two metrics × a category →
+scatter; one category → bar; anything else → the table on its own. It returns a
+`ChartSpec` and imports no Streamlit, so all of it is unit-tested offline and the
+rendering library stays swappable — which is why **Streamlit's native charts**
+were used instead of the Plotly in §7: they cover all four shapes, and since the
+analytics page shares one deploy with the public newsfeed, a dependency added
+here ships there too. The chosen rule is captioned under every answer.
+
+**Dropped — the LLM one-liner.** The plan had an optional generated sentence
+summarising the rows. Cut deliberately: interpreting the chart is the reader's
+job, and a second LLM call per question spends free-tier quota (against a
+5-question session cap) to restate what the table already says. It also adds a
+second place the model could put a wrong number in front of the user — the exact
+failure the rest of this design works to make impossible.
+
+- **Done when:** the 5 canonical questions each render a sensible chart. ✅
 
 ### Phase 7 — Streamlit UX
 - Question box; "Show spec, assumptions & compiled SQL" expander (great teaching surface — you can literally see MetricFlow's SQL); result table; chart; latency + cache-hit badge; 👍/👎 to `query_log`; example-question chips.
