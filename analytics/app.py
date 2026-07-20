@@ -2,12 +2,15 @@
 
 A plain-English question becomes a governed metric-query spec (LLM, from the
 catalog), which MetricFlow compiles to guaranteed-correct DuckDB SQL, which runs
-and comes back as a table + a simple chart. Every answer shows its work: the
-spec, the model's assumptions, and the compiled SQL.
+and comes back as a table plus a shape-appropriate chart. Every answer shows its
+work: the spec, the model's assumptions, and the compiled SQL.
 
-Deliberately partial: the semantic cache and 👍/👎 logging (Phase 5) and the
-richer Plotly chart synthesis (Phase 6) are not wired yet — this page skips
-straight to a working demo of Phase 4's engine over the Phase 3 semantic layer.
+Deliberately partial: the semantic cache and 👍/👎 logging (Phase 5) are not
+wired yet. Phase 6's chart synthesis is in — the rules live in
+analytics/viz/chart.py, pure and tested offline, and this module only renders
+what they decide. The phase's optional LLM one-liner was dropped: reading the
+chart is the user's job, and a second generated sentence per question buys
+little for the free-tier quota it spends.
 
 Rendered as a page of the st.navigation router in app.py, which owns
 set_page_config for the whole app.
@@ -30,7 +33,7 @@ from analytics.nl2metric import (
     load_catalog,
     run_spec,
 )
-from analytics.nl2metric.catalog import is_time_dimension
+from analytics.viz import BAR, LINE, METRIC, SCATTER, choose_chart, split_columns
 
 load_dotenv()  # local dev: reads analytics/.env
 
@@ -95,37 +98,43 @@ def _numeric_frame(rows: list[dict], metric_cols: list[str]) -> pd.DataFrame:
 
 
 def _render_result(spec, result) -> None:
-    metric_set = set(spec.metrics)
-    metric_cols = [c for c in result.columns if c in metric_set]
-    dim_cols = [c for c in result.columns if c not in metric_cols]
+    metric_cols, dim_cols = split_columns(result.columns, spec.metrics)
     df = _numeric_frame(result.rows, metric_cols)
+    chart = choose_chart(
+        metric_cols,
+        dim_cols,
+        row_count=len(df),
+        distinct_counts={c: int(df[c].nunique()) for c in dim_cols if c in df.columns},
+    )
 
-    # Single scalar (one metric, no breakdown) reads best as a big number.
-    if not dim_cols and len(df) == 1 and len(metric_cols) == 1:
-        st.metric(metric_cols[0], df[metric_cols[0]].iloc[0])
+    if chart.kind == METRIC:
+        for col, value in zip(st.columns(len(chart.y)), chart.y):
+            col.metric(value, df[value].iloc[0])
     else:
         st.dataframe(df, use_container_width=True, hide_index=True)
-        _render_chart(df, dim_cols, metric_cols)
+        _render_chart(df, chart)
 
+    drawn = f"{chart.kind} chart" if chart else "no chart"
     st.caption(
         f"⚡ {result.latency_ms:,.0f} ms · {result.row_count} row(s) · "
-        "cache + 👍/👎 land in Phase 5"
+        f"{drawn} — {chart.reason} · cache + 👍/👎 land in Phase 5"
     )
 
 
-def _render_chart(df: pd.DataFrame, dim_cols: list[str], metric_cols: list[str]) -> None:
-    """A minimal rule-based chart: time → line, one category → bar, else nothing.
-
-    The full shape-aware synthesis (scatter, metric cards, multi-series) is Phase 6.
-    """
-    if len(dim_cols) != 1 or not metric_cols:
+def _render_chart(df: pd.DataFrame, chart) -> None:
+    """Draw whatever analytics/viz decided. The rules live there; this only maps
+    a ChartSpec onto Streamlit's native charts."""
+    if not chart:
         return
-    dim = dim_cols[0]
-    chart_df = df.set_index(dim)[metric_cols]
-    if is_time_dimension(dim):
-        st.line_chart(chart_df)
-    else:
-        st.bar_chart(chart_df)
+    kwargs = {"x": chart.x, "y": list(chart.y)}
+    if chart.color:
+        kwargs["color"] = chart.color
+    if chart.kind == LINE:
+        st.line_chart(df, **kwargs)
+    elif chart.kind == BAR:
+        st.bar_chart(df, **kwargs)
+    elif chart.kind == SCATTER:
+        st.scatter_chart(df, **kwargs)
 
 
 def _render_trace(gen, result=None) -> None:
